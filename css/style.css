@@ -1,0 +1,114 @@
+html, 
+body, 
+.cover {
+   height: 100%;
+}
+
+.cover {
+   background: url('../img/couchfriends.jpg') top left no-repeat;
+   background-size: cover;
+   display: table; /* to VERTICAL ALIGN the children! */
+   width: 100%; /* to VERTICAL ALIGN the children! */
+   padding: 0 20px;
+   box-shadow: inset 0 0 100px #000; /* use this to darken or lighten a box! */
+   margin-bottom: 40px;
+}
+
+.cover-text {
+   color: white;
+   text-align: center;
+   display: table-cell;/* to VERTICAL ALIGN the children! */
+   vertical-align: middle;
+   position: relative;
+   top: 50px;
+}
+
+.cover-text h1 {
+   font-size: 70px;
+   letter-spacing: -3px;
+}
+
+.navbar-dark { /* over-ride bootsrap classes! */ /* apply transparency */
+   background-color: rgba(0,0,0,0.8);
+}
+
+.testimonial {
+   background: #222;
+   padding: 40px 0;
+   margin-top: -40px;
+}
+
+blockquote {
+   font-family: Georgia, Times, serif;
+   font-style: italic;
+   font-size: 32px;
+   color: white;
+   
+}
+
+blockquote cite {
+   display: block;
+   text-align: right;
+   text-transform: uppercase;
+   font-family: Helvetica, Arial, sans-serif;
+   font-style: normal;
+   font-size: 18px;
+   font-weight: bold;
+   color: #888;
+}
+
+section {
+   padding: 40px;
+}
+
+h2 {
+   text-align: center;
+   font-size: 28px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin: 0 0 60px;
+}
+
+h2 + p {  /* sibling selector; where we have a h2 and p next to each other...*/
+   
+   text-align: center;
+   margin-top: -60px;
+}
+
+#team {
+   background: url('../img/fan.jpg') top left no-repeat;
+   background-size: cover;
+   color: white;
+   text-align: center;
+}
+
+footer {
+   background: #222;
+   color: white;
+   text-align: center; 
+   padding: 20px;
+   font-family: Georgia, Time, serif;
+}
+
+footer a {
+   color: hotpink;
+}
+
+
+/* Media Queries! */
+
+@media only screen and ( max-width: 568px ) {
+/*   at 568px (iphone6 and above landscape) or less, do: */
+   section {
+      padding: 20px;
+      font-size: 0.8em;
+   }
+   
+   .cover {
+      font-size: 10px;
+   }
+   
+}
+
+
+
