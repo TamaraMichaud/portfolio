@@ -1,0 +1,68 @@
+{
+    "muscle-groups" : [ "arms", "legs", "core"],
+    "workout-type" : [ "cardio", "strength", "balance"],
+    "workouts" : [
+                    {
+                        "name" : "squats",
+                        "reps" : 20,
+                        "sets" : 5, 
+                        "muscle-groups" : [ "legs" ],
+                        "variations" : [ 
+                                            {
+                                                "level" : "easy",
+                                                "description" : ""
+                                            },
+                                            {
+                                                "level" : "medium",
+                                                "description" : "squat 1 pulse 2"
+                                            },
+                                            {
+                                                "level" : "hard",
+                                                "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
+                                            }
+                                        ]
+                    },
+                    {
+                        "name" : "lunges",
+                        "reps" : 10,
+                        "sets" : 6, 
+                        "muscle-groups" : [ "legs" ],
+                        "variations" : [ 
+                                            {
+                                                "level" : "easy",
+                                                "description" : "left then right = 1 rep"
+                                            },
+                                            {
+                                                "level" : "medium",
+                                                "description" : "only left leg for set 1, only right leg for set 2 etc"
+                                            },
+                                            {
+                                                "level" : "hard",
+                                                "description" : "only left leg for set 1; hands overhead + pulse 2 = 1 rep. repeat with right leg for set 2 etc"
+                                            }
+                                        ]
+                    },
+                    {
+                        "name" : "push-ups",
+                        "reps" : 10,
+                        "sets" : 5, 
+                        "muscle-groups" : [ "arms" ],
+                        "variations" : [ 
+                                            {
+                                                "level" : "easy",
+                                                "description" : "knees down"
+                                            },
+                                            {
+                                                "level" : "medium",
+                                                "description" : "feet wide"
+                                            },
+                                            {
+                                                "level" : "hard",
+                                                "description" : "tap opposite shoulder on lift"
+                                            }
+                                        ]
+                    }
+                        
+        ]
+    
+}

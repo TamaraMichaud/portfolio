@@ -33,7 +33,14 @@ $(document).ready(function() {
     
     
     
- 
+    
+    console.log("reading json from file...");
+    readJsonConfig();
+//    var workoutsObject = jQuery.getJSON("./config/workouts.json");
+//    console.log("What's in our json obj? " + workoutsObject);
+    
+    
+    
     
     function updateQodAndCredit(qodObject) {
         
@@ -47,7 +54,40 @@ $(document).ready(function() {
         qodAttributionElement.innerHTML = qodCredit;
     }
     
+    
+    function readJsonConfig(){
+          $.ajax({
+                type: "GET",
+                url: "./config/workouts.json",
+                dataType: "json",
 
+
+
+                error: function (e) {
+                    alert("OOPS failed to load json config file!");
+                    console.log("JSON file-reading Failed: ", e);
+                },
+
+
+
+                success: function (responseObj) {
+//console.log("Read the contents well!! ...now what...");
+
+//                    console.log(response.permissionsTypes[1]);
+                    console.log("Top-level contents are: ")
+                   $.each(responseObj, function(key, val) {
+                       
+                       console.log("key: " + key + ", value: " + val);
+                       
+                       
+                   })
+                    
+                }
+          })
+    }
+    
+
+    
     
 
 });
