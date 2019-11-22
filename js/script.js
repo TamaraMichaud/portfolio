@@ -18,6 +18,11 @@ $(document).ready(function() {
 
     jQuery.support.cors = true;
 
+ 
+    
+    
+    
+    
 //    $.ajax({
 //       url: 'https://quotes.rest/qod',
 //       headers: {

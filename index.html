@@ -19,6 +19,11 @@ name: viewport is what makes your site responsive -->
 <script 
 src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+      <script  type="application/javascript">
+          console.log("attempting to execute function: fetchTopTail");
+//        fetchTopTail();
+
+      </script>
 
 
       <title>TamaraMichaud.io</title>
@@ -27,31 +32,14 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
    <body>
 
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-         <a class="navbar-brand" href="index.html">TamaraMichaud.io</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto text-white">
-               <li class="nav-item text-light active">
-                  <a class="nav-link" href="#">My CV <span class="sr-only">(current)</span></a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link text-light" href="#">Pet Projects</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link text-light" href="#">About Me</a>
-               </li>
-            </ul>
+      <nav id='header' class="navbar navbar-expand-md navbar-dark fixed-top">
 
-         </div>
       </nav>
 
       <div class="cover">
          <div class="cover-text">
             <h1>Hello stranger</h1>
-            <p class="lead">Here are some reasons why you should hire me... if you're an employer.  Otherwise, here are some distractions to keep you from facebook for a few seconds</p>
+            <p class="lead">Here are some reasons why you should hire me if you're an employer.  Otherwise, here are some distractions to keep you from facebook for a few seconds...</p>
             <a href="#my-cv" role="button" class="btn btn-danger btn-lg ">Show me the magic, I guess</a>
          </div>
       </div>
@@ -70,7 +58,7 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <!--my cv-->
       <section id="my-cv">
           <br>
-         <h2>Why Me?</h2>
+         <h2>Why Should You Hire Me?</h2>
          <div class="container">
             <div class="row">
                <div class="col-sm-4">
@@ -122,7 +110,7 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <!--sign-up-->
       <section id="signup">
          <div class="container">
-            <h2>Get our handcrafted newsletter</h2>
+            <h2>Join my next Spartan Race</h2>
             <p class="lead">Seriously, we'll send you real paper in the mail. We don't do email</p>
 
          </div>
@@ -145,8 +133,7 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
       <!--footer-->
 
-      <footer>
-         crafted with &hearts; in England by <a href="">Tamara</a>
+      <footer id=footer>
       </footer>
 
 
@@ -163,7 +150,7 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
       <script src="bootstrap/js/bootstrap.bundle.min.js"></script>       
       <script src="js/script.js"></script>       
-
+       
 
 
    </body>
