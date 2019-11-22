@@ -5,7 +5,7 @@ body,
 }
 
 .cover {
-   background: url('../img/couchfriends.jpg') top left no-repeat;
+   background: url('../img/workspace.jpg') top left no-repeat;
    background-size: cover;
    display: table; /* to VERTICAL ALIGN the children! */
    width: 100%; /* to VERTICAL ALIGN the children! */
