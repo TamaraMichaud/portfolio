@@ -19,11 +19,6 @@ name: viewport is what makes your site responsive -->
 <script 
 src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-      <script  type="application/javascript">
-          console.log("attempting to execute function: fetchTopTail");
-//        fetchTopTail();
-
-      </script>
 
 
       <title>TamaraMichaud.io</title>
@@ -150,7 +145,8 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
       <script src="bootstrap/js/bootstrap.bundle.min.js"></script>       
       <script src="js/script.js"></script>       
-       
+		  <script src="js/modules/loadPages.js" type="application/javascript">     </script>
+		  <script>loadCommonElements()</script>
 
 
    </body>
