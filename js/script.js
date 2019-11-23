@@ -19,9 +19,7 @@ $(document).ready(function() {
     jQuery.support.cors = true;
 
  
-    
-    
-    
+	
     
 //    $.ajax({
 //       url: 'https://quotes.rest/qod',
@@ -39,8 +37,8 @@ $(document).ready(function() {
     
     
     
-    console.log("reading json from file...");
-    readJsonConfig();
+    console.log("reading WORKOUTS json from file...");
+    readJsonConfig("workouts");
 //    var workoutsObject = jQuery.getJSON("./config/workouts.json");
 //    console.log("What's in our json obj? " + workoutsObject);
     
@@ -60,34 +58,34 @@ $(document).ready(function() {
     }
     
     
-    function readJsonConfig(){
-          $.ajax({
-                type: "GET",
-                url: "./config/workouts.json",
-                dataType: "json",
+    function readJsonConfig(configFile){
+			
+				var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
+				var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
+			
+				var urlPath = urlPathStart + projectDir + "/config/";
+			
+				$.ajax({
+						type: "GET",
+						url: urlPath + configFile + ".json",
+						dataType: "json",
+
+						error: function (e) {
+								alert("OOPS failed to load json config file!");
+								console.log("JSON file-reading Failed: ", e);
+						},
+
+						success: function (responseObj) {
+
+							 console.log("Top-level contents are: ")
+							 $.each(responseObj, function(key, val) {
+
+									 console.log("key: " + key + ", value: " + val);
 
 
+							 })
 
-                error: function (e) {
-                    alert("OOPS failed to load json config file!");
-                    console.log("JSON file-reading Failed: ", e);
-                },
-
-
-
-                success: function (responseObj) {
-//console.log("Read the contents well!! ...now what...");
-
-//                    console.log(response.permissionsTypes[1]);
-                    console.log("Top-level contents are: ")
-                   $.each(responseObj, function(key, val) {
-                       
-                       console.log("key: " + key + ", value: " + val);
-                       
-                       
-                   })
-                    
-                }
+						}
           })
     }
     

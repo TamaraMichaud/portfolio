@@ -3,8 +3,7 @@ function loadCommonElements(){
 	const includesArray = [ 'header', 'footer'];
 	$.each(includesArray, function(item) {
 		
-		console.log("item: " + includesArray[item])
-		var pathToFile = "./includes/" + includesArray[item] + ".html";
+		var pathToFile = "/includes/" + includesArray[item] + ".html";
 		var fileType = "html";
 		var elementId = includesArray[item];
 		
@@ -14,16 +13,26 @@ function loadCommonElements(){
 
 
 function readFileContents(pathToFile, fileType, elementId) {
-	
-	 $.ajax({
+	var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
+	var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
+
+	$.ajax({
 				type: "GET",
-				url: pathToFile,
+				url: urlPathStart + projectDir + pathToFile,
 				dataType: fileType,
 				error: function (e) {
 						console.log("Failed to read file: " + pathToFile, e);
 				},
 				success: function (fileContents) {
-						document.getElementById(elementId).innerHTML = fileContents;
+
+						document.getElementById(elementId).innerHTML = setHrefLinks(fileContents, urlPathStart + projectDir);
 				}
 	 }); 
+}
+
+
+
+function setHrefLinks(fileContents, urlPath){
+
+	return fileContents.replace("href=\"", "href=\"" + urlPath + "/");
 }
