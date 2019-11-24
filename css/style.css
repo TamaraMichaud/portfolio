@@ -5,7 +5,7 @@ body,
 }
 
 .cover {
-   background: url('../img/fan.jpg') top center no-repeat;
+   background: url('../img/cover/night_850_70.JPG') top center no-repeat;
    background-size: cover;
    display: table; /* to VERTICAL ALIGN the children! */
    width: 100%; /* to VERTICAL ALIGN the children! */
@@ -18,7 +18,7 @@ body,
    color: white;
    text-align: center;
    display: table-cell;/* to VERTICAL ALIGN the children! */
-   vertical-align: middle;
+   vertical-align: bottom;
    position: relative;
    top: 50px;
 }
@@ -29,7 +29,7 @@ body,
 }
 
 .navbar-dark { /* over-ride bootsrap classes! */ /* apply transparency */
-   background-color: rgba(0,0,0,0.8);
+   background-color: rgba(0,0,0,1);
 }
 
 .testimonial {
