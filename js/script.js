@@ -38,23 +38,38 @@ $(document).ready(function() {
     
     
     console.log("reading WORKOUTS json from file...");
-    readJsonConfig("workouts");
-//    var workoutsObject = jQuery.getJSON("./config/workouts.json");
-//    console.log("What's in our json obj? " + workoutsObject);
+    var workoutsConfig = readJsonConfig("workouts");
+
+    console.log(workoutsConfig);
+    // muscle-groups, workout-types, workouts
+//    var workoutsList = workoutsConfig["workouts"];
+//    var musclesList = workoutsConfig["muscle-groups"];
+//    var typesList = workoutsConfig["workout-types"];
     
+
+    
+    
+    
+    
+    
+    function getElement(elementId) {
+        return document.getElementById(elementId);
+    }
     
     
     
     function updateQodAndCredit(qodObject) {
         
-        var qodTextElement = document.getElementById('qod-text');
-        var qodAuthorElement = document.getElementById('qod-author');
-        var qodAttributionElement = document.getElementById('qod-attribution');
+        ids = {
+            textId: 'qod-text',
+            authorId: 'qod-author',
+            attributionId: 'qod-attribution'
+        }
         
-        qodTextElement.innerHTML = qodObject.quote;
-        qodTextElement.title = qodObject.title;
-        qodAuthorElement.innerHTML = qodObject.author;
-        qodAttributionElement.innerHTML = qodCredit;
+        getElement(ids.textId).innerHTML = qodObject.quote;
+        getElement(ids.textId).title = qodObject.title;
+        getElement(ids.authorId).innerHTML = qodObject.author;
+        getElement(ids.attributionId).innerHTML = qodCredit;
     }
     
     
@@ -64,7 +79,8 @@ $(document).ready(function() {
 				var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
 			
 				var urlPath = urlPathStart + projectDir + "/config/";
-			
+
+        var result;
 				$.ajax({
 						type: "GET",
 						url: urlPath + configFile + ".json",
@@ -83,10 +99,14 @@ $(document).ready(function() {
 									 console.log("key: " + key + ", value: " + val);
 
 
-							 })
-
+							 });
+                            var workoutsList = responseObj['workouts'];
+                            console.log(workoutsList);
+//return responseObj;
+//                            this.result = responseObj;
 						}
           })
+//        return result;
     }
     
 

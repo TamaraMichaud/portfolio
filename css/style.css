@@ -4,6 +4,40 @@ body,
    height: 100%;
 }
 
+.orb:hover{
+	left: -1px;
+}
+
+.orb {
+	z-index: 99;
+/*	border: 1px;*/
+	background: gold;
+/*	margin: 1px solid gold;*/
+	position: relative;
+	top: 50;
+	left: 53px;
+	width: 7px;
+	height: 7px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px gold;
+}
+.orb-major {
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px gold;
+	top: 50px;
+	left: 50px;
+}
+.work {
+	left: 100px;
+}
+.play{
+	left: 50px;
+}
+
+
+
 .cover {
    background: url('../img/night.jpg') top center no-repeat;
    background-size: cover;
@@ -33,7 +67,7 @@ body,
 }
 
 .testimonial {
-   background: #222;
+/*   background: #222;*/
    padding: 40px 0;
    margin-top: -40px;
 }
@@ -43,7 +77,6 @@ blockquote {
    font-style: italic;
    font-size: 32px;
    color: white;
-   
 }
 
 blockquote cite {
@@ -58,7 +91,7 @@ blockquote cite {
 }
 
 section {
-   padding: 40px;
+   padding: 40px ;
 }
 
 h2 {
