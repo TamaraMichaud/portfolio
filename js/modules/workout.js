@@ -120,14 +120,12 @@ function loadExercisesDropdown(exercisesArray, dropdownElement){
         selectElement.appendChild(optionElement);
     }
     
-    var selectElement =  document.getElementById(dropdownElement);
+    var selectElement = document.getElementById(dropdownElement);
     createOption('select an exercise');
     
     exercisesArray.forEach(nextExercise => {
         createOption(nextExercise.name);
     })
-        
-    console.log("complete");
 }
 
 
