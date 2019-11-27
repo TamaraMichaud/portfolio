@@ -8,19 +8,19 @@
                         "sets" : 5, 
                         "muscle-groups" : [ "legs" ],
                         "variations" : [ 
-                                            {
-                                                "level" : "easy",
-                                                "description" : ""
-                                            },
-                                            {
-                                                "level" : "medium",
-                                                "description" : "squat 1 pulse 2"
-                                            },
-                                            {
-                                                "level" : "hard",
-                                                "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
-                                            }
-                                        ]
+                                {
+                                    "level" : "easy",
+                                    "description" : ""
+                                },
+                                {
+                                    "level" : "medium",
+                                    "description" : "squat 1 pulse 2"
+                                },
+                                {
+                                    "level" : "hard",
+                                    "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
+                                }
+                            ]
                     },
                     {
                         "name" : "lunges",
@@ -59,6 +59,26 @@
                                             {
                                                 "level" : "hard",
                                                 "description" : "tap opposite shoulder on lift"
+                                            }
+                                        ]
+                    },
+                    {
+                        "name" : "sit-ups",
+                        "reps" : 20,
+                        "sets" : 5, 
+                        "muscle-groups" : [ "core" ],
+                        "variations" : [ 
+                                            {
+                                                "level" : "easy",
+                                                "description" : "keep shoulderblades on ground"
+                                            },
+                                            {
+                                                "level" : "medium",
+                                                "description" : "raise alternate feet"
+                                            },
+                                            {
+                                                "level" : "hard",
+                                                "description" : "keep both feet raised"
                                             }
                                         ]
                     }
