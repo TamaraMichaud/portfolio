@@ -1,0 +1,9 @@
+WORK:
+	CV: pdf/image, or link to LinkedIn
+	Languages: worked in
+	Projects completed: command-line helpme, selenium suite, cypress suite(s), dwt, finance app
+	
+PLAY:
+	build-a-workout
+	side-scroller game
+	hobbies links; WT, ifly, Spartan, Parkour
