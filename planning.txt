@@ -26,7 +26,6 @@ PLAY:
              input: select level:  easy/medium/hard
              input: select workout duration: [number] minutes
              Go! =>
-
              loop workoutsConfig["workouts"]
                 collect all workouts matching  .muscle-groups and .workout-types
                     - push into displayWorkoutObj with level info
@@ -36,6 +35,58 @@ PLAY:
                     - display workouts and timer on screen
 
 
+//Objects
+Exercise = function(level, ){
+    name: '',
+    description: '',
+    sets: '',
+    reps: '',
+}
+Exercise.prototype.setLevel = function(level){
+
+    var levelInfo = new Level()
+
+}
+
+Level = function(level){
+    name: '', // easy, medium, hard
+    sets: '',
+    reps: '',
+    description: '',
+}
+
+Workout = function(configObject){
+    exercise: new Exercise(configObject.name),
+    variations: setLevels(),
+    setLevels: function(){
+        var levelsArray = [];
+        for (easy medium hard) {
+            levelsArray.push(new Level())
+        }
+        return levelsArray;        
+    }
+}
+
+//{
+                        "name" : "squats",
+                        "reps" : 20,
+                        "sets" : 5, 
+                        "muscle-groups" : [ "legs" ],
+                        "variations" : [ 
+                                {
+                                    "level" : "easy",
+                                    "description" : ""
+                                },
+                                {
+                                    "level" : "medium",
+                                    "description" : "squat 1 pulse 2"
+                                },
+                                {
+                                    "level" : "hard",
+                                    "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
+                                }
+                            ]
+                    }
 
 
 

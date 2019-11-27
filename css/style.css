@@ -4,9 +4,11 @@ body,
    height: 100%;
 }
 
+/*
 .orb:hover{
 	left: -1px;
 }
+*/
 
 .orb {
 	z-index: 99;

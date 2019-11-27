@@ -11,9 +11,9 @@ name: viewport is what makes your site responsive -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <!--        <link rel="stylesheet" href="css/normalize.css">-->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="../css/style.css">
 
-      <link href="js/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+      <link href="../js/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
 
       <!--[if IE]>
 <script 
@@ -28,57 +28,30 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
    <body>
 
       <nav id='header' class="navbar navbar-expand-md navbar-dark fixed-top">
+
       </nav>
 
-      <div class="cover">
-<div class="cover-text">
-	
-		 <div class="orb orb-major work">
-		 
-			 <div class="orb work cv">
-<!--		 and/or PDF of cv, link to linkedIn profile-->
-		 </div>
-			 <div class="orb work history">
-<!--		 timeline: education and employment // languages -->
-		 	 </div>
-			 <div class="orb work projects">
-<!--		 command-line helpme,
-					dwt,
-					finance-app,
-					selenium suite,
-					cypress suite-->
-			 </div>
-		 </div>
-		
-		 <div class="orb orb-major play">
-		 
-			 <div class="orb play workouts">
-<!--		 build a workout -->
-		 </div>
-			 <div class="orb play sidescroller">
-<!--		 side-scroller game? -->
-		 	 </div>
-		 </div>
-				
-				
-				
+<div class="">
+		    <h1>Let's Do a Workout!</h1>
+  <br>
+    <br>
+    <button class='btn btn-primary' id="add">Add a new exercise to library</button>
+    <button class='btn btn-primary' id="edit">Change an existing exercise</button>
+    <br>
+    <div id="addedit" style="display:none">
+        <select id="addedit-exercises">
+        </select>
+    </div>
+    <button class='btn btn-primary' id="workout">Create a Workout to do</button>
+    <br><br>
+    
+    
 
-				      <section class="testimonial">
-<!--         <div class="container">-->
-            <blockquote id="random-qod">
-                &ldquo;<span id="qod-text">Joy in looking and comprehending is nature's most beautiful gift.</span>&rdquo;
-               <cite>&mdash; <span id="qod-author">Albert Einstein</span> 
-               </cite>
-                <small id="qod-attribution" style="font-size:15px"></small>
-            </blockquote>
-<!--         </div>-->
-      </section>
 
-				</div>
-      </div>
+		 </div>
 		 
+      <!--footer-->
 
-		 <!--footer-->
       <footer id=footer>
       </footer>
 
@@ -87,17 +60,18 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <!-- load cdn first, faster  -->
       <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
       <!-- if cdn unavailable, load local version-->
-      <script src="js/jquery-3.4.1.js">window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>');</script>
+      <script src="../js/jquery-3.4.1.js">window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>');</script>
 
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>       
-      <script src="js/script.js"></script>       
-      <script src="js/orbs.js"></script>       
-      <script src="js/modules/loadPages.js" type="application/javascript"></script>
+      <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>       
+      <script src="../js/modules/workout.js"></script>       
+		  <script src="../js/modules/loadPages.js" type="application/javascript">     </script>
+		  <script>loadCommonElements()</script>
+
 
    </body>
 </html>

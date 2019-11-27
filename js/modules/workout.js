@@ -1,75 +1,150 @@
-// data controller
-
-
-var Workout = function(name, level){
-    this.name = name;
-    this.level = level;
-}
-Workout.prototype.getDetails = function(workoutsConfig){
-//    this.reps = workoutsConfig[this.id]
-}
-
-var nextWorkout = new Workout(32, 'easy');
-
-
-
-
-
-
-{
-"name" : "squats",
-"reps" : 20,
-"sets" : 5, 
-"muscle-groups" : [ "legs" ],
-"variations" : [ 
-        {
-            "level" : "easy",
-            "description" : ""
-        },
-        {
-            "level" : "medium",
-            "description" : "squat 1 pulse 2"
-        },
-        {
-            "level" : "hard",
-            "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
-        }
-    ]
-}
-
-
-var newWorkoutObject = {
-	populateProperties:function(){
-		
-		this.name = 'getthenamefromsomewhere...';
-		this.reps = 5;
-	}
-}
-
-newWorkoutObject.populateProperties();
-//nextWrokoutObject = newWorkoutObject; 
-// ^^ mm... not quite.
-	
-	
-	
-
-
-/////////////////////////// OBJECTS:  PROTOTYPES & INHERITANCE!  LET'S DO IT PROPERLY
-
-// if we re-design the Person prototype:
-
-var Person = function(name, yearOfBirth, job){
-    
-                    this.name = name;
-                    this.yearOfBirth = yearOfBirth;
-                    this.job = job;
-
-            }
-Person.prototype.sayHello = function(){
-                        console.log("Hello you!");
-                            }
+var workoutPageIds = {
+                main: {
+                    addNew: 'add',
+                    editEx: 'edit',
+                    getWorkout: 'workout'
+                },
+                addedit: {
+                    wrapper: 'addedit',
+                    dropdown: 'addedit-exercises',
                     
-var john = new Person('John', 1990, 'teacher');
+                }
+}
 
-console.log("JOHN is a: " + john.job);
-john.sayHello();
+// load data
+loadConfigFromFile("exercises", loadWorkouts);
+
+// bind event listeners to buttons
+document.getElementById(workoutPageIds.main.addNew).addEventListener('click', function(){
+        showAddEdit('new');
+    });
+
+document.getElementById(workoutPageIds.main.editEx).addEventListener('click', function(){
+        showAddEdit('edit');
+});
+
+
+// 
+function loadConfigFromFile(fileName, onSuccessFunction){
+
+    console.log("Processing contents of json config file: " + fileName);		
+    var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
+    var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
+
+    var urlPath = urlPathStart + projectDir + "/config/";
+
+    $.ajax({
+            type: "GET",
+            url: urlPath + fileName + ".json",
+            dataType: "json",
+
+            error: function (e) {
+                    alert("OOPS failed to load json config file!");
+                    console.log("JSON file-reading Failed: ", e);
+            },
+
+            success: function (responseObj) {
+
+                onSuccessFunction(responseObj);
+            }
+    })
+}; 
+
+
+function loadWorkouts(allExercisesConfigs){
+
+    // muscle-groups, workout-types, workouts
+    var exercisesList = allExercisesConfigs["exercises"];
+    var musclesList = allExercisesConfigs["muscle-groups"];
+    var typesList = allExercisesConfigs["workout-types"];
+
+    loadExercisesDropdown(exercisesList, workoutPageIds.addedit.dropdown);
+    // ^^ now we have an array of workout options, which we need to pass around to other objects...
+}
+
+
+
+function showAddEdit(option) {
+    
+    const inputWrapperElement = document.getElementById(workoutPageIds.addedit.wrapper);
+/*       "name" : "template",
+            "muscle-groups" : [ ],
+            "workout-type" : [ ],
+            "variations" : [ 
+                    {
+                        "level" : "easy",
+                        "description" : "",
+                        "reps" : 10,
+                        "sets" : 3 
+                    },
+                    {
+                        "level" : "medium",
+                        "description" : "",
+                        "reps" : 15,
+                        "sets" : 5 
+                    },
+                    {
+                        "level" : "hard",
+                        "description" : "",
+                        "reps" : 20,
+                        "sets" : 8 
+                    }*/
+    
+    
+    
+    
+    
+    
+    
+    
+    if(option === 'edit'){
+        
+    // if edit, display select name dropdown only,
+    }
+    //      on select, call showInputs(exercise);
+    // if new, showInputs(blank);
+    
+}
+
+function showInputs(contents){
+    // show addEdit div
+    
+}
+
+function loadExercisesDropdown(exercisesArray, dropdownElement){
+    
+    function createOption(value){
+        
+        var optionElement = document.createElement('option');
+        optionElement.name = optionElement.textContent = value;
+        selectElement.appendChild(optionElement);
+    }
+    
+    var selectElement =  document.getElementById(dropdownElement);
+    createOption('select an exercise');
+    
+    exercisesArray.forEach(nextExercise => {
+        createOption(nextExercise.name);
+    })
+        
+    console.log("complete");
+}
+
+
+/* addExercise(){
+    get main obj.exerciseTemplate;
+    populate contents with values from ui
+    overwrite file with updated contents
+};
+*/
+/* editExercise(name){
+    get main obj.exercises[name]
+    replace contents with values from ui
+    overwrite file with updated contents
+}
+*/
+/* generateWorkout(musclegroups, workouttype, level, duration) {
+    iterate workoutList
+        pull
+}
+*/

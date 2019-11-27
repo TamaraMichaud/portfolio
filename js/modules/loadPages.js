@@ -36,3 +36,5 @@ function setHrefLinks(fileContents, urlPath){
 
 	return fileContents.replace("href=\"", "href=\"" + urlPath + "/");
 }
+
+loadCommonElements();
