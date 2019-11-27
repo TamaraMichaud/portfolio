@@ -1,0 +1,46 @@
+<<<<<<< HEAD
+// Main Page = orbs;
+
+    //Orbs:  (major. onClick, freeze other orbs and display titles)
+            // Work
+                // CV: pdf of cv and/or link to LinkedIn page
+                // History: timeline of education and employment + key things learnt (grades, languages, certificates)
+                // Projects: screenshots of previous projects; commandline helpme, qa selenium, finance app, dwt
+            
+            
+            // Play
+                // sidescroller...
+                // about-me; WT, ifly, 
+                // workouts app
+                    //   
+                    // Workouts Page:
+    /*       input: Select muscle-group(s): workoutsConfig["muscle-groups"]
+             input: select workout type(s): workoutsConfig["workout-types"]
+             input: select level:  easy/medium/hard
+             input: select workout duration: [number] minutes
+             Go! =>
+             
+             loop workoutsConfig["workouts"]
+                collect all workouts matching  .muscle-groups and .workout-types
+                    - push into displayWorkoutObj with level info
+                        - strip non-matching muscle-groups and workout-types for any later "swap workout" option
+                    - calculate workout duration and stop within 5 minutes
+                    - add generic stretching routines to start and end
+                    - display workouts and timer on screen
+    
+    
+    
+    
+    
+    */
+=======
+WORK:
+	CV: pdf/image, or link to LinkedIn
+	Languages: worked in
+	Projects completed: command-line helpme, selenium suite, cypress suite(s), dwt, finance app
+	
+PLAY:
+	build-a-workout
+	side-scroller game
+	hobbies links; WT, ifly, Spartan, Parkour
+>>>>>>> 7b4eaa6f88d8e50c3ed5b5fc0a9b9387ffa1f3bc
