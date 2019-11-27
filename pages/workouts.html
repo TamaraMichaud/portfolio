@@ -11,7 +11,7 @@ name: viewport is what makes your site responsive -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <!--        <link rel="stylesheet" href="css/normalize.css">-->
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/workout-style.css">
 
       <link href="../js/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
 
@@ -30,8 +30,8 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <nav id='header' class="navbar navbar-expand-md navbar-dark fixed-top">
 
       </nav>
-
-<div class="">
+<div class="cover">
+<div class="cover-text" >
 		    <h1>Let's Do a Workout!</h1>
   <br>
     <br>
@@ -39,13 +39,57 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <button class='btn btn-primary' id="edit">Change an existing exercise</button>
     <br>
     <div id="addedit" style="display:none">
-        <select id="addedit-exercises">
-        </select>
+        <br>
+        <div class="input-group">
+            <select class="form-control" id="addedit-select" style="display:none"></select>
+        </div>
+
+        <div id="addedit-inputs" style="display:none">
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input id="name" type="text" class="form-control" placeholder="Name" >
+            </div>
+            
+            <div id="addedit-variations">
+                
+                <h2 id="level"></h2>
+                
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Description</span>
+                    </div>
+                    <input id="desc" type="text" class="form-control" placeholder="e.g. hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Number of Reps</span>
+                    </div>
+                    <input id="reps" type="number" class="form-control" max="50" min="3">
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Number of Sets</span>
+                    </div>
+                    <input id="sets" type="number" class="form-control" max="20" min="3">
+                </div>
+                
+            </div>
+            <select id="muscle-groups"></select>
+            <select id="exercise-type"></select>
+            
+            
+        </div>
     </div>
     <button class='btn btn-primary' id="workout">Create a Workout to do</button>
+    <div id="workout-inputs"></div>
     <br><br>
     
-    
+    </div>
 
 
 		 </div>
@@ -69,8 +113,7 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
       <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>       
       <script src="../js/modules/workout.js"></script>       
-		  <script src="../js/modules/loadPages.js" type="application/javascript">     </script>
-		  <script>loadCommonElements()</script>
+      <script src="../js/modules/loadPages.js" type="application/javascript"></script>
 
 
    </body>
