@@ -30,7 +30,8 @@ document.querySelector('.orb.play.workouts').addEventListener('click', function(
 $(document).ready(function() {
 
     jQuery.support.cors = true;
-
+// ^^ allows cross-origin control support to fetch() from 
+// external urls
  
 	
     
