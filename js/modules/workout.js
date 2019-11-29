@@ -38,10 +38,10 @@ AddEditModal.prototype.displayInputs = function(){
         })
 
         console.log("which is config Index: " + theEx);
-        var theExercise = globalExercisesConfig[theEx];
+        var theExercise = globalExercisesConfig['exercises'][theEx];
         console.log(theExercise);
         
-        console.log(globalExercisesConfig);
+//        console.log(globalExercisesConfig);
         
 //        var exercise = new Exercise(exName);
 //        console.log("Editting Exercise Named: " + exerciseObj.name);
