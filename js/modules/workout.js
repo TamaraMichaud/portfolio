@@ -1,3 +1,56 @@
+var globalExercisesConfig;
+fetchFileContents("exercises");
+
+var AddEditModal = function(mainElementIds) {
+    this.wrapper = document.getElementById(mainElementIds.wrapper);
+    this.dropdown = document.getElementById(mainElementIds.dropdown);
+    this.inputs = document.getElementById(mainElementIds.inputs);
+    console.log("Created new modal object; wrapper id: " + this.wrapper);
+}
+
+AddEditModal.prototype.showHide = function(showOrHide){
+
+    console.log("set wrapper id " + this.wrapper + " visibility to: " + showOrHide);
+    this.wrapper.setAttribute('style', `display:${showOrHide}`);
+}
+
+AddEditModal.prototype.displayEditDropdown = function(){
+    // (hide inputs)
+    this.inputs.setAttribute('style', 'display:none');
+    // show dropdown
+    this.dropdown.options[0].selected = true; // reset default selection to "please select"
+    this.dropdown.setAttribute('style', 'display:block');
+}
+
+AddEditModal.prototype.displayInputs = function(){
+    // (hide dropdown)
+    this.dropdown.setAttribute('style', 'display:none');
+    // show inputs
+    this.inputs.setAttribute('style', 'display:block');
+    // if isset exerciseObj -> iterate properties // inputs list
+    
+    var exName = this.dropdown.options[this.dropdown.selectedIndex].value;
+    if(exName != 'select an exercise') {
+        console.log("Name Chosen Was: " + exName);
+// get the exercise object that matches this name
+        var theEx = globalExercisesConfig['exercises'].findIndex((nextEx) => {
+            return nextEx.name === exName;
+        })
+
+        console.log("which is config Index: " + theEx);
+        var theExercise = globalExercisesConfig[theEx];
+        console.log(theExercise);
+        
+        console.log(globalExercisesConfig);
+        
+//        var exercise = new Exercise(exName);
+//        console.log("Editting Exercise Named: " + exerciseObj.name);
+        console.log("UNDER CONSTRUCTION");
+        // populate values where name matches
+    }
+
+}
+
 //// --- UI Controller --- //
 var workoutUiController = (function(){
    
@@ -14,19 +67,45 @@ var workoutUiController = (function(){
                 variations: 'addedit-variations'
             },
             workout: {
-                alltheelementsrequiredtoceateanewworkout: 'WIP ##################################'
+                filters: 'workout-inputs',
+                workout: 'workout-details'
             }
     };
+
+    var addEditModal = new AddEditModal(workoutPageIds.addedit);
 
     return {
             // show the Add/Edit pane
          displayAddEdit: function(addOrEdit){
-               showAddEdit(addOrEdit, workoutPageIds.addedit);
+//
+//             if(!addEditModal) {
+//                 addEditModal = new AddEditModal(workoutPageIds.addedit);
+//             }
+             addEditModal.showHide('block');
+             if(addOrEdit === 'edit') {
+                 console.log("clicked Edit, display dropdown");
+                 addEditModal.displayEditDropdown();
+             } else {
+                 console.log("clicked New, display inputs");
+                 addEditModal.displayInputs();
+             }
          },
         
+        displayInputs: function(exerciseName){
+            addEditModal.displayInputs(exerciseName);
+        },
+        
+        getAddEditModal: function(){
+//             if(!addEditModal) {
+//                 addEditModal = new AddEditModal(workoutPageIds.addedit);
+//             }
+            return addEditModal;
+        },
             // show the CreateNewWorkout pane
         // displayCreateWorkout: function(){
-        //
+        //      hide addEditModal
+        //      display createNewWorkout pane
+        // ------ make this a permanent feature, and the AddEdit is a modal window... ------- //
         // },
         
             // (re-)populate exercises dropdown
@@ -37,8 +116,6 @@ var workoutUiController = (function(){
             // retreive the values intered in CreateWorkout() pane
         // getWorkoutFilterOptions: function(){
         //      return the values entered into displayCreateWorkout()
-        //      use them to filter the list of exercises
-        
         //},
         
             // prepare the workout!
@@ -51,7 +128,7 @@ var workoutUiController = (function(){
 //             retreive the workoutPageIds object
          getWorkoutPageIds: function(){
              return workoutPageIds;
-        }
+         }
         
     }
     
@@ -62,9 +139,18 @@ var workoutUiController = (function(){
 
 var workoutDataController = (function(){
     
-    var exercisesConfig = fetchFileContents("exercises");
+//    var exercisesConfig;
 
     return {
+        loadInitialData: async function(dropdownElement){
+//            console.log("...loading config");
+//            if(!this.exercisesConfig){
+//                this.exercisesConfig = await fetchFileContents("exercises");
+//            }
+            loadExercisesDropdown(globalExercisesConfig['exercises'], dropdownElement);
+            console.log("...config loaded? " + globalExercisesConfig);
+        }
+//        ,
 
             // set new/editted exercise information into memory
         // createUpdateExercises:  function(){
@@ -80,34 +166,38 @@ var workoutDataController = (function(){
         // }  ,
           
             // retreive the exercisesConfig object
-         getExercisesConfig: function(){
-             return exercisesConfig;
-        }
+//         getExercisesConfig: function(){
+//             console.log("WHY ARE YOU COMING HERE FOR THIS FOOL?? IT's GLOBAL");
+//             return this.exerciseConfig;
+//         }
         
-      }
+    }
     
-});
+})();
 
 
 // --- Main Page Controller --- //
 
 var controller = (function(dataCtrl, UICtrl){
-
     
-    
-  // -- -- //   
     return {
         init: function(){
+            dataCtrl.loadInitialData(UICtrl.getAddEditModal().dropdown);
             console.log('Starting Up');
-            loadExercisesDropdown(UICtrl.getWorkoutPageIds().addedit.dropdown);
             bindEventListeners(UICtrl);
         }
+        //,
+//        getExercisesConfig: function(){
+//            var fuckyou = dataCtrl.getExercisesConfig();
+//            console.log("where do we lose ourselves: " + fuckyou);
+//            return fuckyou;
+//        }
     }
         
 })(workoutDataController, workoutUiController);
 
-controller.init(); 
-// ^^ the only actual thing that's public.
+//controller.init(); 
+// ^^ the only actual thing that's public.  (...apart from all the below...)
 
 
 
@@ -123,8 +213,42 @@ Exercise.prototype.loadAddEdit = function(inputsRootId){
     var nameElement = document.querySelector(`#${inputsRootId} #name`);
     nameElement.innerHTML = "exercise name goes here";   
     nameElement.setAttribute('placeholder', "exercise name goes here");   
+
+}
+
+var Workout = function(filterOptions) {
+
+//     this.exercises = [];
+//     this.duration = filterOptions.duration;
+//     this.level = filterOptions.level;
+    // optional: muscle-groups / types
     
 }
+Workout.prototype.loadWorkout = function(exercisesList){
+    //iterate exercisesList
+        //if item matches filterOptions criteria,
+            //this.exercises.push(item)
+};
+// ^^ this is not right.  nor is the Exercises one.  this should be a method of the main controller (or even the ui controller maybe...)
+
+
+
+
+
+
+
+
+
+//function setGlobalConfig(configObj) {
+//    this.globalExercisesConfig = configObj;
+//    console.log("ARRRRGGGGHHHHHH" + configObj);
+//    controller.init();
+//}
+
+
+
+
+
 
 async function fetchFileContents(fileName){
                             
@@ -135,28 +259,28 @@ async function fetchFileContents(fileName){
     console.log("Reading contents of config file: " + fileName)
     var rawResults = await fetch(urlPath + fileName + ".json");
     var jsonContents = await rawResults.json();
-
-    return jsonContents;
+    
+//    setGlobalConfig(jsonContents);
+    globalExercisesConfig = jsonContents;
+    controller.init();
+    
 };
 
 
-function loadExercisesDropdown(elementId){
+function loadExercisesDropdown(exercisesArray, dropdownElement){
     
-    console.log("Loading Exercises Dropdown Menu");
-    fetchFileContents('exercises').then((exercisesArray) => {
+    console.log("Loading Dropdown: " + dropdownElement + ", with " + exercisesArray);
     
-        var tmpCreateOption = (value) => {
-            var optionElement = document.createElement('option');
-            optionElement.name = optionElement.textContent = value;
-            selectElement.appendChild(optionElement);
-        }
+    var tmpCreateOption = (value) => {
+        var optionElement = document.createElement('option');
+        optionElement.name = optionElement.textContent = value;
+        dropdownElement.appendChild(optionElement);
+    }
 
-        var selectElement = document.querySelector(`#${elementId}`);
-        tmpCreateOption('select an exercise');
+    tmpCreateOption('select an exercise');
 
-        exercisesArray['exercises'].forEach(nextExercise => {
-            tmpCreateOption(nextExercise.name);
-        })
+    exercisesArray.forEach(nextExercise => {
+        tmpCreateOption(nextExercise.name);
     })
 }
 
@@ -173,93 +297,39 @@ function loadExercisesDropdown(elementId){
 
 
 
+// bind event listeners to buttons
+function bindEventListeners(uiCtrl) {
 
+    var pageIdStrings = uiCtrl.getWorkoutPageIds();
 
-
-
-
-
-
-function showAddEdit(option, addEditIds) {
+    //TOGGLE VISIBILITY:
     
+    // show "add new exercise"
+    document.getElementById(pageIdStrings.main.addNew).addEventListener('click', function(){
+            uiCtrl.displayAddEdit('new');
+    });
 
-    toggleVisible(addEditIds.wrapper, 'block');
-    //TODO: toggle off the new-workout
-
-    console.log("option: " + option);
-    if(option === 'edit'){
-        console.log("toggling...");
-        // if edit, display select name dropdown only,
-        
-        toggleVisible(addEditIds.dropdown, 'block');
-        toggleVisible(addEditIds.inputs, 'none');
-    } else {
-        var exercise = new Exercise("exampleExercise", ["easy"], ["brain"], ["strength"] );
-        exercise.loadAddEdit(addEditIds.inputs);
-        showInputs(addEditIds);
-    }
-    //      on select, call showInputs(exercise);
-    // if new, showInputs(blank);
+    // show "edit existing exercise"
+    document.getElementById(pageIdStrings.main.editEx).addEventListener('click', function(){
+            uiCtrl.displayAddEdit('edit');
+    });
     
+    // pre-populate exercise inputs with selected exercise info
+    document.getElementById(pageIdStrings.addedit.dropdown).addEventListener('change', function(){
+
+        uiCtrl.displayInputs();
+    });
     
-}
-
-function showInputs(inputIdsRoot){
-    // show addEdit div
-    toggleVisible(inputIdsRoot.dropdown, 'none');
-    toggleVisible(inputIdsRoot.wrapper, 'block');
-    toggleVisible(inputIdsRoot.inputs, 'block');
-}
-
-
-
-
-function toggleVisible(elementId, showhide){
-    document.getElementById(elementId).setAttribute('style', `display:${showhide}`);
-} //toggleVisible(workoutPageIds.addedit.wrapper, 'block'); // none
-
-/* addExercise(){
-    get main obj.exerciseTemplate;
-    populate contents with values from ui
-    overwrite file with updated contents
-};
-*/
-/* editExercise(name){
-    get main obj.exercises[name]
-    replace contents with values from ui
-    overwrite file with updated contents
-}
-*/
-/* generateWorkout(musclegroups, workouttype, level, duration) {
-    iterate workoutList
-        pull
-}
-*/
-
-
-    // bind event listeners to buttons
-    function bindEventListeners(uiCtrl) {
-        
-        var mainPageIdStrings = uiCtrl.getWorkoutPageIds().main;
-       
-        //TOGGLE VISIBILITY:
-            // show "add new exercise"
-        document.getElementById(mainPageIdStrings.addNew).addEventListener('click', function(){
-                uiCtrl.displayAddEdit('new');
-//            console.log("toggle visibility of NEW")
-        });
-            // show "edit existing exercise"
-        document.getElementById(mainPageIdStrings.editEx).addEventListener('click', function(){
-//                console.log("calling the edit function!");
-                uiCtrl.displayAddEdit('edit');
-//            console.log("toggle dropdown of exercises to EDIT")
-        });
-            // show "create a new workout"
-//        document.getElementById('').addEventListener('click', function(){
-//                console.log("NEED TO BIND THIS TO CREATENEWWORKOUT... AND DO SOMETHING!! ########");
-//        });
+    // save exercise
+    ///////////////////////////
+    /////////////////////////// addEditModal needs a "save/cancel" button
+    
+    // show "create a new workout"
+    document.getElementById(pageIdStrings.main.getWorkout).addEventListener('click', function(){
+            console.log("Need to display the workout!!");
+    });
 //        // start new workout
 //        document.getElementById('').addEventListener('click', function(){
 //                console.log("NEED TO BIND THIS TO CREATENEWWORKOUT/GO ... AND start the workout");
 //        });
-    }
+}
