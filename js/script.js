@@ -32,7 +32,7 @@ $(document).ready(function() {
     jQuery.support.cors = true;
 // ^^ allows cross-origin control support to fetch() from 
 // external urls
- 
+ // ^^ does nothing actually :(
 	
     
 //    $.ajax({

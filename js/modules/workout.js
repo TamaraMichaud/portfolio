@@ -20,9 +20,9 @@ var workoutUiController = (function(){
 
     return {
             // show the Add/Edit pane
-        // displayAddEdit: function(addOrEdit){
-        //      // showAddEdit(addOrEdit);
-        // },
+         displayAddEdit: function(addOrEdit){
+               showAddEdit(addOrEdit, workoutPageIds.addedit);
+         },
         
             // show the CreateNewWorkout pane
         // displayCreateWorkout: function(){
@@ -99,7 +99,8 @@ var controller = (function(dataCtrl, UICtrl){
     return {
         init: function(){
             console.log('Starting Up');
-            bindEventListeners(UICtrl.getWorkoutPageIds());
+            loadExercisesDropdown(UICtrl.getWorkoutPageIds().addedit.dropdown);
+            bindEventListeners(UICtrl);
         }
     }
         
@@ -118,8 +119,8 @@ var Exercise = function(name, variations, muscleGroups, types){
     this.muscleGroups = muscleGroups;
     this.types = types;    
 }
-Exercise.prototype.loadAddEdit = function(){
-    var nameElement = document.querySelector(`#${workoutPageIds.addedit.inputs} #name`);
+Exercise.prototype.loadAddEdit = function(inputsRootId){
+    var nameElement = document.querySelector(`#${inputsRootId} #name`);
     nameElement.innerHTML = "exercise name goes here";   
     nameElement.setAttribute('placeholder', "exercise name goes here");   
     
@@ -131,12 +132,36 @@ async function fetchFileContents(fileName){
     var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
     var urlPath = urlPathStart + projectDir + "/config/";
 
+    console.log("Reading contents of config file: " + fileName)
     var rawResults = await fetch(urlPath + fileName + ".json");
     var jsonContents = await rawResults.json();
 
-    loadExercisesDropdown(jsonContents["exercises"], workoutPageIds.addedit.dropdown);
     return jsonContents;
 };
+
+
+function loadExercisesDropdown(elementId){
+    
+    console.log("Loading Exercises Dropdown Menu");
+    fetchFileContents('exercises').then((exercisesArray) => {
+    
+        var tmpCreateOption = (value) => {
+            var optionElement = document.createElement('option');
+            optionElement.name = optionElement.textContent = value;
+            selectElement.appendChild(optionElement);
+        }
+
+        var selectElement = document.querySelector(`#${elementId}`);
+        tmpCreateOption('select an exercise');
+
+        exercisesArray['exercises'].forEach(nextExercise => {
+            tmpCreateOption(nextExercise.name);
+        })
+    })
+}
+
+
+
 
 
 
@@ -151,9 +176,14 @@ async function fetchFileContents(fileName){
 
 
 
-function showAddEdit(option) {
+
+
+
+
+function showAddEdit(option, addEditIds) {
     
-    toggleVisible(workoutPageIds.addedit.wrapper, 'block');
+
+    toggleVisible(addEditIds.wrapper, 'block');
     //TODO: toggle off the new-workout
 
     console.log("option: " + option);
@@ -161,12 +191,12 @@ function showAddEdit(option) {
         console.log("toggling...");
         // if edit, display select name dropdown only,
         
-        toggleVisible(workoutPageIds.addedit.dropdown, 'block');
-        toggleVisible(workoutPageIds.addedit.inputs, 'none');
+        toggleVisible(addEditIds.dropdown, 'block');
+        toggleVisible(addEditIds.inputs, 'none');
     } else {
         var exercise = new Exercise("exampleExercise", ["easy"], ["brain"], ["strength"] );
-        exercise.loadAddEdit();
-        showInputs();
+        exercise.loadAddEdit(addEditIds.inputs);
+        showInputs(addEditIds);
     }
     //      on select, call showInputs(exercise);
     // if new, showInputs(blank);
@@ -174,29 +204,15 @@ function showAddEdit(option) {
     
 }
 
-function showInputs(contents){
+function showInputs(inputIdsRoot){
     // show addEdit div
-    toggleVisible(workoutPageIds.addedit.dropdown, 'none');
-    toggleVisible(workoutPageIds.addedit.wrapper, 'block');
-    toggleVisible(workoutPageIds.addedit.inputs, 'block');
+    toggleVisible(inputIdsRoot.dropdown, 'none');
+    toggleVisible(inputIdsRoot.wrapper, 'block');
+    toggleVisible(inputIdsRoot.inputs, 'block');
 }
 
 
-function loadExercisesDropdown(exercisesArray, dropdownElement){
-    
-    var tmpCreateOption = (value) => {
-        var optionElement = document.createElement('option');
-        optionElement.name = optionElement.textContent = value;
-        selectElement.appendChild(optionElement);
-    }
-    
-    var selectElement = document.querySelector(`#${dropdownElement}`);
-    tmpCreateOption('select an exercise');
-    
-    exercisesArray.forEach(nextExercise => {
-        tmpCreateOption(nextExercise.name);
-    })
-}
+
 
 function toggleVisible(elementId, showhide){
     document.getElementById(elementId).setAttribute('style', `display:${showhide}`);
@@ -222,19 +238,21 @@ function toggleVisible(elementId, showhide){
 
 
     // bind event listeners to buttons
-    function bindEventListeners(pageIdStrings) {
+    function bindEventListeners(uiCtrl) {
         
-        console.log("Page ElementId Strings: " + pageIdStrings);
+        var mainPageIdStrings = uiCtrl.getWorkoutPageIds().main;
        
         //TOGGLE VISIBILITY:
             // show "add new exercise"
-        document.getElementById(pageIdStrings.main.addNew).addEventListener('click', function(){
-                showAddEdit('new');
+        document.getElementById(mainPageIdStrings.addNew).addEventListener('click', function(){
+                uiCtrl.displayAddEdit('new');
+//            console.log("toggle visibility of NEW")
         });
             // show "edit existing exercise"
-        document.getElementById(pageIdStrings.main.editEx).addEventListener('click', function(){
-                console.log("calling the edit function!");
-                showAddEdit('edit');
+        document.getElementById(mainPageIdStrings.editEx).addEventListener('click', function(){
+//                console.log("calling the edit function!");
+                uiCtrl.displayAddEdit('edit');
+//            console.log("toggle dropdown of exercises to EDIT")
         });
             // show "create a new workout"
 //        document.getElementById('').addEventListener('click', function(){

@@ -44,12 +44,12 @@ Exercise = function(level, ){
 }
 Exercise.prototype.setLevel = function(level){
 
-    var levelInfo = new Level()
+    var levelInfo = workoutList[this].variations[level]
 
 }
 
-Level = function(level){
-    name: '', // easy, medium, hard
+Variation = function(level){
+    level: '', // easy, medium, hard
     sets: '',
     reps: '',
     description: '',
@@ -91,4 +91,11 @@ Workout = function(configObject){
 
 
     */
+
+///////////////////////////////////////////////////////
+
+controller
+
+
+
 
