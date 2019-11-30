@@ -1,3 +1,5 @@
+import {AddEditModal} from './AddEditModal.js';
+
 var globalExercisesConfig;
 fetchFileContents("exercises");
 
@@ -8,114 +10,6 @@ function getElement(elementId){
 function findElement(identifier){
 	return document.querySelector(identifier);
 }
-
-var AddEditModal = function(mainElementIds) {
-	this.wrapper = getElement(mainElementIds.wrapper);
-	this.dropdown = getElement(mainElementIds.dropdown);
-	this.inputs = getElement(mainElementIds.inputs);
-
-	this.inputsId = mainElementIds.inputs;
-	this.variationsId = mainElementIds.variations;
-	this.origVariation = findElement(`#${this.variationsId}0`);
-	
-	this.variationsArray = ['level', 'description', 'reps', 'sets'];
-}
-
-AddEditModal.prototype.showHide = function(showOrHide){
-
-    console.log(`set wrapper id ${this.wrapper} visibility to: ${showOrHide}`);
-    this.wrapper.setAttribute('style', `display:${showOrHide}`);
-	 this.dropdown.options[0].selected = true;
-}
-
-AddEditModal.prototype.displayEditDropdown = function(){
-    // (hide inputs)
-    this.inputs.setAttribute('style', 'display:none');
-    // show dropdown
-    this.dropdown.options[0].selected = true; // reset default selection to "please select"
-    this.dropdown.setAttribute('style', 'display:block');
-}
-
-AddEditModal.prototype.displayInputs = function(){
-    // (hide dropdown)
-    this.dropdown.setAttribute('style', 'display:none');
-    // show inputs
-	 this.resetInputs();
-    this.inputs.setAttribute('style', 'display:block');
-	
-    // if isset exerciseObj -> populate inputs
-    var exName = this.dropdown
-	 			.options[this.dropdown.selectedIndex]
-	 			.value;
-	
-    if(exName != 'select an exercise') {
-	 // get the exercise object that matches this name
-        var exInd = globalExercisesConfig.exercises
-					  .findIndex((nextEx) => {
-							return nextEx.name === exName;
-					  });
-
-        var theExercise = globalExercisesConfig.exercises[exInd];
-		 
-		  this.populateInputs(theExercise);
-	 } else {
-		  // replicate the variations
-		  console.log(globalExercisesConfig.exerciseTemplate);
-		  this.populateVariations(globalExercisesConfig.exerciseTemplate.variations)
-	 }
-}
-
-
-AddEditModal.prototype.populateInputs = function(exercise){
-	//populate the name
-	findElement(`#${this.inputsId} #name`)
-			.setAttribute('value', exercise.name);
-	//populate the variation elements, and copy as needed
-	this.populateVariations(exercise.variations);
-}
-
-AddEditModal.prototype.populateVariations = function (exerciseVariations) {
-	console.log(this.origVariation)
-	var loopNum = 0;
-	// loop variations
-	for(variation of exerciseVariations){
-
-		var elementBlock = this.origVariation;
-		if(loopNum > 0) {
-			elementBlock = this.origVariation.cloneNode(true);
-			elementBlock.id = this.variationsId + loopNum; 
-		}
-
-		for(varDetail of this.variationsArray){
-			console.log(`seeking id: #${varDetail}-${loopNum}`)
-			var detailElement = 
-			elementBlock.querySelector(`#${varDetail}-0`);
-			if(varDetail === 'level') {
-				detailElement.textContent = variation[varDetail];
-			} else {
-				detailElement.setAttribute('value', variation[varDetail]);
-			}
-			detailElement.id = varDetail + '-' + loopNum;
-		}
-
-		if(loopNum > 0){
-			getElement(this.inputsId).appendChild(elementBlock);
-		}
-		loopNum++;
-	}
-}
-
-
-AddEditModal.prototype.resetInputs = function(){
-	// empty any contents
-	// delete variations > 0
-	
-	
-	
-	
-	
-}
-
 
 
 //// --- UI Controller --- //
@@ -151,15 +45,28 @@ var workoutUiController = (function(){
                  addEditModal.displayEditDropdown();
              } else {
                  console.log("clicked New, display inputs");
-                 addEditModal.displayInputs();
+//                 console.log(globalExercisesConfig.exerciseTemplate);
+                 addEditModal.displayInputs(globalExercisesConfig.exerciseTemplate);
              }
          },
         
         displayInputs: function(exerciseName){
-            addEditModal.displayInputs(exerciseName);
+			   var selectedAnExercise = addEditModal.getSelectedExercise();
+			   var theExercise = globalExercisesConfig.exerciseTemplate;
+			   if(selectedAnExercise != 'select an exercise') {	
+					// get the exercise object that matches this name
+        			var exInd = globalExercisesConfig.exercises
+										.findIndex((nextEx) => {
+												return nextEx.name === selectedAnExercise;
+					  				});
+					theExercise = globalExercisesConfig.exercises[exInd];
+				}
+			   console.log(theExercise);
+            addEditModal.displayInputs(theExercise);
         },
         
         getAddEditModal: function(){
+
             return addEditModal;
         },
             // show the CreateNewWorkout pane
@@ -355,7 +262,6 @@ function bindEventListeners(uiCtrl) {
     
     // pre-populate exercise inputs with selected exercise info
     document.getElementById(pageIdStrings.addedit.dropdown).addEventListener('change', function(){
-
         uiCtrl.displayInputs();
     });
     
