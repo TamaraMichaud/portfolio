@@ -10,21 +10,22 @@ function findElement(identifier){
 }
 
 var AddEditModal = function(mainElementIds) {
-    this.wrapper = getElement(mainElementIds.wrapper);
-    this.dropdown = getElement(mainElementIds.dropdown);
-    this.inputs = getElement(mainElementIds.inputs);
+	this.wrapper = getElement(mainElementIds.wrapper);
+	this.dropdown = getElement(mainElementIds.dropdown);
+	this.inputs = getElement(mainElementIds.inputs);
+
+	this.inputsId = mainElementIds.inputs;
+	this.variationsId = mainElementIds.variations;
+	this.origVariation = findElement(`#${this.variationsId}0`);
 	
-	 this.inputsId = mainElementIds.inputs;
-  this.variationsId = mainElementIds.variations;
-	
-	
-    console.log("Created new modal object; wrapper id: " + this.wrapper);
+	this.variationsArray = ['level', 'description', 'reps', 'sets'];
 }
 
 AddEditModal.prototype.showHide = function(showOrHide){
 
     console.log(`set wrapper id ${this.wrapper} visibility to: ${showOrHide}`);
     this.wrapper.setAttribute('style', `display:${showOrHide}`);
+	 this.dropdown.options[0].selected = true;
 }
 
 AddEditModal.prototype.displayEditDropdown = function(){
@@ -39,63 +40,83 @@ AddEditModal.prototype.displayInputs = function(){
     // (hide dropdown)
     this.dropdown.setAttribute('style', 'display:none');
     // show inputs
+	 this.resetInputs();
     this.inputs.setAttribute('style', 'display:block');
 	
-    // if isset exerciseObj -> iterate properties // inputs list 
-    var exName = this.dropdown.options[this.dropdown.selectedIndex].value;
-    if(exName != 'select an exercise') {
-        console.log("Name Chosen Was: " + exName);
-// get the exercise object that matches this name
-        var theEx = globalExercisesConfig['exercises'].findIndex((nextEx) => {
-            return nextEx.name === exName;
-        });
-
-        var theExercise = globalExercisesConfig['exercises'][theEx];
-	 //populate the name
-		 findElement(`#${this.inputsId} #name`).setAttribute('value', theExercise.name);
-		 
-	 //populate the variation elements, and copy as needed
-		 const variationsArray = ['level', 'description', 'reps', 'sets'];
-		 var origVarElement = findElement(`#${this.variationsId}0`);
-//		 console.log(origVarElement);
-//		 const variationElementsArray = variationsArray.map((a, b, c) => {
-//			 if(b === 0){
-//				 console.log("first loop");
-//				 return origVarElement;
-//			 } else {
-//				 console.log("next loops");
-//				 var copiedVariationElement = origVarElement.cloneNode(true);
-//				 copiedVariationElement.id = this.variationsId + b;
-//				 console.log(copiedVariationElement);
-//				 getElement(this.inputsId).appendChild(copiedVariationElement);
-//				 
-//				 
-//				 
-//			 }
-//		 })
+    // if isset exerciseObj -> populate inputs
+    var exName = this.dropdown
+	 			.options[this.dropdown.selectedIndex]
+	 			.value;
 	
-		 
-// loop variations
-		 var loopNum = 0;
-	 	for(variation of theExercise.variations){
-			
-			var elementBlock = origVarElement;
-			if(loopNum > 0) {
-				elementBlock = origVarElement.cloneNode(true);
-				elementBlock.id = this.variationsId + loopNum; 
-			}
-				 
-			for(varDetail of variationsArray){
-				elementBlock.querySelector(`#${varDetail}`).setAttribute('value', variation[varDetail]);
-			}
-			if(loopNum > 0){
-				getElement(this.inputsId).appendChild(elementBlock);
-			}
-			loopNum++;
-		}
-    }
+    if(exName != 'select an exercise') {
+	 // get the exercise object that matches this name
+        var exInd = globalExercisesConfig.exercises
+					  .findIndex((nextEx) => {
+							return nextEx.name === exName;
+					  });
 
+        var theExercise = globalExercisesConfig.exercises[exInd];
+		 
+		  this.populateInputs(theExercise);
+	 } else {
+		  // replicate the variations
+		  console.log(globalExercisesConfig.exerciseTemplate);
+		  this.populateVariations(globalExercisesConfig.exerciseTemplate.variations)
+	 }
 }
+
+
+AddEditModal.prototype.populateInputs = function(exercise){
+	//populate the name
+	findElement(`#${this.inputsId} #name`)
+			.setAttribute('value', exercise.name);
+	//populate the variation elements, and copy as needed
+	this.populateVariations(exercise.variations);
+}
+
+AddEditModal.prototype.populateVariations = function (exerciseVariations) {
+	console.log(this.origVariation)
+	var loopNum = 0;
+	// loop variations
+	for(variation of exerciseVariations){
+
+		var elementBlock = this.origVariation;
+		if(loopNum > 0) {
+			elementBlock = this.origVariation.cloneNode(true);
+			elementBlock.id = this.variationsId + loopNum; 
+		}
+
+		for(varDetail of this.variationsArray){
+			console.log(`seeking id: #${varDetail}-${loopNum}`)
+			var detailElement = 
+			elementBlock.querySelector(`#${varDetail}-0`);
+			if(varDetail === 'level') {
+				detailElement.textContent = variation[varDetail];
+			} else {
+				detailElement.setAttribute('value', variation[varDetail]);
+			}
+			detailElement.id = varDetail + '-' + loopNum;
+		}
+
+		if(loopNum > 0){
+			getElement(this.inputsId).appendChild(elementBlock);
+		}
+		loopNum++;
+	}
+}
+
+
+AddEditModal.prototype.resetInputs = function(){
+	// empty any contents
+	// delete variations > 0
+	
+	
+	
+	
+	
+}
+
+
 
 //// --- UI Controller --- //
 var workoutUiController = (function(){

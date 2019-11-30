@@ -16,12 +16,12 @@
 var qodCredit = 'courtesy of &nbsp;&nbsp;<span style="z-index:50;font-size:0.9em;"><img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/><a href="https://theysaidso.com" title="Powered by quotes from theysaidso.com" style="color: #9fcc25; margin-left: 4px; vertical-align: middle;">theysaidso.com</a></span>';
 
 
-//// for index page only...
-//document.querySelector('.orb.play.workouts').addEventListener('click', function(){
-//    
-////    alert("Load the workouts page somehow!");
-//    window.location.href = "./pages/workouts.html";
-//})
+// for index page only...
+document.querySelector('.orb.play.workouts').addEventListener('click', function(){
+    
+//    alert("Load the workouts page somehow!");
+    window.location.href = "./pages/workouts.html";
+})
 
 
 
