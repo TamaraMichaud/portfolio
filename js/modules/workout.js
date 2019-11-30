@@ -295,7 +295,6 @@ function loadExercisesDropdown(exercisesArray, dropdownElement){
         optionElement.name = optionElement.textContent = value;
         dropdownElement.appendChild(optionElement);
     }
-
     tmpCreateOption('select an exercise');
 
     exercisesArray.forEach(nextExercise => {
