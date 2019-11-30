@@ -38,19 +38,19 @@ var workoutUiController = (function(){
     return {
             // show the Add/Edit pane
          displayAddEdit: function(addOrEdit){
-
+				//hide workouts info
+document.getElementById(workoutPageIds.workout.filters).style = 'display:none';
              addEditModal.showHide('block');
              if(addOrEdit === 'edit') {
                  console.log("clicked Edit, display dropdown");
                  addEditModal.displayEditDropdown();
              } else {
                  console.log("clicked New, display inputs");
-//                 console.log(globalExercisesConfig.exerciseTemplate);
                  addEditModal.displayInputs(globalExercisesConfig.exerciseTemplate);
              }
          },
         
-        displayInputs: function(exerciseName){
+        displayAddEditInputs: function(exerciseName){
 			   var selectedAnExercise = addEditModal.getSelectedExercise();
 			   var theExercise = globalExercisesConfig.exerciseTemplate;
 			   if(selectedAnExercise != 'select an exercise') {	
@@ -70,11 +70,14 @@ var workoutUiController = (function(){
             return addEditModal;
         },
             // show the CreateNewWorkout pane
-        // displayCreateWorkout: function(){
+         displayCreateWorkout: function(){
         //      hide addEditModal
+				addEditModal.showHide('none');
         //      display createNewWorkout pane
+				document.getElementById(workoutPageIds.workout.filters).style = 'display:block';
         // ------ make this a permanent feature, and the AddEdit is a modal window... ------- //
-        // },
+				console.log("showing workout selection?");
+         },
         
             // (re-)populate exercises dropdown
         // populateExercisesList: function(exercisesList, dropdownId){
@@ -125,13 +128,8 @@ var workoutDataController = (function(){
         // filterExercises: function(filterCriteria){
         //   // loop exercisesConfig["exercises"]  
         //   // return filtered list
-        // }  ,
+        // } 
           
-            // retreive the exercisesConfig object
-//         getExercisesConfig: function(){
-//             console.log("WHY ARE YOU COMING HERE FOR THIS FOOL?? IT's GLOBAL");
-//             return this.exerciseConfig;
-//         }
         
     }
     
@@ -262,7 +260,7 @@ function bindEventListeners(uiCtrl) {
     
     // pre-populate exercise inputs with selected exercise info
     document.getElementById(pageIdStrings.addedit.dropdown).addEventListener('change', function(){
-        uiCtrl.displayInputs();
+        uiCtrl.displayAddEditInputs();
     });
     
     // save exercise
@@ -271,7 +269,7 @@ function bindEventListeners(uiCtrl) {
     
     // show "create a new workout"
     document.getElementById(pageIdStrings.main.getWorkout).addEventListener('click', function(){
-            console.log("Need to display the workout!!");
+           uiCtrl.displayCreateWorkout();
     });
 //        // start new workout
 //        document.getElementById('').addEventListener('click', function(){
