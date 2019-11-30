@@ -2,15 +2,15 @@ import {AddEditModal} from './AddEditModal.js';
 
 var globalExercisesConfig;
 fetchFileContents("exercises");
-
-function getElement(elementId){
-	return document.getElementById(elementId);
-}
-
-function findElement(identifier){
-	return document.querySelector(identifier);
-}
-
+//
+//function getElement(elementId){
+//	return document.getElementById(elementId);
+//}
+//
+//function findElement(identifier){
+//	return document.querySelector(identifier);
+//}
+//
 
 //// --- UI Controller --- //
 var workoutUiController = (function(){
