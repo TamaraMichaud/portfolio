@@ -1,16 +1,29 @@
 var globalExercisesConfig;
 fetchFileContents("exercises");
 
+function getElement(elementId){
+	return document.getElementById(elementId);
+}
+
+function findElement(identifier){
+	return document.querySelector(identifier);
+}
+
 var AddEditModal = function(mainElementIds) {
-    this.wrapper = document.getElementById(mainElementIds.wrapper);
-    this.dropdown = document.getElementById(mainElementIds.dropdown);
-    this.inputs = document.getElementById(mainElementIds.inputs);
+    this.wrapper = getElement(mainElementIds.wrapper);
+    this.dropdown = getElement(mainElementIds.dropdown);
+    this.inputs = getElement(mainElementIds.inputs);
+	
+	 this.inputsId = mainElementIds.inputs;
+  this.variationsId = mainElementIds.variations;
+	
+	
     console.log("Created new modal object; wrapper id: " + this.wrapper);
 }
 
 AddEditModal.prototype.showHide = function(showOrHide){
 
-    console.log("set wrapper id " + this.wrapper + " visibility to: " + showOrHide);
+    console.log(`set wrapper id ${this.wrapper} visibility to: ${showOrHide}`);
     this.wrapper.setAttribute('style', `display:${showOrHide}`);
 }
 
@@ -27,26 +40,59 @@ AddEditModal.prototype.displayInputs = function(){
     this.dropdown.setAttribute('style', 'display:none');
     // show inputs
     this.inputs.setAttribute('style', 'display:block');
-    // if isset exerciseObj -> iterate properties // inputs list
-    
+	
+    // if isset exerciseObj -> iterate properties // inputs list 
     var exName = this.dropdown.options[this.dropdown.selectedIndex].value;
     if(exName != 'select an exercise') {
         console.log("Name Chosen Was: " + exName);
 // get the exercise object that matches this name
         var theEx = globalExercisesConfig['exercises'].findIndex((nextEx) => {
             return nextEx.name === exName;
-        })
+        });
 
-        console.log("which is config Index: " + theEx);
         var theExercise = globalExercisesConfig['exercises'][theEx];
-        console.log(theExercise);
-        
-//        console.log(globalExercisesConfig);
-        
-//        var exercise = new Exercise(exName);
-//        console.log("Editting Exercise Named: " + exerciseObj.name);
-        console.log("UNDER CONSTRUCTION");
-        // populate values where name matches
+	 //populate the name
+		 findElement(`#${this.inputsId} #name`).setAttribute('value', theExercise.name);
+		 
+	 //populate the variation elements, and copy as needed
+		 const variationsArray = ['level', 'description', 'reps', 'sets'];
+		 var origVarElement = findElement(`#${this.variationsId}0`);
+//		 console.log(origVarElement);
+//		 const variationElementsArray = variationsArray.map((a, b, c) => {
+//			 if(b === 0){
+//				 console.log("first loop");
+//				 return origVarElement;
+//			 } else {
+//				 console.log("next loops");
+//				 var copiedVariationElement = origVarElement.cloneNode(true);
+//				 copiedVariationElement.id = this.variationsId + b;
+//				 console.log(copiedVariationElement);
+//				 getElement(this.inputsId).appendChild(copiedVariationElement);
+//				 
+//				 
+//				 
+//			 }
+//		 })
+	
+		 
+// loop variations
+		 var loopNum = 0;
+	 	for(variation of theExercise.variations){
+			
+			var elementBlock = origVarElement;
+			if(loopNum > 0) {
+				elementBlock = origVarElement.cloneNode(true);
+				elementBlock.id = this.variationsId + loopNum; 
+			}
+				 
+			for(varDetail of variationsArray){
+				elementBlock.querySelector(`#${varDetail}`).setAttribute('value', variation[varDetail]);
+			}
+			if(loopNum > 0){
+				getElement(this.inputsId).appendChild(elementBlock);
+			}
+			loopNum++;
+		}
     }
 
 }
@@ -64,7 +110,7 @@ var workoutUiController = (function(){
                 wrapper: 'addedit',
                 dropdown: 'addedit-select',
                 inputs: 'addedit-inputs',
-                variations: 'addedit-variations'
+                variations: 'addedit-variations-'
             },
             workout: {
                 filters: 'workout-inputs',
@@ -77,10 +123,7 @@ var workoutUiController = (function(){
     return {
             // show the Add/Edit pane
          displayAddEdit: function(addOrEdit){
-//
-//             if(!addEditModal) {
-//                 addEditModal = new AddEditModal(workoutPageIds.addedit);
-//             }
+
              addEditModal.showHide('block');
              if(addOrEdit === 'edit') {
                  console.log("clicked Edit, display dropdown");
@@ -96,9 +139,6 @@ var workoutUiController = (function(){
         },
         
         getAddEditModal: function(){
-//             if(!addEditModal) {
-//                 addEditModal = new AddEditModal(workoutPageIds.addedit);
-//             }
             return addEditModal;
         },
             // show the CreateNewWorkout pane
@@ -139,14 +179,8 @@ var workoutUiController = (function(){
 
 var workoutDataController = (function(){
     
-//    var exercisesConfig;
-
     return {
         loadInitialData: async function(dropdownElement){
-//            console.log("...loading config");
-//            if(!this.exercisesConfig){
-//                this.exercisesConfig = await fetchFileContents("exercises");
-//            }
             loadExercisesDropdown(globalExercisesConfig['exercises'], dropdownElement);
             console.log("...config loaded? " + globalExercisesConfig);
         }
@@ -186,26 +220,16 @@ var controller = (function(dataCtrl, UICtrl){
             console.log('Starting Up');
             bindEventListeners(UICtrl);
         }
-        //,
-//        getExercisesConfig: function(){
-//            var fuckyou = dataCtrl.getExercisesConfig();
-//            console.log("where do we lose ourselves: " + fuckyou);
-//            return fuckyou;
-//        }
     }
         
 })(workoutDataController, workoutUiController);
-
-//controller.init(); 
-// ^^ the only actual thing that's public.  (...apart from all the below...)
-
 
 
 // ---------------------------------------------------------------------------------- //
 
 var Exercise = function(name, variations, muscleGroups, types){
     this.name = name;
-    this.variations = variations;
+    this.variations = [ /* array of VARiATION objects */ ];
     this.muscleGroups = muscleGroups;
     this.types = types;    
 }
@@ -213,8 +237,18 @@ Exercise.prototype.loadAddEdit = function(inputsRootId){
     var nameElement = document.querySelector(`#${inputsRootId} #name`);
     nameElement.innerHTML = "exercise name goes here";   
     nameElement.setAttribute('placeholder', "exercise name goes here");   
-
 }
+
+var Variation = function(){
+	this.name = "easy";
+	this.desc = "";
+	this.reps = "";
+	this.sets = "";
+}
+
+
+
+
 
 var Workout = function(filterOptions) {
 
@@ -237,19 +271,6 @@ Workout.prototype.loadWorkout = function(exercisesList){
 
 
 
-
-
-//function setGlobalConfig(configObj) {
-//    this.globalExercisesConfig = configObj;
-//    console.log("ARRRRGGGGHHHHHH" + configObj);
-//    controller.init();
-//}
-
-
-
-
-
-
 async function fetchFileContents(fileName){
                             
     var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
@@ -260,10 +281,8 @@ async function fetchFileContents(fileName){
     var rawResults = await fetch(urlPath + fileName + ".json");
     var jsonContents = await rawResults.json();
     
-//    setGlobalConfig(jsonContents);
     globalExercisesConfig = jsonContents;
-    controller.init();
-    
+    controller.init();    
 };
 
 
@@ -305,7 +324,7 @@ function bindEventListeners(uiCtrl) {
     //TOGGLE VISIBILITY:
     
     // show "add new exercise"
-    document.getElementById(pageIdStrings.main.addNew).addEventListener('click', function(){
+   document.getElementById(pageIdStrings.main.addNew).addEventListener('click', function(){
             uiCtrl.displayAddEdit('new');
     });
 
