@@ -6,15 +6,25 @@
 			"title" : "Newstead Wood School For Girls",
 			"startDate" : "2000-09-01",
 			"endDate" : "2007-04-01",
-			"certificate" : "pathtofile",
+			"description" : "12 GCSE's; 4 A*, 4 A, 2 B <br>3 A-levels; Spanish A, Maths B, Psychology C",
+			"certificate" : "",
 			"languages" : []
 		},
 		{
-			"title"  : "Udemy Course",
-			"startDate" : "",
-			"endDate" : "",
-			"certificate" : "pathtofile",
-			"languages" : [ "PHP", ""]
+			"title"  : "Cucumber, Selenium & Java - Develop a Framework",
+			"startDate" : "2019-06-17",
+			"endDate" : "2019-06-17",
+			"description" : "explore qa automation using cucumber and gherkin with selenium",
+			"certificate" : "/path/to/file.pdf",
+			"languages" : [ "Cucumber", "Gherkin", "Selenium", "Java"]
+		},
+		{
+			"title"  : "Ultime Web Designer & Developer",
+			"startDate" : "2019-08-05",
+			"endDate" : "2019-08-05",
+			"description" : "explore qa automation using cucumber and gherkin with selenium",
+			"certificate" : "/path/to/file.pdf",
+			"languages" : [ "Cucumber", "Gherkin", "Selenium", "Java"]
 		}
 		
 		
@@ -27,6 +37,21 @@
 			"startDate" : "2019-01-01",
 			"endDate" : ""
 			
+		},
+		{
+			"employer" : "Smartfocus",
+			"jobTitle" : "Data Integration Specialist",
+			"description": "creating bespoke etl packages using bash shell scripting, Oracle SQL",
+			"startDate" : "2015-09-01",
+			"endDate" : "2019-01-01"
+			
+		},
+		{
+			"employer" : "Capita PLC",
+			"jobTitle" : "-------------",
+			"description": "------------------",
+			"startDate" : "2010-09-01",
+			"endDate" : "2015-09-01"
 		}
 		
 	],
@@ -36,9 +61,17 @@
 			"description" : "the dwt is...",
 			"technologies" : [ "PHP", "Oracle SQL", "shell"],
 			"image" : "path to file", 
-			"startDate" : "",
-			"endDate" : "",
+			"startDate" : "2017-10-01",
+			"endDate" : "2017-10-01",
 			"linkedTo" : "jobHistory:item || educatin:item" 
+		}, 
+		{
+			"title" : "Badb Exports",
+			"description" : "A reporting hub for the finance department with both manual and automated report-generation, encrypted login process, self sign-up with restricted access",
+			"technologies" : [ "Java", "JSP"],
+			"image" : "/path/to/file",
+			"startDate" : "2019-11-01",
+			"endDate" : "2019-11-01"
 		}
 	]
 	

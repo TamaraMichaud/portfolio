@@ -1,92 +1,107 @@
-//   CV: pdf/image, or link to LinkedIn
-//        Languages: worked in
-//        Projects completed: command-line helpme, selenium suite, cypress suite(s), dwt, finance app
-
-// FRONT-END:
-
-//      [ -------------------------- timeline ------------------------ ]
-//   ^^ language; on-hover: show project img thumb								^^ full CV pdf here
-//					   on-click: show project img Large								^^ linkedIn URL
-
-// education -> starts at school, certificates for study
-// career history -> job-starts
-// acheivements -> projects-made / languages-used
-
-
-// BACK-END:
-
-// loadTimeline() -> read config/career.json
-		
-		// education, jobHistory, projects
-		// foreach
-		// name, start, end, title, description, image, [linked with = langaues / linkedTo]
-		// order by startDate
-	// place an orb on timeline, link an event
-
 import {fetchFileContents} from './FetchConfig.js';
-import {JobRecord} from './JobRecord.js';
+import {ProjectRecord, JobRecord, EducationRecord} from './work/CareerInfo.js';
 
-var globalCareerInfo;
+var globalConfig;
 fetchFileContents("career").then((jsonContents) => {
-	globalCareerInfo = jsonContents;
+	globalConfig = jsonContents;
 	uiController.init();
 });
 
 
 var uiController = (function(){
 	
-	var timeLine = document.getElementById('timeline-anchor');
+	var timeLine = document.getElementById('timeline');
+	var careerItemArray = [];
 	
+	function buildItemArray(itemList, ClassObject) {
+	
+		for (var nextItem of itemList ){
+			var thisItem = new ClassObject(nextItem);
+			careerItemArray.push({ ref: thisItem.orderPosition,
+										  element: thisItem.asElement()
+										});
+		}
+	}
+
 	return {
-        init: function(){
-            console.log('Starting Up');
-            console.log(globalCareerInfo);
-			  	loadCareerHistory(timeLine);
-        }
+	  init: function(){
+			console.log('Starting Up');
+		  
+		  // create an array of elements & their "value"
+			buildItemArray(globalConfig.jobHistory, JobRecord);
+			buildItemArray(globalConfig.projects, ProjectRecord);
+			buildItemArray(globalConfig.education, EducationRecord);
+		  
+console.log(careerItemArray);
+		  // get a list of timestamp values
+			var d = new Date();
+			var maxDate = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+			var refArray = [];
+			var minDate = maxDate;
+			// we grab all the dates and print a div per 0^10
+			careerItemArray.forEach(a => {
+				var refValue = (Array.isArray(a.ref)) ? a.ref[0] : a.ref;
+				minDate = (refValue > minDate) ? minDate : refValue;
+				refArray.push(refValue);
+			});
+			refArray.push(maxDate);
+
+			var tlH = timeLine.getBoundingClientRect();
+		  	var tlW = timeLine.clientWidth / (refArray.length - 1);
+		  
+		   var leftPos = 61; // review this later...
+			refArray.forEach((ref, index) =>  {
+
+				var item = careerItemArray[index];
+				//create orb,
+				var newOrb = document.createElement("div");
+				newOrb.id = "orb-" + index;
+				newOrb.classList.add("orb");
+
+				// set item element invisible
+				var elementObj;
+if(item) {
+				elementObj = item.element;
+
+	
+} else {
+	elementObj = document.createElement("div");
+	elementObj.textContent = "TODAYS DATE";
+	
+	
+}
+				elementObj.id = "info-" + index;
+				elementObj.style.setProperty("display", "none");
+				// append item element
+	
+				newOrb.appendChild(elementObj);
+
+				// bind click action (show item element)
+				newOrb.addEventListener('click', () => {
+
+					var infoEl = document.getElementById(elementObj.id);
+					var currVal = infoEl.style.display;
+					var newVal = (currVal === "none") ? "inline" : "none";
+
+					infoEl.style.setProperty("display", newVal);
+				});
+				
+				// append orb at position
+				newOrb.style.setProperty("position", "absolute");
+//				newOrb.style.setProperty("top", `${tlH.top + ((tlH.bottom - tlH.top) / 2)}px`);
+
+				newOrb.style.setProperty("left", `${leftPos}px`);
+				leftPos += tlW;
+				timeLine.appendChild(newOrb);
+			});
+
+		  //TODO: push one final orb for "today", only the date in it.
+		  
+	  }
 	}
         
 })();
 
-function loadCareerHistory(timeLine){
-	
-	var jobHistory = globalCareerInfo.jobHistory;
-	for(var nextJob of jobHistory){
-		
-		var thisJobRecord = new JobRecord(nextJob);
-		timeLine.appendChild(thisJobRecord.asElement());
-	}
-}
 
 
-// ----
-//export class JobRecord {
-//	
-//	constructor(jobConfig) {
-//		this.employer = jobConfig.employer;
-//		this.jobTitle = jobConfig.jobTitle;
-//		this.description = jobConfig.description;
-//		this.startDate = jobConfig.startDate;
-//		this.endDate = jobConfig.endDate;
-//	}
-//	
-//	asElement(){
-//		
-//		var nextLine = textValue => {
-//			var line = document.createElement("p");
-//			line.textContent = textValue;
-//			return line;
-//		}
-//		
-//		var wrapper = document.createElement("div");
-//		wrapper.id = `job-${this.employer}`;
-//		
-//		wrapper.appendChild(nextLine(this.employer));
-//		wrapper.appendChild(nextLine(this.jobTitle));
-//		wrapper.appendChild(nextLine(this.description));
-//		wrapper.appendChild(nextLine(this.startDate));
-//		wrapper.appendChild(nextLine(this.endDate));
-//		
-//		return wrapper;
-//	}
-//}
-//
+
