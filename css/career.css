@@ -34,7 +34,7 @@ div#timeline div.orb div.item-wrapper [name="subHeading"] {
 div#timeline div.orb div.item-wrapper [name="description"] {
 	
 	
-/*	display: block;*/
+	display: inline-block;
 	margin: none;
 	margin-top: 1px;
 	padding: none;
