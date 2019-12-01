@@ -1,16 +1,13 @@
+import {getElement} from './elementSeeker.js';
 import {AddEditModal} from './AddEditModal.js';
+import {CreateWorkout} from './CreateWorkout.js';
+import {fetchFileContents} from './FetchConfig.js';
 
 var globalExercisesConfig;
-fetchFileContents("exercises");
-//
-//function getElement(elementId){
-//	return document.getElementById(elementId);
-//}
-//
-//function findElement(identifier){
-//	return document.querySelector(identifier);
-//}
-//
+fetchFileContents("exercises").then((jsonContents) => {
+	 globalExercisesConfig = jsonContents;
+    controller.init();
+});
 
 //// --- UI Controller --- //
 var workoutUiController = (function(){
@@ -28,18 +25,21 @@ var workoutUiController = (function(){
                 variations: 'addedit-variations-'
             },
             workout: {
-                filters: 'workout-inputs',
-                workout: 'workout-details'
+                filters: 'workout-filter',
+                details: 'workout-details',
+					 load: 'create-workout',
+					 start: 'start-workout'
             }
     };
 
     var addEditModal = new AddEditModal(workoutPageIds.addedit);
+	 var createWorkout = new CreateWorkout(workoutPageIds.workout);
 
     return {
             // show the Add/Edit pane
          displayAddEdit: function(addOrEdit){
 				//hide workouts info
-document.getElementById(workoutPageIds.workout.filters).style = 'display:none';
+				 createWorkout.showHide('none');
              addEditModal.showHide('block');
              if(addOrEdit === 'edit') {
                  console.log("clicked Edit, display dropdown");
@@ -69,15 +69,22 @@ document.getElementById(workoutPageIds.workout.filters).style = 'display:none';
 
             return addEditModal;
         },
-            // show the CreateNewWorkout pane
-         displayCreateWorkout: function(){
+       
+            
+		  // show the CreateNewWorkout pane
+        displayCreateWorkout: function(){
         //      hide addEditModal
 				addEditModal.showHide('none');
         //      display createNewWorkout pane
-				document.getElementById(workoutPageIds.workout.filters).style = 'display:block';
+			  	createWorkout.showHide('block');
+	
         // ------ make this a permanent feature, and the AddEdit is a modal window... ------- //
 				console.log("showing workout selection?");
          },
+		 
+		 loadWorkout: function(){
+			 createWorkout.loadWorkout();
+		 },
         
             // (re-)populate exercises dropdown
         // populateExercisesList: function(exercisesList, dropdownId){
@@ -151,65 +158,22 @@ var controller = (function(dataCtrl, UICtrl){
 })(workoutDataController, workoutUiController);
 
 
-// ---------------------------------------------------------------------------------- //
+// -------------------------------------------------------- //
+// -------------------------------------------------------- //
 
-var Exercise = function(name, variations, muscleGroups, types){
-    this.name = name;
-    this.variations = [ /* array of VARiATION objects */ ];
-    this.muscleGroups = muscleGroups;
-    this.types = types;    
-}
-Exercise.prototype.loadAddEdit = function(inputsRootId){
-    var nameElement = document.querySelector(`#${inputsRootId} #name`);
-    nameElement.innerHTML = "exercise name goes here";   
-    nameElement.setAttribute('placeholder', "exercise name goes here");   
-}
-
-var Variation = function(){
-	this.name = "easy";
-	this.desc = "";
-	this.reps = "";
-	this.sets = "";
-}
-
-
-
-
-
-var Workout = function(filterOptions) {
-
-//     this.exercises = [];
-//     this.duration = filterOptions.duration;
-//     this.level = filterOptions.level;
-    // optional: muscle-groups / types
-    
-}
-Workout.prototype.loadWorkout = function(exercisesList){
-    //iterate exercisesList
-        //if item matches filterOptions criteria,
-            //this.exercises.push(item)
-};
-// ^^ this is not right.  nor is the Exercises one.  this should be a method of the main controller (or even the ui controller maybe...)
-
-
-
-
-
-
-
-async function fetchFileContents(fileName){
-                            
-    var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
-    var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
-    var urlPath = urlPathStart + projectDir + "/config/";
-
-    console.log("Reading contents of config file: " + fileName)
-    var rawResults = await fetch(urlPath + fileName + ".json");
-    var jsonContents = await rawResults.json();
-    
-    globalExercisesConfig = jsonContents;
-    controller.init();    
-};
+//async function fetchFileContents(fileName){
+//                            
+//    var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
+//    var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
+//    var urlPath = urlPathStart + projectDir + "/config/";
+//
+//    console.log("Reading contents of config file: " + fileName)
+//    var rawResults = await fetch(urlPath + fileName + ".json");
+//    var jsonContents = await rawResults.json();
+//    
+//    globalExercisesConfig = jsonContents;
+//    controller.init();    
+//};
 
 
 function loadExercisesDropdown(exercisesArray, dropdownElement){
@@ -229,16 +193,8 @@ function loadExercisesDropdown(exercisesArray, dropdownElement){
 }
 
 
-
-
-
-
 // ---------------------------------------------------------------------------------- //
 // ---------------------------------------------------------------------------------- //
-// ---------------------------------------------------------------------------------- //
-// ---- WIP -------------------- //
-
-
 
 
 // bind event listeners to buttons
@@ -249,17 +205,17 @@ function bindEventListeners(uiCtrl) {
     //TOGGLE VISIBILITY:
     
     // show "add new exercise"
-   document.getElementById(pageIdStrings.main.addNew).addEventListener('click', function(){
+    getElement(pageIdStrings.main.addNew).addEventListener('click', function(){
             uiCtrl.displayAddEdit('new');
     });
 
     // show "edit existing exercise"
-    document.getElementById(pageIdStrings.main.editEx).addEventListener('click', function(){
+    getElement(pageIdStrings.main.editEx).addEventListener('click', function(){
             uiCtrl.displayAddEdit('edit');
     });
     
     // pre-populate exercise inputs with selected exercise info
-    document.getElementById(pageIdStrings.addedit.dropdown).addEventListener('change', function(){
+    getElement(pageIdStrings.addedit.dropdown).addEventListener('change', function(){
         uiCtrl.displayAddEditInputs();
     });
     
@@ -268,11 +224,14 @@ function bindEventListeners(uiCtrl) {
     /////////////////////////// addEditModal needs a "save/cancel" button
     
     // show "create a new workout"
-    document.getElementById(pageIdStrings.main.getWorkout).addEventListener('click', function(){
+    getElement(pageIdStrings.main.getWorkout).addEventListener('click', function(){
            uiCtrl.displayCreateWorkout();
     });
-//        // start new workout
-//        document.getElementById('').addEventListener('click', function(){
-//                console.log("NEED TO BIND THIS TO CREATENEWWORKOUT/GO ... AND start the workout");
-//        });
+	
+	 // start new workout
+	 getElement(pageIdStrings.workout.load).addEventListener('click', function(){
+		  //hide filter
+		  // show workout
+		  uiCtrl.loadWorkout();
+	 });
 }

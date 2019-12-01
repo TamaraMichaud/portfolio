@@ -1,0 +1,49 @@
+{
+	"cv" : "path to pdf",
+	"linkedInUrl" : "LINKED IN LINK",
+	"education" : [
+		{
+			"title" : "Newstead Wood School For Girls",
+			"startDate" : "2000-09-01",
+			"endDate" : "2007-04-01",
+			"certificate" : "pathtofile",
+			"languages" : []
+		},
+		{
+			"title"  : "Udemy Course",
+			"startDate" : "",
+			"endDate" : "",
+			"certificate" : "pathtofile",
+			"languages" : [ "PHP", ""]
+		}
+		
+		
+	],
+	"jobHistory" : [
+		{
+			"employer" : "Smartfocus",
+			"jobTitle" : "QA Automation Engineer",
+			"description": "developing regression test packages using behaviour driven development techniques with Selenium, Cucumber, Gherkin, Cypress",
+			"startDate" : "2019-01-01",
+			"endDate" : ""
+			
+		}
+		
+	],
+	"projects" : [
+		{
+			"title" : "Data Web Tool",
+			"description" : "the dwt is...",
+			"technologies" : [ "PHP", "Oracle SQL", "shell"],
+			"image" : "path to file", 
+			"startDate" : "",
+			"endDate" : "",
+			"linkedTo" : "jobHistory:item || educatin:item" 
+		}
+	]
+	
+}
+
+
+
+

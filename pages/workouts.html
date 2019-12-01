@@ -91,18 +91,41 @@ src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     
     <button class='btn btn-primary' id="workout">Create a Workout to do</button>
         <br><br>
-    <div id="workout-inputs" style="display:none">
-    
-        <button class='btn btn-info'>MY Workout Selection Stuff Here</button>
-        <button class='btn btn-success'>Create Worout</button>
+    <div id="workout-filter" style="display:none">
+
+         <div class="input-group">
+				 <div class="input-group-prepend">
+					  <span class="input-group-text">Workout Level</span>
+				 </div>
+				 <select id="level" class="form-control">
+					 <option disabled selected>select a level</option>
+					 <option id="easy">Easy</option>
+					 <option id="medium">Medium</option>
+					 <option id="hard">Hard</option>
+				 </select>
+			</div>
+		 	<br>
+		   <div class="input-group">
+				 <div class="input-group-prepend">
+					  <span class="input-group-text">Workout Duration</span>
+				 </div>
+				 <input id="hour" type="number" max=2 min=0 class="form-control">
+				 <input id="min" type="number" max=59 min=0 class="form-control">
+			</div>
+		 	<br>
+		   <button id="create-workout" class='btn btn-success'>Create Worout</button>
+		 	<br>
     </div>
 	
-	    <div id="workout-details" style="display:none">
-    			<div>
-			 Timer // ExercisesList</div>
-        <button class='btn btn-info'>Start Workout</button>
+	 <div id="workout-details" style="display:none">
+		 	<h3>Your Workout</h3>
+			<ul id="exercise-list">
+			</ul>
+		   <br>
+		 <button class="btn btn-warning">Timer goes Here</button>
+		 	
+         <button id="start-workout" class='btn btn-info'>Start Workout</button>
     </div>
-
     
 </div>
 </div>

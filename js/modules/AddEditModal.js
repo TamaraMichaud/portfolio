@@ -1,10 +1,4 @@
-function getElement(elementId){
-	return document.getElementById(elementId);
-}
-
-function findElement(identifier){
-	return document.querySelector(identifier);
-}
+import {findElement, getElement} from './elementSeeker.js';
 
 const variationsArray = ['level', 'description', 'reps', 'sets'];
 

@@ -23,6 +23,12 @@ document.querySelector('.orb.play.workouts').addEventListener('click', function(
     window.location.href = "./pages/workouts.html";
 })
 
+// for index page only...
+document.querySelector('.orb.orb-major.work').addEventListener('click', function(){
+    
+//    alert("Load the workouts page somehow!");
+    window.location.href = "./pages/work.html";
+})
 
 
 
