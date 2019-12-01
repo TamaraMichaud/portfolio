@@ -1,0 +1,115 @@
+.orb {
+	z-index: 99;
+/*	border: 1px;*/
+	background: gold;
+/*	margin: 1px solid gold;*/
+	position: relative;
+	top: 50px;
+	left: 53px;
+	width: 7px;
+	height: 7px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px gold;
+	
+}
+/*
+
+.orb:hover{
+	left: -1px;
+}
+*/
+.orb-major {
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px gold;
+	top: 50px;
+	left: 50px;
+/* background: radial-gradient(white, gold);*/
+	
+	animation: orbPulse 1s infinite alternate;
+	animation: shiver 0.1s infinite alternate;
+/*	animation: shiver 0.82s infinite;*/
+}
+.work {
+	left: 100px;
+}
+.play{
+	left: 50px;
+}
+
+@keyframes orbPulse {
+
+    from {opacity: 1;}
+    to {opacity: 0.7;}
+}
+/*
+
+@keyframes flare {
+
+    from { box-shadow: 0 0 50px #f5c91a;}
+    to { box-shadow: 0 0 100px #f5c91a;}
+}
+*/
+
+.orb-major:hover {
+
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shiver {
+	from { 
+		transform: translate3d(0.5px, 0, 0);
+	}
+	to {
+		transform: translate3d(-0.5px, 0, 0);
+	}
+}
+
+
+@keyframes flutter {
+	
+}
+
+
+
+@keyframes rotation {
+
+    from {
+        transform: rotate(0);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+    animation: sunFire 3s infinite alternate;
+
+     animation: rotation 20s linear infinite;
+    background: radial-gradient(#ddd, #888);
+    box-shadow: 0 0 5px white; 
+  */  /* << horizontal shadow, then vertical shadow, then Blur, then color */ 
+/*     animation: rotation 4s linear infinite reverse;*/
