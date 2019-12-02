@@ -27,7 +27,7 @@
 	left: 50px;
 /* background: radial-gradient(white, gold);*/
 	
-	animation: orbPulse 1s infinite alternate;
+	
 	animation: shiver 0.1s infinite alternate;
 /*	animation: shiver 0.82s infinite;*/
 }
@@ -35,8 +35,19 @@
 	left: 100px;
 }
 .play{
-	left: 50px;
+	left: 250px;
 }
+
+.cv {
+	left: 80px;
+	animation: orbPulse 1s infinite alternate;
+}
+
+.workout, .history, .projectss {
+	animation: orbPulse 1s infinite alternate reverse;
+}
+
+
 
 @keyframes orbPulse {
 
