@@ -18,11 +18,17 @@
 	left: -1px;
 }
 */
-.orb-major {
+
+.orb-large {
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-	box-shadow: 0 0 10px gold;
+	box-shadow: 0 0 10px gold;	
+}
+
+
+.orb-major {
+
 	top: 50px;
 	left: 50px;
 /* background: radial-gradient(white, gold);*/
