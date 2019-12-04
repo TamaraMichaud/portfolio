@@ -73,7 +73,13 @@ class CareerInfo {
 		if(this.extraPropertiesList) {
 			for(var nextProperty of this.extraPropertiesList) {
 				if(this[nextProperty] != "") {
-					wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+					console.log(nextProperty);
+					console.log(this[nextProperty]);
+					if(typeof(this[nextProperty]) === "string" || this[nextProperty] === undefined) {
+						wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+					} else {
+						wrapper.appendChild(this[nextProperty]);	
+					}
 				}
 			}
 		}
@@ -101,7 +107,7 @@ export class ProjectRecord extends CareerInfo {
 	constructor(projectConfig) {
 		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
 		super("project", projectConfig, configMap);
-		this.image = projectConfig.image;
+		this.image = buildImageElement(projectConfig.image, "Project Collage");
 		this.linkedTo = projectConfig.linkedTo;
 		this.extraPropertiesList = [ "image", "linkedTo" ];
 	}
@@ -113,9 +119,21 @@ export class EducationRecord extends CareerInfo {
 	
 	constructor(educationConfig) {
 		var configMap = [ "title", "languages", "description", "startDate", "endDate"];
-		super("education", educationConfig, configMap);
-		this.certificate = educationConfig.certificate;
+		super("education", educationConfig, configMap);		
+		this.certificate = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
 		this.extraPropertiesList = [ "certificate" ];
 	}
 }
+
+
+function buildImageElement(location, title){
+	var wrapper = document.createElement("div");
+	wrapper.classList.add("thumb");
+	var img = document.createElement("img");
+	img.setAttribute("src", location);
+	img.setAttribute("title", title);
+	wrapper.appendChild(img);
+	return wrapper;
+}
+
 
