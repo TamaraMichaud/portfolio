@@ -1,12 +1,16 @@
 import {fetchFileContents} from './FetchConfig.js';
 import {ProjectRecord, JobRecord, EducationRecord} from './work/CareerInfo.js';
 
+var orbWidth = 7; //TODO: find a way to tie this dynamically to the css
+var innerWidth = 100;
 var globalConfig;
 fetchFileContents("career").then((jsonContents) => {
 	globalConfig = jsonContents;
 	uiController.init();
 });
 
+
+//body.addEventListener("resize", positionOrbs);
 
 var uiController = (function(){
 	
@@ -33,28 +37,35 @@ var uiController = (function(){
 			buildItemArray(globalConfig.education, EducationRecord);
 		  
 console.log(careerItemArray);
+		  
 		  // get a list of timestamp values
-			var d = new Date();
-			var maxDate = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
-			var refArray = [];
+			
+			var orderedRefsArray = [];
+		   var maxDate = getMaxDate();
 			var minDate = maxDate;
 			// we grab all the dates and print a div per 0^10
 			careerItemArray.forEach(a => {
 				var refValue = (Array.isArray(a.ref)) ? a.ref[0] : a.ref;
 				minDate = (refValue > minDate) ? minDate : refValue;
-				refArray.push(refValue);
+				orderedRefsArray.push(refValue);
 			});
-			refArray.push(maxDate);
-
-			var tlH = timeLine.getBoundingClientRect();
-		  	var tlW = timeLine.clientWidth / (refArray.length - 1);
-//		  console.log(`tlh: top: ${tlH.top}, bottom: ${tlH.bottom}`)
-//		  
-//		  console.log(`${tlH.top + ((tlH.bottom - tlH.top) / 2)}px`)
+			orderedRefsArray.push(maxDate);
+console.log(orderedRefsArray.sort((a,b)=>a-b));
+			var tlH = timeLine.getBoundingClientRect().top - 49;
+		  	var tlW = (timeLine.clientWidth - orbWidth)  / (orderedRefsArray.length - 1);
+		  
 		   var leftPos = 0; 
-			refArray.forEach((ref, index) =>  {
-
-				var item = careerItemArray[index];
+		   var innerYRef = 0;
+		   var innerXRef = 0;
+			orderedRefsArray.forEach((ref, index, fullArray) =>  {
+console.log("REF: " + ref);
+				var item = careerItemArray.find(obj => {
+var arrayitemref = (Array.isArray(obj.ref)) ? obj.ref[0] : obj.ref;
+				console.log("matches " + arrayitemref + "?");
+														  
+														 return arrayitemref === ref});
+console.log("ref:");
+console.log(item);
 				//create orb,
 				var newOrb = document.createElement("div");
 				newOrb.id = "orb-" + index;
@@ -70,6 +81,7 @@ console.log(careerItemArray);
 				}
 				elementObj.id = "info-" + index;
 				elementObj.style.setProperty("display", "none");
+				elementObj.classList.add(`pos-${innerYRef}`);
 				// append item element
 	
 				newOrb.appendChild(elementObj);
@@ -86,18 +98,20 @@ console.log(careerItemArray);
 
 				// append orb at position
 				newOrb.style.setProperty("position", "absolute");
-				newOrb.style.setProperty("top", `${tlH.top - 49.5}px`);
+				newOrb.style.setProperty("top", `${tlH}px`);
 				newOrb.style.setProperty("left", `${leftPos}px`);
-				leftPos += tlW;
 				
 				timeLine.appendChild(newOrb);
 				
+				leftPos += tlW;
+				innerYRef = (innerYRef === 2) ? 0 : ++innerYRef;
+				innerXRef -= innerWidth  / (fullArray.length - 1);
 				
-//				console.log(`appending to ${timeLine.id} the positions of left ${leftPos}px. Top is... ${document.getElementById(newOrb.id).getAttribute("top")}?`);
-			});
+				var innerElem = document.getElementById(elementObj.id);
+				innerElem.style.left = `${innerXRef}px`;
 
-		  //TODO: push one final orb for "today", only the date in it.
-		  
+			});
+	  
 	  }
 	}
         
@@ -105,4 +119,7 @@ console.log(careerItemArray);
 
 
 
-
+function getMaxDate(){
+	var d = new Date();
+	return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+}

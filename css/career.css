@@ -25,10 +25,22 @@ div#timeline div.orb div.item-wrapper{
 /*	margin: 0 5px;*/
 	overflow-y: auto;
 	border-radius: 5px 0 0 5px;
-	
-	top: -300px;
+	position: relative;
+/*	top: -300px;*/
 	padding: 2px 3px;
 }
+
+div#timeline div.orb div.item-wrapper.pos-0{
+	top: -250px;
+}
+div#timeline div.orb div.item-wrapper.pos-1{
+	top: -125px;
+}
+div#timeline div.orb div.item-wrapper.pos-2{
+	top: 25px;
+}
+
+
 
 div#timeline div.orb div.item-wrapper [name="title"] {
 	
