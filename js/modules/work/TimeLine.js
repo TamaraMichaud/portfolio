@@ -12,7 +12,6 @@ export class TimeLine {
 		this.posX = this.element().getBoundingClientRect().left - 20;
 		this.posY = this.element().getBoundingClientRect().top - 57;
 		this.space = (this.element().clientWidth - this.orbWidth) / (divisor - 1);
-console.log(`SPACER: ${this.space}`)
 		return [this.posX, this.posY, this.space];
 	}
 	

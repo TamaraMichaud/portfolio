@@ -1,3 +1,12 @@
+:root {
+	--job-pop-bg: rgba(0, 199, 10, 0.85);
+	--job-pop-tt: rgba(0, 209, 10, 0.85);
+	--proj-pop-bg: rgba(0, 139, 10, 0.85);
+	--proj-pop-tt: rgba(0, 149, 10, 0.85);
+	--edu-pop-bg: rgba(50, 209, 10, 0.85);
+	--edu-pop-tt: rgba(60, 209, 10, 0.85);
+}
+
 .cover-text {
 	vertical-align: middle;
 }
@@ -17,29 +26,65 @@
 /* pop-up items */
 
 div#timeline div.orb div.item-wrapper{
-	width: 300px;
-	height: 100px;
+
+	min-width: 300px;
 	font-size: 0.9em;
-	background: rgba(0, 199, 10, 0.85);
 	color: white;
 	overflow-y: auto;
-	border-radius: 5px 0 0 5px;
+	border-radius: 5px;
 	position: relative;
-	padding: 2px 3px;
+}
+
+div#timeline div.orb div.item-wrapper div{
+  padding: 2px 8px;
 }
 
 div#timeline div.orb div.item-wrapper.pos-0{
-	top: -250px;
+	top: -300px;
 }
 div#timeline div.orb div.item-wrapper.pos-1{
 	top: -125px;
-	background: rgba(0, 199, 10, 0.95);
 }
 div#timeline div.orb div.item-wrapper.pos-2{
 	top: 25px;
-	background: rgba(0, 199, 10, 0.75);
 }
 
+div#timeline div.orb div.item-wrapper.project {
+	background: var(--proj-pop-bg);
+}
+div#timeline div.orb div.item-wrapper.project .header, 
+div#timeline div.orb div.item-wrapper.project .footer {
+	background: var(--proj-pop-tt);
+}
+
+div#timeline div.orb div.item-wrapper.education {
+	background: var(--edu-pop-bg);
+}
+div#timeline div.orb div.item-wrapper.education .header, 
+div#timeline div.orb div.item-wrapper.education .footer {
+	background: var(--edu-pop-tt);
+}
+
+div#timeline div.orb div.item-wrapper.job {
+	background: var(--job-pop-bg);
+}
+div#timeline div.orb div.item-wrapper.job .header, 
+div#timeline div.orb div.item-wrapper.job .footer {
+	background: var(--job-pop-tt);
+}
+
+div#timeline div.orb div.item-wrapper .header {
+	border-bottom: 0.1px solid darkgreen;
+}
+
+div#timeline div.orb div.item-wrapper .footer {
+	
+	border-top: 0.5px solid darkgreen;
+	font-size: 1.2em;
+	border-radius: 0 0 5px 5px;
+/*	margin-top: 5px;*/
+}
+	
 
 
 div#timeline div.orb div.item-wrapper [name="title"] {
@@ -48,34 +93,15 @@ div#timeline div.orb div.item-wrapper [name="title"] {
 	text-align: left;
 	font-weight: bold;
 	display: inline-block;
-	margin-right: 5px;
 	padding-right: auto;
 }
 
 div#timeline div.orb div.item-wrapper [name="subHeading"] {
-	
-/*
-	text-align: right;
-	display: inline-block;
-	margin-left: auto;
-*/
+		
+	margin-left: 5px;
+	font-style: italic;
 }
 
 div#timeline div.orb div.item-wrapper [name="description"] {
-	
-	
-	display: inline-block;
-	margin: 5px 0;
-	padding: 5px 0;
-	border-bottom: 0.1px solid darkgreen;
-	border-top: 0.1px solid darkgreen;
+	text-align: justify;
 }
-
-
-div#timeline div.orb div.item-wrapper [name="dateFrom"],
-div#timeline div.orb div.item-wrapper [name="dateTo"] {
-	display: inline;
-	width: 45%;
-	font-size: 1.2em;
-}
-	

@@ -1,6 +1,7 @@
 class CareerInfo {
 	
-	constructor(careerObject, objectMap) {
+	constructor(type, careerObject, objectMap) {
+		this.type = type;
 		this.title = careerObject[objectMap[0]];
 		this.subHeading = careerObject[objectMap[1]];
 		this.description = careerObject[objectMap[2]];
@@ -50,13 +51,17 @@ class CareerInfo {
 		
 		var wrapper = document.createElement("div");
 		wrapper.classList.add("item-wrapper");
+		wrapper.classList.add(this.type);
 		wrapper.style.setProperty("position", "absolute");
 
 		var wrapperHeader = document.createElement("div");
+		wrapperHeader.classList.add('header');
 		wrapperHeader.appendChild(elemArray[0]);
-		wrapperHeader.appendChild(elemArray[1]);
-		
+		if(elemArray[1].innerHTML != "") {
+			wrapperHeader.appendChild(elemArray[1]);
+		}
 		var wrapperDates = document.createElement("div");
+		wrapperDates.classList.add('footer');
 		wrapperDates.appendChild(elemArray[3]);
 		wrapperDates.appendChild(nextLine('&nbsp; - &nbsp;', "spacer"));	
 		wrapperDates.appendChild(elemArray[4]);
@@ -64,14 +69,17 @@ class CareerInfo {
 		wrapper.appendChild(wrapperHeader);
 		elemArray[2].style.setProperty("display", "block")
 		wrapper.appendChild(elemArray[2]);
-		wrapper.appendChild(wrapperDates);
-		
+	
 		if(this.extraPropertiesList) {
 			for(var nextProperty of this.extraPropertiesList) {
-				wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+				if(this[nextProperty] != "") {
+					wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+				}
 			}
 		}
-		
+
+		wrapper.appendChild(wrapperDates);
+			
 		return wrapper;
 	}
 }
@@ -82,7 +90,7 @@ export class JobRecord extends CareerInfo {
 	constructor(jobConfig) {
 		
 		var configMap = [ "employer", "jobTitle", "description", "startDate", "endDate" ];
-		super(jobConfig, configMap);
+		super("job", jobConfig, configMap);
 	}
 	
 }			
@@ -92,7 +100,7 @@ export class ProjectRecord extends CareerInfo {
 	
 	constructor(projectConfig) {
 		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
-		super(projectConfig, configMap);
+		super("project", projectConfig, configMap);
 		this.image = projectConfig.image;
 		this.linkedTo = projectConfig.linkedTo;
 		this.extraPropertiesList = [ "image", "linkedTo" ];
@@ -105,7 +113,7 @@ export class EducationRecord extends CareerInfo {
 	
 	constructor(educationConfig) {
 		var configMap = [ "title", "languages", "description", "startDate", "endDate"];
-		super(educationConfig, configMap);
+		super("education", educationConfig, configMap);
 		this.certificate = educationConfig.certificate;
 		this.extraPropertiesList = [ "certificate" ];
 	}
