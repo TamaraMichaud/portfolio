@@ -29,27 +29,49 @@ class CareerInfo {
 		}
 	}
 	
-	
+	// Title - subheading
+	// description
+	// datefrom - dateto
+	// other infos
 	asElement(){
 		const propertiesList = [ "title", "subHeading", "description", "dateFrom", "dateTo"];
-		if(this.extraPropertiesList) {
-			propertiesList.push(...this.extraPropertiesList);
-		}
 		// create elements
 		var nextLine = (textValue, title) => {
-			var line = document.createElement("p");
+			var line = document.createElement("div");
 			line.setAttribute("name", title);
 			line.style.setProperty("color", "darkgreen");
-			line.textContent = textValue;
+			line.style.setProperty("display", "inline");
+			line.innerHTML = textValue;
 			return line;
 		}
 
+		var elemArray = []
+		for(var nextProperty of propertiesList){
+			elemArray.push(nextLine(this[nextProperty], nextProperty));
+		}
+		
 		var wrapper = document.createElement("div");
 		wrapper.classList.add("item-wrapper");
 		wrapper.style.setProperty("position", "absolute");
+
+		var wrapperHeader = document.createElement("div");
+		wrapperHeader.appendChild(elemArray[0]);
+		wrapperHeader.appendChild(elemArray[1]);
 		
-		for(var nextProperty of propertiesList) {
-			wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+		var wrapperDates = document.createElement("div");
+		wrapperDates.appendChild(elemArray[3]);
+		wrapperDates.appendChild(nextLine('&nbsp; - &nbsp;', "spacer"));	
+		wrapperDates.appendChild(elemArray[4]);
+
+		wrapper.appendChild(wrapperHeader);
+		elemArray[2].style.setProperty("display", "block")
+		wrapper.appendChild(elemArray[2]);
+		wrapper.appendChild(wrapperDates);
+		
+		if(this.extraPropertiesList) {
+			for(var nextProperty of this.extraPropertiesList) {
+				wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+			}
 		}
 		
 		return wrapper;

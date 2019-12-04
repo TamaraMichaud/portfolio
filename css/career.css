@@ -70,3 +70,11 @@ div#timeline div.orb div.item-wrapper [name="description"] {
 /*	border-top: black 1px;*/
 }
 
+
+div#timeline div.orb div.item-wrapper [name="dateFrom"],
+div#timeline div.orb div.item-wrapper [name="dateTo"] {
+	display: inline;
+	width: 45%;
+	font-size: 1.2em;
+}
+	
