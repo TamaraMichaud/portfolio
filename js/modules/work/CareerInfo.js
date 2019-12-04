@@ -18,13 +18,12 @@ class CareerInfo {
 		
 			var singleDate = (from === "" ) ? to : from;
 			// convert this into a timestamp value
-			return Date.UTC(...singleDate.split("-"));
+			return Date.UTC(...(singleDate.split("/")).reverse());
 			
 		} else {
 			
-			var oldestDate = Date.UTC(...from.split("-"));
-			var newestDate = Date.UTC(...to.split("-"));
-				
+			var oldestDate = Date.UTC(...(from.split("/")).reverse());
+			var newestDate = Date.UTC(...(to.split("/")).reverse());
 			return [ oldestDate, newestDate ];
 		}
 	}
@@ -39,7 +38,6 @@ class CareerInfo {
 		var nextLine = (textValue, title) => {
 			var line = document.createElement("div");
 			line.setAttribute("name", title);
-			line.style.setProperty("color", "darkgreen");
 			line.style.setProperty("display", "inline");
 			line.innerHTML = textValue;
 			return line;

@@ -19,15 +19,12 @@
 div#timeline div.orb div.item-wrapper{
 	width: 300px;
 	height: 100px;
-	font-size: 10px;
-	display: inline-block;
-	background: darkgrey;
-/*	border: 3px solid lime;*/
-/*	margin: 0 5px;*/
+	font-size: 0.9em;
+	background: rgba(0, 199, 10, 0.85);
+	color: white;
 	overflow-y: auto;
 	border-radius: 5px 0 0 5px;
 	position: relative;
-/*	top: -300px;*/
 	padding: 2px 3px;
 }
 
@@ -36,9 +33,11 @@ div#timeline div.orb div.item-wrapper.pos-0{
 }
 div#timeline div.orb div.item-wrapper.pos-1{
 	top: -125px;
+	background: rgba(0, 199, 10, 0.95);
 }
 div#timeline div.orb div.item-wrapper.pos-2{
 	top: 25px;
+	background: rgba(0, 199, 10, 0.75);
 }
 
 
@@ -55,20 +54,21 @@ div#timeline div.orb div.item-wrapper [name="title"] {
 
 div#timeline div.orb div.item-wrapper [name="subHeading"] {
 	
-	
+/*
 	text-align: right;
 	display: inline-block;
 	margin-left: auto;
+*/
 }
 
 div#timeline div.orb div.item-wrapper [name="description"] {
 	
 	
 	display: inline-block;
-	margin: none;
-	margin-top: 1px;
-	padding: none;
-/*	border-top: black 1px;*/
+	margin: 5px 0;
+	padding: 5px 0;
+	border-bottom: 0.1px solid darkgreen;
+	border-top: 0.1px solid darkgreen;
 }
 
 

@@ -33,7 +33,7 @@ var uiController = (function(){
 			buildItemArray(globalConfig.projects, ProjectRecord);
 			buildItemArray(globalConfig.education, EducationRecord);
 
-			var timeline = new TimeLine(careerItemArray, orbWidth);
+			var timeline = new TimeLine(careerItemArray, orbWidth, innerWidth);
 			timeline.populateTimeline();
 
 			window.addEventListener("resize", () => timeline.reset());
