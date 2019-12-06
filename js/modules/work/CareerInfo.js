@@ -119,9 +119,11 @@ export class EducationRecord extends CareerInfo {
 	
 	constructor(educationConfig) {
 		var configMap = [ "title", "languages", "description", "startDate", "endDate"];
-		super("education", educationConfig, configMap);		
-		this.certificate = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
-		this.extraPropertiesList = [ "certificate" ];
+		super("education", educationConfig, configMap);
+		if(educationConfig.certificate) {
+			this.certificate = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
+		   this.extraPropertiesList = [ "certificate" ];
+		}
 	}
 }
 
