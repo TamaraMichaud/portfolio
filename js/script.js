@@ -17,7 +17,24 @@ var qodCredit = 'courtesy of &nbsp;&nbsp;<span style="z-index:50;font-size:0.9em
 
 
 // for index page only...
-document.querySelector('.orb.play.workouts').addEventListener('click', function(){
+document.querySelectorAll('.orb.orb-major').forEach(elem => {
+	
+	elem.addEventListener('mouseover', function(){
+    
+		if(this.parentNode.classList.contains('moving')){
+			this.parentNode.classList.remove('moving');
+			this.parentNode.classList.add('locked');
+			var otherId = (this.classList.contains("a")) ? "b" : "a";
+
+			var otherElem = this.parentElement.parentElement.getElementsByClassName("moving")[0];
+			otherElem.classList.remove('moving');
+			otherElem.classList.add('locked');
+		}
+
+	});
+});
+
+document.querySelector('.orb.orb-major.play').addEventListener('click', function(){
     
 //    alert("Load the workouts page somehow!");
     window.location.href = "./pages/workouts.html";
@@ -29,7 +46,6 @@ document.querySelector('.orb.orb-major.work').addEventListener('click', function
 //    alert("Load the workouts page somehow!");
     window.location.href = "./pages/work.html";
 })
-
 
 
 

@@ -11,27 +11,26 @@
 	z-index: -99;
 }
 
-.pivot.a.play {
+.pivot.a.play.moving {
 	animation: figureEight 3s infinite cubic-bezier(.48,.86,.33,.27);
 	animation-delay: 1s;
 }
 /* TODO: media query to adjust orbs LEFT position  */
 
-.pivot.b.play {
+.pivot.b.play.moving {
 	animation: figureEight 3s reverse infinite cubic-bezier(.56,.77,.19,.07);
 	animation-delay: 1s;
 }
 
-.pivot.a.work {
+.pivot.a.work.moving {
 	animation: figureEight 3s infinite cubic-bezier(.36,.97,.19,.07);
 }
 
 /* TODO: media query to adjust orbs LEFT position  */
 
-.pivot.b.work {
+.pivot.b.work.moving {
 	animation: figureEight 3s reverse infinite cubic-bezier(.56,.77,.19,.07);
 }
-
 
 .orb {
 	z-index: 99;
