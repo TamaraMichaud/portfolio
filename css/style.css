@@ -3,6 +3,7 @@ body,
 .cover {
 	background: black;
    height: 95.5%;
+	min-height: 275px;
 }
 
 .cover {

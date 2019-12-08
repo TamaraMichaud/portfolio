@@ -20,17 +20,22 @@ var qodCredit = 'courtesy of &nbsp;&nbsp;<span style="z-index:50;font-size:0.9em
 document.querySelectorAll('.orb.orb-major').forEach(elem => {
 	
 	elem.addEventListener('mouseover', function(){
-    
-		if(this.parentNode.classList.contains('moving')){
-			this.parentNode.classList.remove('moving');
-			this.parentNode.classList.add('locked');
-			var otherId = (this.classList.contains("a")) ? "b" : "a";
+    		
+		var elems = this.parentElement.parentElement.
+							getElementsByClassName('pivot');
 
-			var otherElem = this.parentElement.parentElement.getElementsByClassName("moving")[0];
-			otherElem.classList.remove('moving');
-			otherElem.classList.add('locked');
-		}
+		Array.prototype.forEach.call(elems, element => {
 
+			element.classList.remove('moving');
+			this.classList.add('caught');
+		});
+
+		setTimeout(() => {
+				Array.prototype.forEach.call(elems, element => {
+					element.classList.add('moving');
+					this.classList.remove('caught');
+				});
+			}, 3000);
 	});
 });
 

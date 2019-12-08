@@ -1,3 +1,33 @@
+//WelcomeOrbs
+
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 console.log("BEGIN");
 //(function() {
 	
@@ -6,7 +36,9 @@ console.log("BEGIN");
 	for(var o = 0; o < mainOrbs.length ; o++){
 
 		// get the children
-		var children = mainOrbs[o].children;
+//		var children = mainOrbs[o].children;
+		
+		
 
 		
 			// scatter them around their parent
