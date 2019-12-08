@@ -1,28 +1,7 @@
-import {getElement} from './ElementSeeker.js';
-
-class OrbActions {
-	
-	constructor(orbElementObj) {
-	// createOrb(major/large)
-	 	this.orbsList = [];
-		this.orbsList.push(orbElementObj);
-	}
-
-	addOrb(orbElementObj){
-		this.orbsList.push(orbElementObj);
-	}
-	
-	//getOrb(){
-	
-//}
-	
-	
-	
-}
+import {findElement, getElement} from './ElementSeeker.js';
 
 
-
-export class TimelineOrb extends OrbActions {
+export class TimelineOrb {
 	
 	constructor(orbId, elementObj){
 		var newOrb = document.createElement("div");
@@ -45,7 +24,7 @@ export class TimelineOrb extends OrbActions {
 		// append orb at position
 		newOrb.style.setProperty("position", "absolute");
 
-		super(newOrb);
+//this.orb = newOrb;
 		return newOrb;
 	}
 	
@@ -54,88 +33,72 @@ export class TimelineOrb extends OrbActions {
 
 
 
-export class InfinityOrb extends OrbActions {
+export class InfinityOrb {
+//	extends OrbActions {
 	
 	constructor(orbLinkType){
+
 		this.type = orbLinkType;
+		this.orbsList = ["a", "b"];
 		this.a = { 
-			orb: this.getOrb('a'),
-			pivot: this.getPivot('a')
+			orb: `.${orbLinkType}.orb-major.a`,
+			pivot: `.${orbLinkType}.pivot.a`
 		}
 		this.b = { 
-			orb: this.getOrb('b'),
-			pivot: this.getPivot('b')
+			orb: `.${orbLinkType}.orb-major.b`,
+			pivot: `.${orbLinkType}.pivot.b`
 		}		
 	}
 	
-	getPivot(ab){
-		console.log("err...");
+	
+	addListeners(href_link) {
+					
+		for(var nextOrb of this.orbsList) {
+			
+			this.addClick(this[nextOrb].orb, href_link);
+			
+			var other = (nextOrb === "a") ? "b" : "a";
+			this.addMouseOver(this[nextOrb], this[other]);
+		}
+	}
+			
+	
+	addClick(orbRef, href){
+
+		findElement(orbRef).addEventListener('click', function(){
+
+			window.location.href = href;
+		})
 	}
 	
 	
-	
-//this.orbsList == pairs of orbs
-	//classList.add()
-	//appendCareerItem(careerInfo object)
-	//setEventListener(on-hover/click)
-	
+	addMouseOver(mainRefs, otherRefs){
+
+		var mainOrb = findElement(mainRefs.orb);
+		var mainPivot = findElement(mainRefs.pivot);
+		var otherOrb = findElement(otherRefs.orb);
+		var otherPivot = findElement(otherRefs.pivot);
+				
+		mainOrb.addEventListener('mouseover', function(){
+
+			if(mainPivot.classList.contains('moving')) {
+
+				// freeze, ...wait... unfreeze
+				mainPivot.classList.remove('moving');
+				otherPivot.classList.remove('moving');
+				mainOrb.classList.add('caught');
+				otherOrb.classList.add('caught');
+
+				setTimeout(() => {
+
+					mainPivot.classList.add('moving');
+					otherPivot.classList.add('moving');
+					mainOrb.classList.remove('caught');
+					otherOrb.classList.remove('caught');
+
+				}, 3000);
+			} 
+		});
+	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log("BEGIN");
-//(function() {
-	
-	var mainOrbs = document.getElementsByClassName('orb-major');
-
-	for(var o = 0; o < mainOrbs.length ; o++){
-
-		// get the children
-//		var children = mainOrbs[o].children;
-		
-		
-
-		
-			// scatter them around their parent
-    	// make them shiver
-			// make them float in figure of 8
-
-	
-	
-	}
-
-
-	
-// on click of major, freeze children and display their title
-
-// on click of child, go to destination
-
-//listeners, keyboard events:  keydown, keypress, keyup
-
-	
-	
-//})();
