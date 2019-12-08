@@ -1,5 +1,5 @@
 import {InfinityOrb} from './modules/Orbs.js';
-import {getElement} from './ElementSeeker.js';
+import {getElement} from './modules/ElementSeeker.js';
 
 
 var workOrbPair = new InfinityOrb('work');

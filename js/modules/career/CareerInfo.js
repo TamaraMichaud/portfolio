@@ -74,6 +74,7 @@ class CareerInfo {
 		wFooter.appendChild(nextLine(dateText, 'dates'));
 
 		var wBody = newDiv(['body']);
+		wBody.id = this.title;
 		if(this.description !== "") {
 			
 			wBody.appendChild(nextLine(this.description, 'description', 'block'));
@@ -97,7 +98,19 @@ class CareerInfo {
 		}
 		
 		wrapper.appendChild(wHeader);
-		wrapper.appendChild(wBody);
+		if(wBody.hasChildNodes()) { 
+			wBody.style.setProperty("display", "none");
+			wrapper.appendChild(wBody);
+			wrapper.addEventListener('mouseover', () =>{
+				document.getElementById(this.title).style.setProperty("display", "block");
+				
+			});
+			wrapper.addEventListener('mouseout', () =>{
+				document.getElementById(this.title).style.setProperty("display", "none");
+				
+			});
+
+		};
 		wrapper.appendChild(wFooter);
 			
 		return wrapper;
