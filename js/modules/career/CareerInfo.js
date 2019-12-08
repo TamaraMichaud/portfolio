@@ -29,62 +29,76 @@ class CareerInfo {
 		}
 	}
 	
-	// Title - subheading
-	// description
-	// datefrom - dateto
-	// other infos
+
 	asElement(){
-		const propertiesList = [ "title", "subHeading", "description", "dateFrom", "dateTo"];
-		// create elements
-		var nextLine = (textValue, title) => {
-			var line = document.createElement("div");
+		// Title - subheading
+		// description
+			// (other infos)
+		// datefrom - dateto
+
+		var nextLine = (textValue, title, display) => {
+			var line = newDiv();
 			line.setAttribute("name", title);
-			line.style.setProperty("display", "inline");
+			line.style.setProperty("display", display);
 			line.innerHTML = textValue;
 			return line;
 		}
-
-		var elemArray = []
-		for(var nextProperty of propertiesList){
-			elemArray.push(nextLine(this[nextProperty], nextProperty));
-		}
 		
-		var wrapper = document.createElement("div");
-		wrapper.classList.add("item-wrapper");
-		wrapper.classList.add(this.type);
+		var newDiv = (classList) => {
+			var tmpDiv = document.createElement("div");
+			if(classList) {
+				tmpDiv.classList.add(...classList);
+			}
+			return tmpDiv;
+		}
+
+		var wrapper = newDiv(['item-wrapper', this.type]);
 		wrapper.style.setProperty("position", "absolute");
 
-		var wrapperHeader = document.createElement("div");
-		wrapperHeader.classList.add('header');
-		wrapperHeader.appendChild(elemArray[0]);
-		if(elemArray[1].innerHTML != "") {
-			wrapperHeader.appendChild(elemArray[1]);
+		var wHeader = newDiv(["header"]);
+		wHeader.style.setProperty("display", 'block');
+		
+		wHeader.appendChild(nextLine(this.title, 'title', 'inline'));
+		if(this.subHeading !== "") {
+			wHeader.appendChild(nextLine(this.subHeading, 'subHeading', 'inline'));
 		}
-		var wrapperDates = document.createElement("div");
-		wrapperDates.classList.add('footer');
-		wrapperDates.appendChild(elemArray[3]);
-		wrapperDates.appendChild(nextLine('&nbsp; - &nbsp;', "spacer"));	
-		wrapperDates.appendChild(elemArray[4]);
 
-		wrapper.appendChild(wrapperHeader);
-		elemArray[2].style.setProperty("display", "block")
-		wrapper.appendChild(elemArray[2]);
+		var wFooter = newDiv(['footer']);
+		var dateText = "";
+		if(this.dateFrom == "" || this.dateTo == "") {
+			dateText = this.dateFrom + this.dateTo;
+		} else {
+			dateText = this.dateFrom + '&nbsp; - &nbsp;' + this.dateTo;
+		}
+		
+		wFooter.appendChild(nextLine(dateText, 'dates'));
+
+		var wBody = newDiv(['body']);
+		if(this.description !== "") {
+			
+			wBody.appendChild(nextLine(this.description, 'description', 'block'));
+		}
 	
 		if(this.extraPropertiesList) {
 			for(var nextProperty of this.extraPropertiesList) {
-				if(this[nextProperty] != "") {
-					console.log(nextProperty);
-					console.log(this[nextProperty]);
-					if(typeof(this[nextProperty]) === "string" || this[nextProperty] === undefined) {
-						wrapper.appendChild(nextLine(this[nextProperty], nextProperty));	
+				var nextVal = this[nextProperty];
+				if(nextVal != "") {
+					
+					var bodyChild;
+					
+					if(typeof(nextVal) === "string" || nextVal === undefined) {
+						bodyChild = nextLine(nextVal, nextProperty);	
 					} else {
-						wrapper.appendChild(this[nextProperty]);	
+						bodyChild = this[nextProperty];	
 					}
+					wBody.appendChild(bodyChild);
 				}
 			}
 		}
-
-		wrapper.appendChild(wrapperDates);
+		
+		wrapper.appendChild(wHeader);
+		wrapper.appendChild(wBody);
+		wrapper.appendChild(wFooter);
 			
 		return wrapper;
 	}
@@ -102,6 +116,24 @@ export class JobRecord extends CareerInfo {
 }			
 
 
+export class TimeRecord extends CareerInfo {
+
+	constructor(){
+		const propertiesList = [ "title", "subHeading", "description", "dateFrom", "dateTo"];
+		
+		var timeObj = {};
+		propertiesList.forEach(propName => {
+			timeObj[propName] = "";
+		});
+		var now = new Date();
+		timeObj.title = now.toGMTString();
+		timeObj.dateFrom = now.toLocaleDateString();
+		super("date", timeObj, propertiesList);
+	}
+	
+}
+
+
 export class ProjectRecord extends CareerInfo {
 	
 	constructor(projectConfig) {
@@ -111,7 +143,6 @@ export class ProjectRecord extends CareerInfo {
 		this.linkedTo = projectConfig.linkedTo;
 		this.extraPropertiesList = [ "image", "linkedTo" ];
 	}
-
 }
 
 
@@ -137,5 +168,4 @@ function buildImageElement(location, title){
 	wrapper.appendChild(img);
 	return wrapper;
 }
-
 

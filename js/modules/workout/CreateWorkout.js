@@ -1,4 +1,4 @@
-import {getElement} from './elementSeeker.js';
+import {getElement} from '../ElementSeeker.js';
 
 export class CreateWorkout {
 //	this.workoutExercises = [];

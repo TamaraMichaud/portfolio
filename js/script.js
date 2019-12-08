@@ -1,3 +1,11 @@
+//import {InfinityOrb} from './Orbs.js';
+////
+////
+//var workOrbPair = new InfinityOrb('work'); // return my 2 work Elements (and their pivot..?)
+//
+
+
+
 
 //import {searchClients} from './SearchFilterClients.js';
 //import {createCustomElement} from './modules/CustomElements.js';
@@ -28,12 +36,14 @@ document.querySelectorAll('.orb.orb-major').forEach(elem => {
 
 			element.classList.remove('moving');
 			this.classList.add('caught');
+			this.parentElement.nextElementSibling.classList.add('caught');
 		});
 
 		setTimeout(() => {
 				Array.prototype.forEach.call(elems, element => {
 					element.classList.add('moving');
-					this.classList.remove('caught');
+					element.classList.remove('caught');
+					this.parentElement.nextElementSibling.classList.remove('caught');
 				});
 			}, 3000);
 	});

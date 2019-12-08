@@ -1,6 +1,6 @@
 import {getElement} from './elementSeeker.js';
-import {AddEditModal} from './AddEditModal.js';
-import {CreateWorkout} from './CreateWorkout.js';
+import {AddEditModal} from './workout/AddEditModal.js';
+import {CreateWorkout} from './workout/CreateWorkout.js';
 import {fetchFileContents} from './FetchConfig.js';
 
 var globalExercisesConfig;

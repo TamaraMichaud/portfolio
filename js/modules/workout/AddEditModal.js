@@ -1,4 +1,4 @@
-import {findElement, getElement} from './elementSeeker.js';
+import {findElement, getElement} from '../ElementSeeker.js';
 
 const variationsArray = ['level', 'description', 'reps', 'sets'];
 

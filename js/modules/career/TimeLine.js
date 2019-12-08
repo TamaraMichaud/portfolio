@@ -1,3 +1,5 @@
+import {TimelineOrb} from '../Orbs.js';
+
 export class TimeLine {
 	
 	constructor(careerItemArray, orbWidth, innerWidth){
@@ -31,8 +33,7 @@ export class TimeLine {
 	
 	populateTimeline(){
 
-		var maxDate = this.getMaxDate();
-		var minDate = maxDate;
+		var minDate; 
 		// order the career objects (add one for "today")
 		this.careerArray.sort((a,b) => {
 			var refA = (Array.isArray(a.ref)) ? a.ref[0] : a.ref;
@@ -40,7 +41,6 @@ export class TimeLine {
 			minDate = (refA > minDate) ? minDate : refA;
 			return refA - refB;
 		});
-		this.careerArray.push(maxDate);
 
 		// grab all the dates and print a div per [space]
 		this.getPositionPoints(this.careerArray.length);
@@ -50,9 +50,9 @@ export class TimeLine {
 		var innerXRef = 0;
 		this.careerArray.forEach((ref, index, fullArray) =>  {
 
-			//create orb,
+			//create orb and child
 			var careerObj = this.createCareerItem(index, ref, innerXRef, innerYRef);
-			var newOrb = this.createPopulatedOrb(index, careerObj, leftPos);
+			var newOrb = this.createPopulatedOrb(index, careerObj);
 
 			this.element().appendChild(newOrb);
 
@@ -66,13 +66,8 @@ export class TimeLine {
 	
 	createCareerItem(index, ref, innerXRef, innerYRef){
 			
-		var elementObj;
-		if(ref.element) {
-			elementObj = ref.element;
-		} else {
-			elementObj = document.createElement("div");
-			elementObj.textContent = "TODAYS DATE";
-		}
+		var elementObj = ref.element;
+
 		elementObj.id = "info-" + index;
 		elementObj.style.setProperty("display", "none");
 		elementObj.style.setProperty("left", `${innerXRef}px`);
@@ -82,34 +77,10 @@ export class TimeLine {
 	}
 	
 	
-	createPopulatedOrb(index, elementObj, leftPos){
+	createPopulatedOrb(index, elementObj){
 
-		var newOrb = document.createElement("div");
-		newOrb.id = "orb-" + index;
-		newOrb.classList.add("orb-large");
-		newOrb.classList.add("orb");
+		return new TimelineOrb("orb-" + index, elementObj);
 
-		// append item element
-		newOrb.appendChild(elementObj);
-
-		// bind click action (show item element)
-		newOrb.addEventListener('click', () => {
-
-		var infoEl = document.getElementById(elementObj.id);
-		var newVal = 
-			 (infoEl.style.display === "none") ? "inline" : "none";
-		infoEl.style.setProperty("display", newVal);
-		});
-
-		// append orb at position
-		newOrb.style.setProperty("position", "absolute");
-
-		return newOrb;
 	}
-					 
 
-	getMaxDate(){
-		var d = new Date();
-		return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
-	}	
 }

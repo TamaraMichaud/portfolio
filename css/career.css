@@ -1,10 +1,12 @@
 :root {
-	--job-pop-bg: rgba(0, 199, 10, 0.85);
-	--job-pop-tt: rgba(0, 209, 10, 0.85);
+	--edu-pop-bg: rgba(15, 209, 160, 0.85);
+	--edu-pop-tt: rgba(15, 199, 160, 0.85);
 	--proj-pop-bg: rgba(0, 139, 10, 0.85);
 	--proj-pop-tt: rgba(0, 149, 10, 0.85);
-	--edu-pop-bg: rgba(50, 209, 10, 0.85);
-	--edu-pop-tt: rgba(60, 209, 10, 0.85);
+	--job-pop-bg: rgba(50, 209, 10, 0.85);
+	--job-pop-tt: rgba(60, 209, 10, 0.85);
+	--day-pop-bg: rgba(209, 230, 0, 0.85);
+	--day-pop-tt: rgba(209, 209, 0, 0.85);
 }
 
 .cover-text {
@@ -47,6 +49,10 @@ div#timeline div.orb div.item-wrapper{
 	border-radius: 5px;
 	position: relative;
 }
+div#timeline div.orb div.item-wrapper.date {
+	width: auto;
+	min-width: 150px;
+}
 
 div#timeline div.orb div.item-wrapper div{
   padding: 2px 8px;
@@ -76,6 +82,13 @@ div#timeline div.orb div.item-wrapper.education {
 div#timeline div.orb div.item-wrapper.education .header, 
 div#timeline div.orb div.item-wrapper.education .footer {
 	background: var(--edu-pop-tt);
+}
+div#timeline div.orb div.item-wrapper.date {
+	background: var(--day-pop-bg);
+}
+div#timeline div.orb div.item-wrapper.date .header, 
+div#timeline div.orb div.item-wrapper.date .footer {
+	background: var(--day-pop-tt);
 }
 
 div#timeline div.orb div.item-wrapper.job {
