@@ -105,46 +105,6 @@ $(document).ready(function() {
         getElement(ids.authorId).innerHTML = qodObject.author;
         getElement(ids.attributionId).innerHTML = qodCredit;
     }
-
-//        loadConfigFromFile("exercises", loadWorkouts);
-//
-//    function loadConfigFromFile(fileName, onSuccessFunction){
-//                
-//        console.log("Processing contents of json config file: " + fileName);		
-//        var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
-//        var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
-//
-//        var urlPath = urlPathStart + projectDir + "/config/";
-//
-//        $.ajax({
-//                type: "GET",
-//                url: urlPath + fileName + ".json",
-//                dataType: "json",
-//
-//                error: function (e) {
-//                        alert("OOPS failed to load json config file!");
-//                        console.log("JSON file-reading Failed: ", e);
-//                },
-//
-//                success: function (responseObj) {
-//
-//                    onSuccessFunction(responseObj);
-//                }
-//        })
-//    }; 
-//    
-//
-//    function loadWorkouts(allExercisesConfigs){
-//
-//        // muscle-groups, workout-types, workouts
-//        var exercisesList = allExercisesConfigs["exercises"];
-//        var musclesList = allExercisesConfigs["muscle-groups"];
-//        var typesList = allExercisesConfigs["workout-types"];
-//
-//        console.log(exercisesList);
-//        // ^^ now we have an array of workout options, which we need to pass around to other objects...
-//    }
-    
     
 
 });

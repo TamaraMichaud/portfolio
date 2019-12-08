@@ -61,6 +61,19 @@
 }
 
 
+.caught {
+	height: 1.5em;
+	width: 1.5em;
+	border-radius: 1.5em;
+	animation: shiver 0.1s infinite linear;
+}
+.caught:hover {
+
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+
 @keyframes figureEight {
 	0.01%, 50% {
 		z-index: 99;
@@ -91,17 +104,6 @@
     to { box-shadow: 0 0 100px #f5c91a;}
 }
 */
-
-
-.caught:hover {
-
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-
 
 
 @keyframes shake {
