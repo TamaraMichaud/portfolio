@@ -6,7 +6,8 @@ var workOrbPair = new InfinityOrb('work');
 workOrbPair.addListeners("./pages/work.html");
 
 var playOrbPair = new InfinityOrb('play');
-playOrbPair.addListeners("./pages/workouts.html");
+//playOrbPair.addListeners("./pages/workouts.html");
+playOrbPair.addListeners("./pages/under-construction.html");
 
 
 
