@@ -6,10 +6,6 @@ body,
 	min-height: 275px;
 }
 
-#linkedIn-badge {
-    margin-left: 100px;
-    
-}
 .cover {
    background: url('../img/night.jpg') center center no-repeat;
    background-size: cover;
