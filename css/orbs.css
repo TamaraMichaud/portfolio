@@ -1,0 +1,137 @@
+.pivot {
+	width: 5px;
+	height: 2px;
+	position: relative;
+}
+.pivot.a {
+	left: 130px;
+}
+.pivot.b {
+	left: 190px;
+	z-index: -99;
+}
+
+.pivot.a.play.moving {
+	animation: figureEight 3s infinite cubic-bezier(.48,.86,.33,.27);
+	animation-delay: 1s;
+}
+/* TODO: media query to adjust orbs LEFT position  */
+
+.pivot.b.play.moving {
+	animation: figureEight 3s reverse infinite cubic-bezier(.56,.77,.19,.07);
+	animation-delay: 1s;
+}
+
+.pivot.a.work.moving {
+	animation: figureEight 3s infinite cubic-bezier(.36,.97,.19,.07);
+}
+
+/* TODO: media query to adjust orbs LEFT position  */
+
+.pivot.b.work.moving {
+	animation: figureEight 3s reverse infinite cubic-bezier(.56,.77,.19,.07);
+}
+
+.orb {
+	z-index: 99;
+	background: radial-gradient(yellow, orange);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0 0 5px gold;
+	width: 7px;
+	height: 7px;
+}
+
+.orb-large {
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px gold;	
+}
+.orb-major {
+	animation: orbPulse 2s infinite alternate;
+}
+
+.orb-major.a {
+	left: 24px;
+}
+.orb-major.b {
+	left: -36px;
+	top: -2px;
+}
+
+
+.caught {
+	height: 1.5em;
+	width: 1.5em;
+	border-radius: 1.5em;
+	animation: shiver 0.1s infinite linear;
+}
+.caught:hover {
+
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+
+@keyframes figureEight {
+	0.01%, 50% {
+		z-index: 99;
+	}
+	0.02% {
+		transform: rotate(360deg);
+	}
+	50.01% {
+		z-index: -99;
+		transform: none;
+	}
+	100% {
+		z-index: -99;
+	}
+}
+
+
+@keyframes orbPulse {
+
+    from {opacity: 1;}
+    to {opacity: 0.7;}
+}
+/*
+
+@keyframes flare {
+
+    from { box-shadow: 0 0 50px #f5c91a;}
+    to { box-shadow: 0 0 100px #f5c91a;}
+}
+*/
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+
+@keyframes shiver {
+	from { 
+		transform: translate3d(0.5px, 0, 0);
+	}
+	to {
+		transform: translate3d(-0.5px, 0, 0);
+	}
+}
+

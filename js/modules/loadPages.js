@@ -1,40 +1,41 @@
-function loadCommonElements(){
-	
-	const includesArray = [ 'header', 'footer'];
-	$.each(includesArray, function(item) {
-		
-		var pathToFile = "/includes/" + includesArray[item] + ".html";
-		var fileType = "html";
-		var elementId = includesArray[item];
-		
-		readFileContents(pathToFile, fileType, elementId);
-	});
+const relativeDir = getRelativeDir();
+const includesArray = [ 'header', 'footer'];
+const urlPathStart = window.location.protocol + 
+		"//" + window.location.host + "/";
+const projectDir = document.URL
+  		.replace(urlPathStart, "").replace(/\/.*$/, "\/");
+const pathRoot = urlPathStart + projectDir;
+
+
+for(var i = 0; i < includesArray.length; i++){
+	doAjax(includesArray[i]);
 }
 
+function doAjax(item){
+  $.ajax({
+			type: "GET",
+			url: relativeDir + 'includes/' + item + '.html',
+			dataType: 'html',
+			error: function (e) {
+					console.log("Failed to read file: " + 'x', e);
+			},
+			success: function (fileContents) {
 
-function readFileContents(pathToFile, fileType, elementId) {
-	var urlPathStart = window.location.protocol + "//" + window.location.host + "/";
-	var projectDir = document.URL.replace(urlPathStart, "").replace(/\/.*$/, "");
-
-	$.ajax({
-				type: "GET",
-				url: urlPathStart + projectDir + pathToFile,
-				dataType: fileType,
-				error: function (e) {
-						console.log("Failed to read file: " + pathToFile, e);
-				},
-				success: function (fileContents) {
-
-						document.getElementById(elementId).innerHTML = setHrefLinks(fileContents, urlPathStart + projectDir);
-				}
-	 }); 
+					document.getElementById(item).innerHTML = setHrefLinks(fileContents);
+			}
+	}); 
 }
 
-
-
-function setHrefLinks(fileContents, urlPath){
-
-	return fileContents.replace("href=\"", "href=\"" + urlPath + "/");
+function getRelativeDir(){
+	const folderDepth = document.URL.replace(/^.*portfolio\//, '').replace(/[^\/]*/g, '').length;
+	var relativeDir = '';
+	for(var d = 0; d < folderDepth; d++) {
+		relativeDir += '../';
+	}
+	return relativeDir;
 }
 
-loadCommonElements();
+function setHrefLinks(fileContents){
+
+	return fileContents.replace("href=\"", "href=\"" + pathRoot + "/");
+}

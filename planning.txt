@@ -1,3 +1,31 @@
+// TODO: 
+// figure out how to do set tasks on github.
+
+// fix css on background image
+// find footer
+// --> develop footer link
+// fix css on workout page: add/edit=modal, workout inputs, current-exercise, timer
+// fix css on career page:  timeline, orbs, careerItemObjs
+// check cv on linked in and update json
+// fix css on index orbs: movement, on-hover
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 WORK:
         CV: pdf/image, or link to LinkedIn
         Languages: worked in
@@ -44,12 +72,12 @@ Exercise = function(level, ){
 }
 Exercise.prototype.setLevel = function(level){
 
-    var levelInfo = new Level()
+    var levelInfo = workoutList[this].variations[level]
 
 }
 
-Level = function(level){
-    name: '', // easy, medium, hard
+Variation = function(level){
+    level: '', // easy, medium, hard
     sets: '',
     reps: '',
     description: '',
@@ -91,4 +119,11 @@ Workout = function(configObject){
 
 
     */
+
+///////////////////////////////////////////////////////
+
+controller
+
+
+
 

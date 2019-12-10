@@ -1,19 +1,17 @@
 html, 
 body, 
 .cover {
-	background: black;
-   height: 95.5%;
-	min-height: 275px;
+   height: 100%;
 }
 
 .cover {
-   background: url('../img/night.jpg') center center no-repeat;
+   background: black;
    background-size: cover;
    display: table; /* to VERTICAL ALIGN the children! */
    width: 100%; /* to VERTICAL ALIGN the children! */
-	height: 100%;
    padding: 0 20px;
-   box-shadow: inset 0 0 100px black;  /*use this to darken or lighten a box! */
+   box-shadow: inset 0 0 100px black; /* use this to darken or lighten a box! */
+   margin-bottom: 40px;
 }
 
 .cover-text {
@@ -30,13 +28,14 @@ body,
    letter-spacing: -3px;
 }
 
-.navbar{
-	background-color: black;
-	border-bottom: 0.1px solid white;
+.navbar-dark { /* over-ride bootsrap classes! */ /* apply transparency */
+   background-color: rgba(0,0,0,1);
 }
 
 .testimonial {
+/*   background: #222;*/
    padding: 40px 0;
+   margin-top: -40px;
 }
 
 blockquote {
@@ -57,9 +56,8 @@ blockquote cite {
    color: #888;
 }
 
-h3 {
-	color: white;
-	text-align: left;
+section {
+   padding: 40px ;
 }
 
 h2 {
@@ -70,37 +68,32 @@ h2 {
    margin: 0 0 60px;
 }
 
-/*
-h2 + p {   sibling selector; where we have a h2 and p next to each other...
+h2 + p {  /* sibling selector; where we have a h2 and p next to each other...*/
    
    text-align: center;
    margin-top: -60px;
 }
-*/
+
+#team {
+   background: url('../img/fan.jpg') top left no-repeat;
+   background-size: cover;
+   color: white;
+   text-align: center;
+}
 
 footer {
-   background: '#222';
+   background: #222;
    color: white;
    text-align: center; 
-   padding: 5px 0 ;
-   font-family: Georgia, Times, serif;
+   padding: 20px;
+   font-family: Georgia, Time, serif;
 	position: fixed;
-	bottom: 0;
-	left: 0;
 	width: 100%;
-	border-top: 0.1px solid white;
+	
 }
 
 footer a {
-	color:white;
-/*	font-weight: bolder;*/
-	font-style: italic;
-}
-
-footer i {
-	background: url('../img/tenerifeJack.png') top center no-repeat;
-	background-size: cover;
-	font-weight: lighter;
+   color: hotpink;
 }
 
 

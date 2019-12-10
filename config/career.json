@@ -1,0 +1,82 @@
+{
+	"cv" : "path to pdf",
+	"linkedInUrl" : "LINKED IN LINK",
+	"education" : [
+		{
+			"title" : "Newstead Wood School For Girls",
+			"startDate" : "01/09/2000",
+			"endDate" : "01/04/2007",
+			"description" : "12 GCSE's; 4 A*, 4 A, 2 B <br>3 A-levels;<br> Spanish A, Maths B, Psychology C",
+			"certificate" : "",
+			"languages" : []
+		},
+		{
+			"title"  : "Cucumber & Selenium - Develop a Framework",
+			"startDate" : "17/06/2019",
+			"endDate" : "17/06/2019",
+			"description" : "Explore qa automation using cucumber and gherkin with selenium",
+			"certificate" : "../img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
+			"languages" : [ "Cucumber", "Gherkin", "Selenium", "Java"]
+		},
+		{
+			"title"  : "Ultimate Web Developer",
+			"startDate" : "05/08/2019",
+			"endDate" : "05/08/2019",
+			"description" : "",
+			"certificate" : "../img/career/certs/WebDesignerAndDeveloper.jpg",
+			"languages" : [ "Javascript", "Angular", "css"]
+		}
+		
+		
+	],
+	"jobHistory" : [
+		{
+			"employer" : "NewSmartfocus",
+			"jobTitle" : "QA Automation Engineer",
+			"description": "Developing regression test packages using behaviour driven development techniques with Selenium, Cucumber, Gherkin, Cypress",
+			"startDate" : "01/01/2019",
+			"endDate" : "current"
+			
+		},
+		{
+			"employer" : "Smartfocus",
+			"jobTitle" : "Data Integration Specialist",
+			"description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL",
+			"startDate" : "201/09/2015",
+			"endDate" : "01/01/2019"
+			
+		},
+		{
+			"employer" : "Capita PLC",
+			"jobTitle" : "Technical Officer",
+			"description": "Using UNIX shell scripts, SQL queries & XML coding to extract and manipulate data for monthly statistics packs, FOI requests and ad-hoc client projects to strict SLAs",
+			"startDate" : "01/07/2010",
+			"endDate" : "01/09/2015"
+		}
+		
+	],
+	"projects" : [
+		{
+			"title" : "Data Web Tool",
+			"description" : "An internal tool collating data from several servers and databases into a searchable portal to aid the support team in ticket resolution",
+			"technologies" : [ "PHP", "Oracle SQL", "shell"],
+			"image" : "path to file", 
+			"startDate" : "01/10/2017",
+			"endDate" : "01/10/2017",
+			"linkedTo" : "jobHistory:item || educatin:item" 
+		}, 
+		{
+			"title" : "Badb Exports",
+			"description" : "A reporting hub for the finance department with both manual and automated report-generation, encrypted login process, self sign-up with restricted access",
+			"technologies" : [ "Java", "JSP"],
+			"image" : "/path/to/file",
+			"startDate" : "01/11/2019",
+			"endDate" : "01/11/2019"
+		}
+	]
+	
+}
+
+
+
+
