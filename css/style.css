@@ -30,11 +30,6 @@ body,
    letter-spacing: -3px;
 }
 
-.navbar{
-	background-color: black;
-	border-bottom: 0.1px solid white;
-}
-
 .testimonial {
    padding: 40px 0;
 }
@@ -88,7 +83,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	border-top: 0.1px solid white;
+	border-top: 0.1px solid grey;
 }
 
 footer a {

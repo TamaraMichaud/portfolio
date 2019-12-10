@@ -36,5 +36,5 @@ function getRelativeDir(){
 
 function setHrefLinks(fileContents){
     
-	return fileContents.replace(/href=\"/g, "href=\"" + pathRoot);
+	return fileContents.replace(/href=\"\.\//g, "href=\"" + pathRoot).replace(/src=\"\.\//g, "src=\"" + pathRoot);
 }
