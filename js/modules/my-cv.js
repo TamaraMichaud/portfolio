@@ -49,10 +49,11 @@ function toggleSidebar() {
 function destroyModal(){
 	var myCvModal = document.querySelector('.cv-pdf');
 	var parent = document.querySelector('.mycvmodal');
-	console.log(myCvModal);
+//	console.log(myCvModal);
 	console.log(parent);
 //	console.log(parent.firstChild);
-	while(parent.firstChild){
-		parent.removeChild(myCvModal);
-	}
+//	while(parent.firstChild){
+//		parent.removeChild();
+//	}
+	myCvModal.remove();
 }
