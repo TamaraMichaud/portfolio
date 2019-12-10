@@ -71,7 +71,7 @@ export class TimeLine {
 		elementObj.id = "info-" + index;
 		elementObj.style.setProperty("display", "none");
 		elementObj.style.setProperty("left", `${innerXRef}px`);
-		elementObj.classList.add(`pos-${innerYRef}`);
+		elementObj.classList.add(`pos-${innerYRef}`,  "hidden");
 
 		return elementObj;
 	}

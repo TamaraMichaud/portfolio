@@ -40,6 +40,20 @@
 
 /* pop-up items */
 
+.item-wrapper.show {
+	animation: appear 0.2s 1 linear;
+}
+
+.item-wrapper.show.pos-2 {
+	animation: appear 0.2s 1 reverse;
+}
+
+@keyframes appear {
+	from { top: 0; }
+	to   { top: -500%; }
+}
+
+
 div#timeline div.orb div.item-wrapper{
 
 	min-width: 300px;

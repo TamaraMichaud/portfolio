@@ -16,9 +16,17 @@ export class TimelineOrb {
 		newOrb.addEventListener('click', () => {
 
 			var infoEl = getElement(elementObj.id);
-			var newVal = 
-			 (infoEl.style.display === "none") ? "inline" : "none";
-			infoEl.style.setProperty("display", newVal);
+			if(infoEl.style.display === "none") {
+				
+				infoEl.style.setProperty("display", "inline");
+				infoEl.classList.add('show');
+			} else {
+				infoEl.classList.remove('show');
+				infoEl.style.setProperty("display", "none");
+			}
+			
+			
+			
 		});
 
 		// append orb at position

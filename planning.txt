@@ -19,6 +19,11 @@
 
 
 
+// instead of sidebar, open new page; have the 3 images in a bootstrap carousel
+    // nope; will need to be v.2; carousel of 3 circular images that rotate visibly on x axis
+//(2 fading in the background, one major in the fore, on click/swipe, swivel the three and bring another forward)
+
+
 
 
 
