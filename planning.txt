@@ -4,14 +4,18 @@
 // fix css on background image
 // find footer
 // --> develop footer link
-// fix css on workout page: add/edit=modal, workout inputs, current-exercise, timer
-// fix css on career page:  timeline, orbs, careerItemObjs
-// check cv on linked in and update json
-// fix css on index orbs: movement, on-hover
-// 
 
 
+// Portfolio;
+- MyCv -> CV Pdf, LinkedInBadge, GitHub Link
+ --> fix EMBED not-closing for pdf...
+ --> import new displayImageModal() for the sidebar modal
+- career; on-load, display orb.carerrItemType on the screen for 2s
+- career; certificates enlarge on mouseover/click (**touchscreen)
 
+// ^^ pr here and then stop procrastinating and apply for some jobs fool!!
+
+(- starburst of technologies/languages on hover/click)
 
 
 
