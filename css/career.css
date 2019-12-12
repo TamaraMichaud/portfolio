@@ -24,6 +24,7 @@
 }
 
 
+
 /* thumbnails */
 .thumb {
 	width: 60px;
@@ -36,6 +37,24 @@
 }
 
 
+/* the zoomed-in images (modal popup) */
+
+.enlarge-image-modal {
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	background: rgba(0,0,0,0.7);
+	top: 20px;
+    left: 0;  /* without this it indents... don't understand why! */
+	padding: 5%;
+	text-align: center;
+}
+
+.zoom-img {
+/*	width: 100%;*/
+	height: 90%;
+}
 
 
 /* pop-up items */

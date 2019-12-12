@@ -27,7 +27,7 @@ function toggleSidebar() {
 
 		var myExit = document.createElement('div');
 		myExit.innerHTML = "X";
-		myExit.classList.add('cv-close');
+		myExit.classList.add('modal-close');
 		myExit.addEventListener('click', destroyModal);
 		
 		myCvModal.appendChild(myExit);
@@ -39,7 +39,7 @@ function toggleSidebar() {
 		myPdf.type = "application/pdf";
 		myCvModal.appendChild(myPdf);
 
-		document.querySelector('.mycvmodal').appendChild(myCvModal);
+		document.querySelector('.main-image-modal').appendChild(myCvModal);
 		document.querySelector('.sidebar').setAttribute("style", "display:none");
 
 	});
@@ -47,13 +47,14 @@ function toggleSidebar() {
 
 
 function destroyModal(){
-	var myCvModal = document.querySelector('.cv-pdf');
-	var parent = document.querySelector('.mycvmodal');
-//	console.log(myCvModal);
-	console.log(parent);
+//	var myCvModal = document.querySelector('.cv-pdf');
+//	var parent = document.querySelector('.mycvmodal');
+////	console.log(myCvModal);
+//	console.log(parent);
 //	console.log(parent.firstChild);
 //	while(parent.firstChild){
 //		parent.removeChild();
 //	}
-	myCvModal.remove();
+//	myCvModal.remove();
+    this.parentNode.remove();
 }

@@ -19,7 +19,6 @@
 }
 
 .cv-pdf {
-	
 	z-index: 999;
 	width: 100%;
 	height: 100%;
@@ -31,13 +30,15 @@
 }
 
 .the-pdf {
-	
 	width: 100%;
 	height: 90%;
-	
 }
 
-.cv-close {
+#pdf-png:hover {
+    cursor: pointer;
+}
+
+.modal-close {
 	background: skyblue;
 	color: azure;
 	width: 25px;
@@ -51,10 +52,10 @@
 	box-shadow: 0 0 15px 5px skyblue;
 }
 
-.cv-close:hover {
+.modal-close:hover {
 	cursor:pointer;
 }
-.cv-close:active {
+.modal-close:active {
 	top: -9px;
 	left: 27px;
 }

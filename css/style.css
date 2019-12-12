@@ -2,7 +2,7 @@ html,
 body, 
 .cover {
 	background: black;
-   height: 95.5%;
+    height: 95.5%;
 	min-height: 275px;
 }
 
@@ -11,7 +11,7 @@ body,
    background-size: cover;
    display: table; /* to VERTICAL ALIGN the children! */
    width: 100%; /* to VERTICAL ALIGN the children! */
-	height: 100%;
+   height: 100%;
    padding: 0 20px;
    box-shadow: inset 0 0 100px black;  /*use this to darken or lighten a box! */
 }
@@ -29,6 +29,7 @@ body,
    font-size: 70px;
    letter-spacing: -3px;
 }
+
 
 .testimonial {
    padding: 40px 0;
