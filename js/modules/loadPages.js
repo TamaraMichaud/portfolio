@@ -6,12 +6,11 @@ const projectDir = document.URL
   		.replace(urlPathStart, "").replace(/\/.*$/, "\/");
 const pathRoot = urlPathStart + projectDir;
 
-
 for(var i = 0; i < includesArray.length; i++){
-	doAjax(includesArray[i]);
+	doAjax(includesArray[i], true);
 }
 
-function doAjax(item){
+function doAjax(item, relative){
   $.ajax({
 			type: "GET",
 			url: relativeDir + 'includes/' + item + '.html',
@@ -21,7 +20,7 @@ function doAjax(item){
 			},
 			success: function (fileContents) {
 
-					document.getElementById(item).innerHTML = setHrefLinks(fileContents);
+					document.getElementById(item).innerHTML = (relative) ? setHrefLinks(fileContents) : fileContents;
 			}
 	}); 
 }
@@ -36,6 +35,6 @@ function getRelativeDir(){
 }
 
 function setHrefLinks(fileContents){
-
-	return fileContents.replace("href=\"", "href=\"" + pathRoot + "/");
+    
+	return fileContents.replace(/href=\"\.\//g, "href=\"" + pathRoot).replace(/src=\"\.\//g, "src=\"" + pathRoot);
 }

@@ -1,3 +1,5 @@
+import {enlargeImage} from "../displayImageModal.js";
+
 class CareerInfo {
 	
 	constructor(type, careerObject, objectMap) {
@@ -178,6 +180,7 @@ function buildImageElement(location, title){
 	var img = document.createElement("img");
 	img.setAttribute("src", location);
 	img.setAttribute("title", title);
+    img.addEventListener('click', enlargeImage);
 	wrapper.appendChild(img);
 	return wrapper;
 }
