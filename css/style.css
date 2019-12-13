@@ -75,6 +75,7 @@ h2 + p {   sibling selector; where we have a h2 and p next to each other...
 */
 
 footer {
+	height: 5%;
    background: '#222';
    color: white;
    text-align: center; 
@@ -93,11 +94,21 @@ footer a {
 	font-style: italic;
 }
 
-footer i {
-	background: url('../img/tenerifeJack.png') top center no-repeat;
-	background-size: cover;
-	font-weight: lighter;
+footer #tenerife-jack {
+
+	width: 2%;
+	height: 0.8em;
+	display: inline;
 }
+
+#github, #linked-in {
+
+	height: 1em;
+	background: white;
+	border-radius: 50%;
+}
+
+
 
 
 /* Media Queries! */
