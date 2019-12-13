@@ -53,30 +53,17 @@ blockquote cite {
    color: #888;
 }
 
+/*
 h3 {
 	color: white;
 	text-align: left;
 }
-
-h2 {
-   text-align: center;
-   font-size: 28px;
-   font-weight: bold;
-   text-transform: uppercase;
-   margin: 0 0 60px;
-}
-
-/*
-h2 + p {   sibling selector; where we have a h2 and p next to each other...
-   
-   text-align: center;
-   margin-top: -60px;
-}
 */
+
 
 footer {
 	height: 5%;
-   background: '#222';
+   background: black;
    color: white;
    text-align: center; 
    padding: 5px 0 ;

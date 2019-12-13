@@ -4,9 +4,9 @@
             "title" : "Newstead Wood School For Girls",
             "startDate" : "01/09/2000",
             "endDate" : "01/04/2007",
-            "description" : "12 GCSE's; 4 A*, 4 A, 2 B <br>3 A-levels;<br>Spanish A, Psychology C, Maths B",
+            "description" : "&#9679; 12 GCSE's; 4 A*, 4 A, 2 B &#9679; 3 A-levels; Spanish A, Psychology C, Maths B",
             "certificate" : "",
-            "languages" : []
+            "languages" : ""
         },
         {
             "title"  : "Cucumber & Selenium - Develop a Framework",
@@ -31,7 +31,7 @@
         {
             "employer" : "NewSmartfocus",
             "jobTitle" : "QA Automation Engineer",
-            "description": "Developing regression test packages using behaviour driven development techniques with Selenium, Cucumber, Gherkin, Cypress",
+            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Researching other automation frameworks; Cypress. Also built an application to generate monthly reports for the finance department. <a href=\"badbexports\">learn more</a>",
             "startDate" : "01/11/2018",
             "endDate" : "current"
 
@@ -39,15 +39,15 @@
         {
             "employer" : "Smartfocus",
             "jobTitle" : "Data Integration Specialist",
-            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL",
-            "startDate" : "201/09/2015",
+            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of back-end packages with a web tool interface <a href=\"dwt\">learn more</a>",
+            "startDate" : "01/09/2015",
             "endDate" : "01/11/2018"
 
         },
         {
             "employer" : "Capita PLC",
             "jobTitle" : "Technical Officer",
-            "description": "Using UNIX shell scripts, SQL queries & XML coding to extract and manipulate data for monthly statistics packs, FOI requests and management reporting to strict SLAs",
+            "description": "Using UNIX shell scripts, SQL queries & XSL coding to extract and manipulate data for monthly statistics packs, FOI requests and management reporting to strict SLAs",
             "startDate" : "01/07/2010",
             "endDate" : "01/09/2015"
         }
@@ -60,17 +60,23 @@
             "technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
             "image" : "../img/career/projects/DWT_1.jpg",
             "startDate" : "01/10/2017",
-            "endDate" : "01/10/2017",
-            "linkedTo" : "jobHistory:item || education:item" 
+            "endDate" : "01/10/2017"
         }, 
         {
             "title" : "Badb Exports",
             "description" : "Self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports",
-            "technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "Bitbucket" ],
+            "technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
             "image" : "../img/career/projects/finance-reports.jpg",
             "startDate" : "01/11/2019",
             "endDate" : "01/11/2019"
-        }
+        },
+		 {
+			 "title" : "QA Regression Test Suite",
+			 "description" : "Working in a small international team, I helped to build a suite of automated tests that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices",
+			 "technologies" : [ "Selenium", "Java", "Cucumber", "Gherkin", "CI/CD", "Jenkins", "Postman", "Cypress"],
+			 "startDate" : "01/11/2018",
+			 "endDate" : "01/11/2019"
+		 }
     ]
 
 }

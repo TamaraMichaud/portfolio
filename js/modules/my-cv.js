@@ -1,53 +1,55 @@
-function toggleSidebar() {
+import {fetchFileContents} from './FetchConfig.js';
+import {ProjectRecord, JobRecord, EducationRecord} from './career/CareerInfo.js';
 
-	var sidebarElem = document.querySelector('.sidebar');
+var globalConfig;
+fetchFileContents("career").then((jsonContents) => {
+	globalConfig = jsonContents;
+	uiController.init();
+});
 
-	if(sidebarElem.classList.contains('show')) {
-		sidebarElem.setAttribute("style", "display:none");
-		sidebarElem.classList.remove('show');
-	} else {
-		sidebarElem.setAttribute("style", "display:block");
-		sidebarElem.classList.add('show');
+var uiController = (function(){
+
+	return {
+		init: function(){
+			console.log('Starting Up');
+
+			globalConfig.jobHistory.forEach((obj, idx, array) => {
+				
+				document.querySelector(".job-history").appendChild(new JobRecord(obj));
+			})
+
+			globalConfig.education.forEach((obj, idx, array) => {
+				var selector = ".education";
+//				if(obj.certificate) {
+//					selector = ".certs";
+//				}
+				document.querySelector(selector).appendChild(new EducationRecord(obj));
+			})
+
+			
+			
+//			eduItems.forEach((obj, idx, array) => {
+//				
+//				document.querySelector(".education").appendChild(obj.element);
+//			})
+console.log("ok now what?");
+//console.log(careerItemArray);
+//console.log(careerItemArray[2].element);
+//			careerItemArray.forEach((obj, idx, array) =>{
+//				
+//				switch (obj.ref) {
+//					case "job" :			
+//						document.querySelector(".job-history").appendChild(obj.element);
+//						break;
+//					case "education" :
+//						document.querySelector(".education").appendChild(obj.element);
+//						break;
+//				}
+//			})
+//			
+			
+		
+		}
 	}
-
-	setTimeout(() => {
-
-		if(sidebarElem.classList.contains('show')) {
-			sidebarElem.setAttribute("style", "display:none");
-			sidebarElem.classList.remove('show');
-		}	
-
-	}, 5000);
-
-
-	document.getElementById('pdf-png').addEventListener('click', () => {
-
-		var myCvModal = document.createElement('div');
-		myCvModal.classList.add('cv-pdf');
-
-		var myExit = document.createElement('div');
-		myExit.innerHTML = "X";
-		myExit.classList.add('modal-close');
-		myExit.addEventListener('click', destroyModal);
-		
-		myCvModal.appendChild(myExit);
-		
-		var myPdf = document.createElement('embed');
-		myPdf.classList.add('the-pdf')
-		myPdf.src = window.location.protocol + 
-			"//" + window.location.host + "/portfolio/img/career/tm_cv-2019.pdf";
-		myPdf.type = "application/pdf";
-		myCvModal.appendChild(myPdf);
-
-		document.querySelector('.main-image-modal').appendChild(myCvModal);
-		document.querySelector('.sidebar').setAttribute("style", "display:none");
-
-	});
-}
-
-
-function destroyModal(){
-
-//	 this.parentNode.removeChild(this.parentNode);
-    this.parentNode.remove();
-}
+        
+})();

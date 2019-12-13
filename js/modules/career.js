@@ -1,5 +1,5 @@
 import {fetchFileContents} from './FetchConfig.js';
-import {ProjectRecord, JobRecord, EducationRecord, TimeRecord} from './career/CareerInfo.js';
+import {ProjectRecord, JobRecord, EducationRecord, TimeRecord} from './career/CareerInfo - Copy.js';
 import {TimeLine} from './career/TimeLine.js'
 
 var orbWidth = 15; //TODO: find a way to tie this dynamically to the css
