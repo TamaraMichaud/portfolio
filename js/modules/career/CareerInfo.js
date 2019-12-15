@@ -12,14 +12,14 @@ class CareerInfo {
 	}
 
 
-	toElement(){
+	toElement(extraElement){
 		// Title - subheading
 		// description
 		// (other infos)
 		// datefrom - dateto
 
 					
-		var wrapper = getWrapperAndHeader(this, ["col", "col-4", "col-lg-4", "col-md-12", "col-sm-12"]);
+		var wrapper = getWrapperAndHeader(this, []);
 
 		var wFooter = newDiv(['footer']);
 		var dateText = "";
@@ -33,37 +33,13 @@ class CareerInfo {
 
 		var wBody = buildBody(this.description, this.title);
 
-		if(this.extraPropertiesList) {
-			for(var nextProperty of this.extraPropertiesList) {
-				var nextVal = this[nextProperty];
-				if(nextVal != "") {
-
-					var bodyChild;
-
-					if(typeof(nextVal) === "string" || nextVal === undefined) {
-						bodyChild = nextLine(nextVal, nextProperty);	
-					} else {
-						bodyChild = this[nextProperty];	
-					}
-					wBody.appendChild(bodyChild);
-				}
-			}
+		if(extraElement) {
+					wBody.appendChild(extraElement);
 		}
 
-//		wrapper.appendChild(wHeader);
 		if(wBody.hasChildNodes()) { 
-			//			wBody.style.setProperty("display", "none");
 			wrapper.appendChild(wBody);
-			//			wrapper.addEventListener('mouseover', () =>{
-			//				document.getElementById(this.title).style.setProperty("display", "block");
-			//				
-			//			});
-			//			wrapper.addEventListener('mouseout', () =>{
-			//				document.getElementById(this.title).style.setProperty("display", "none");
-			//				
-			//			});
-
-		};
+		}
 		wrapper.appendChild(wFooter);
 
 		return wrapper;
@@ -93,10 +69,15 @@ export class ProjectRecord extends CareerInfo {
 
 	constructor(projectConfig) {
 		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
+		var tech = projectConfig.technologies.toString().replace(/,/g, ' &#9679 ');
+		projectConfig.technologies = tech;
+		
 		super("project", projectConfig, configMap);
 		this.image = buildImageElement(projectConfig.image, "Project Collage");
 		this.linkedTo = projectConfig.linkedTo;
-		this.extraPropertiesList = [ "image", "linkedTo" ];
+		this.image = buildImageElement(projectConfig.image, "Obfuscated Image - my code only");
+	
+		return this.toElement(this.image);
 	}
 }
 
@@ -109,18 +90,10 @@ export class EducationRecord extends CareerInfo {
 		
 		if(educationConfig.certificate) {
 			this.element = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
-			//			this.certificate = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
-			//		   this.extraPropertiesList = [ "certificate" ];
 
-			//			this.element = 
 		} else {
 			this.element = this.school(this);
-			console.log("School is: ")
-//			console.log(this.element);
 		}
-		console.log("cert or school?");
-		console.log(this.element);
-		
 		return this.element; //asElement();
 	}
 
@@ -128,19 +101,10 @@ export class EducationRecord extends CareerInfo {
 		
 		var wrapper = getWrapperAndHeader(mainObj, []);
 		var wBody = buildBody(mainObj.description, mainObj.title);
-//		wBody.appendChild(nextLine(mainObj.description, 'description', 'block'));
-//		console.log(mainObj.description);
 		wrapper.appendChild(wBody);
 		return wrapper;
 	}
 	
-//	asElement() {
-//		
-//     return getWrapperAndHeader(this);
-//	}
-
-
-
 }
 
 
@@ -176,7 +140,7 @@ function getWrapperAndHeader(obj, classList){
 	//		wrapper.style.setProperty("position", "absolute");
 
 	var wHeader = newDiv(["header"]);
-	wHeader.style.setProperty("display", 'block');
+//	wHeader.style.setProperty("display", 'block');
 
 	wHeader.appendChild(nextLine(obj.title, 'title'));
 	if(obj.subHeading !== "") {
