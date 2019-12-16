@@ -1,3 +1,33 @@
+/*  font-size; 1em == 18px (??)
+    
+/* desktop = max-width: 1000px, min-width: 600px
+[title]  [lead]
+^^ 1.5em    ^^1em  -- line-spacing--;
+[carouselle if list > 3] [job1] [job2] [job3]
+    (don't allow > 3...)
+    
+[title] [subH]
+^^ bold, bigger than lead...
+[descr]
+^^
+[date]
+
+^^ fixed-height
+
+
+[acheivements] [ references]
+[crouselle if list > 3] [project1] [project2] [project3]
+
+([hobbies])
+
+tablet = max-width: 599px, 
+h2 { margin-bottom: 20px; }
+
+*/
+
+
+
+
 .row {
 	padding: 0;
 /*	margin: 0;*/
@@ -18,6 +48,7 @@
 	font-family: serif;
 	padding: 7.5% 15%;
 	padding-top: 11%;
+    font-size: 18px;    /* * << starting font-size... hopefully? * << nop */  
 }
 
 .cv-frame {
@@ -46,7 +77,7 @@
 
 h2 {
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.6em;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -195,6 +226,12 @@ h2 {
 	padding: 0 15%;
 	min-height: 300px;
 }
+
+#carouselExampleIndicators a.carousel-control-prev, #carouselExampleIndicators a.carousel-control-next{
+    
+    width: 5%;
+}
+
 
 
 /* desktop = max-width: 1000px, min-width: 600px

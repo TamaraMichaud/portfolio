@@ -61,33 +61,6 @@ h3 {
 */
 
 
-footer {
-	height: 5%;
-   background: black;
-   color: white;
-   text-align: center; 
-   padding: 5px 0 ;
-   font-family: Georgia, Times, serif;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	border-top: 0.1px solid grey;
-}
-
-footer a {
-	color:white;
-/*	font-weight: bolder;*/
-	font-style: italic;
-}
-
-footer #tenerife-jack {
-
-	width: 2%;
-	height: 0.8em;
-	display: inline;
-}
-
 #github, #linked-in {
 
 	height: 1em;
