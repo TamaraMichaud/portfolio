@@ -1,143 +1,11 @@
-/*  font-size; 1em == 18px (??)
-    
-/* desktop = max-width: 1000px, min-width: 600px
-[title]  [lead]
-^^ 1.5em    ^^1em  -- line-spacing--;
-[carouselle if list > 3] [job1] [job2] [job3]
-    (don't allow > 3...)
-    
-[title] [subH]
-^^ bold, bigger than lead...
-[descr]
-^^
-[date]
 
-^^ fixed-height
-
-
-[acheivements] [ references]
-[crouselle if list > 3] [project1] [project2] [project3]
-
-([hobbies])
-
-tablet = max-width: 599px, 
-h2 { margin-bottom: 20px; }
-
-*/
-
-
-
-
-.row {
-	padding: 0;
-/*	margin: 0;*/
-}
-
-.cover {
-	padding: 0;
-/*
-	max-width: 100%;
-	max-height: 100%;
-*/
-}
-
-.cover-content {
-	width: 100%;
-	background: rgba(0,0,0,0.7);
-	color: white;
-	font-family: serif;
-	padding: 7.5% 15%;
-	padding-top: 11%;
-    font-size: 18px;    /* * << starting font-size... hopefully? * << nop */  
-}
-
-.cv-frame {
-	max-width: 1000px;
-	margin: auto;
-	background: rgba(77,77,77,1); 
-	padding: 1%;
-}
-.enlarge-image-modal {
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	position:fixed;
-	background: rgba(0,0,0,0.7);
-	top: 20px;
-    left: 0;  /* without this it indents... don't understand why! */
-	padding: 5%;
-	text-align: center;
-}
-.zoom-img {
-/*	max-width: 100%;*/
-	height: 90%;
-}
-
-
-
-h2 {
-	text-align: center;
-	font-size: 1.6em;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-.lead{
-	text-align: justify;
-	font-size: 1.2em;
-}
-
-.row.first {
-	padding-top: 2%;
-}
-
-.line {  /* h2 */
-
-	width: 96%; 
-	text-align: center; 
-	border-bottom: 1px solid gold; 
-	line-height: 0.05em;
-	margin: auto; 
-}
-
-.line span {  /* span */
-	color: gold;
-	font-size: 0.5em;
-	text-transform: uppercase;
-	background: rgba(100,100,100,1); 
-	border-radius: 60%;
-	padding: 0 1%;
-	height: 5px;
-	box-sizing: border-box
-}
-
-.row {
-	padding: 0.5% 2%;
-	background: rgba(100,100,100,0.9);
-}
-
-.row.h {
-	height: 4.5em;
-}
-
-
-/*[ "title", "subHeading", "description", "dateFrom", "dateTo"]*/
-.job {
-	font-family: sans-serif;
-}
-
-.col.education .item-wrapper {
-	margin-bottom: 2%;
-}
-
-.education .img {
+#education .img {
 	display: inline;
 	margin: 0.5%;
 }
-
-.education img {
+#education img {
 	min-width: 15%;
 	max-width: 15%;
-
 }
 
 .project .header {
@@ -146,10 +14,8 @@ h2 {
 }
 .project .title {
 	font-weight: bold;
-	
 }
 .project .body {
-/*	height: 60%;*/	
 	max-height: 300px;
 	min-height: 150px;
 }
@@ -172,56 +38,14 @@ h2 {
 }
 
 
-.job .item-wrapper {
-	/*	background: grey;	*/
-	/*	border: 1px solid blue;*/
-	margin: 1%;
-	/*	padding: 2%;*/
-	/*	max-width: 450px;*/
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.job .item-wrapper .title {
-	font-weight: bold;
-	font-size: 1.2em;
-	min-width: 50%;
-	display: inline-block;
-}
-
-.job .subHeading {
-	font-style: italic;
-	font-size: 1.2em;
-	display: inline-block;
-	text-align: right;
-	margin-left: auto;
-	min-width: 50%;
-
-}
-
-.description {
-	font-size: 1em;
-}
-
-.item-wrapper .header {
-	margin-bottom: 1%;
-}
-
-.item-wrapper .body {
-	text-align: justify;
-}
-
-.item-wrapper .footer {
-	text-align: right;
-}
-
-
-
-.row.fourth {
+#projects-carousel {
 	min-height: 300px;
 	height: 40%;
+	display: table;
 }
 #carouselExampleIndicators {
+	display: table-cell;
+	vertical-align: middle;
 	width: 100%;
 	padding: 0 15%;
 	min-height: 300px;
@@ -245,3 +69,339 @@ tablet = max-width: 599px,
 h2 { margin-bottom: 20px; }
 
 */
+
+
+
+
+
+
+
+/* https://vanseodesign.com/css/vertical-centering/    <<< print this!! */  
+
+body, .cover {
+    padding: 0;
+    margin: 0;
+}
+
+.enlarge-image-modal {
+	background: rgba(0,0,0,0.7);
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	top: 20px;
+	left: 0;
+	padding: 5%;
+	text-align: center;
+}
+.zoom-img {
+	height: 90%;
+}
+
+#cv-background-cover {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 5% 0;
+	background: rgba(0,0,0,0.7);
+	color: white;
+	font-family: serif;
+	border: none;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+#cv-sheet-div {
+
+    box-sizing: border-box;
+    padding: 2em;
+/*    background: yellow;*/
+	background: rgb(100, 100, 100);
+    max-width: 1000px;
+    width: 75%;
+    margin: 2% auto;
+}
+
+#cv-sheet-header, #education-references {
+	max-height: 150px;
+	min-height: 55px;
+	height: 25%;
+	display: table;
+	width: 99%;
+}
+
+#cv-sheet-header #title {
+	display: table-cell;
+	width: 23%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#cv-sheet-header #sub-head {
+	display: table-cell;
+	width: 73%;
+	text-align: justify;
+	vertical-align: middle;
+	padding: 0 2%;
+}
+
+.line {  /* h1 */
+
+	width: 96%; 
+	text-align: center; 
+	border-bottom: 1px solid gold; 
+	line-height: 0.05em;
+	margin: auto; 
+}
+
+.line span {  /* span */
+	color: gold;
+	font-size: 0.5em;
+	text-transform: uppercase;
+	background: rgba(100,100,100,1); 
+	border-radius: 60%;
+	padding: 0 1%;
+	height: 5px;
+	box-sizing: border-box;
+}
+
+.divider {
+	padding: 0.5% 2%;
+	background: rgba(100,100,100,0.9);
+	height: 1.5em;
+	margin: 0.5% 0;
+}
+
+
+#job-history {
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 55px;
+	max-height: 25%;
+	height: 25%;
+	display: table;
+	padding: 1% 0;
+}
+
+.job {
+	display: table-cell;
+	width: 31.9%;
+	margin: 0 0.5%;
+	min-height: 50px;
+	height: 100%;
+	padding: 0 1%;
+	vertical-align: top;
+}
+
+.job .header {
+	display: table;
+	width: 99%;
+	padding-bottom: 2%;
+	height: 15%;
+	min-height: 2em;
+	font-size: 1.2em;
+}
+
+
+.job .title {
+	display: table-cell;
+/*	background: green;*/
+	vertical-align: middle;
+}
+
+.job .subHeading {
+/*	background: blue;*/
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	font-style: italic;
+	font-weight: bold;	
+}
+
+.job .body {
+	text-align: justify;
+	min-height: 100px;
+}
+
+.job .description {
+	display: block;
+	height: 100%;
+}
+
+
+.job .footer {
+	text-align: right;
+	height: 15%;
+}
+
+
+
+#education-references {
+	padding: 1% 0;
+	margin: 0 auto;
+}
+
+#education {
+	display: table-cell;
+	width: 60%;
+	margin: 0 0.5%;
+	padding: 0 1%;
+}
+
+#education .education {
+	margin-bottom: 1%;
+}
+
+#references {
+	display: table-cell;
+	vertical-align: middle;
+	width: 38%;
+	margin: 0 0.5%;
+	box-sizing: border-box;
+	padding-left: 2%;
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+div {
+    border: 1px solid black;
+}
+*/
+
+
+
+
+
+/* Media Queries! */
+
+
+/* 
+    1536 == monitor full-screen
+    1098 == laptop full-screen   (& tablet landscape; roughly)
+     768 == monitor half-screen  (& tablet portrait)
+     568 == phone landscape
+     375 == phone portrait
+*/
+
+
+@media only screen and ( max-width: 1098px ) {
+    /* half a monitor screen... */
+    
+	#cv-sheet-div {
+
+		 min-width: 700px;
+		 width: 90%;
+		 margin: 2% auto;
+/*			background: green;*/
+	}
+	#cv-sheet-header #title {
+		width: 36%;
+	}
+	
+	#cv-sheet-header #sub-head {
+		width: 60%;
+		padding: 1%;
+	}
+	
+	.job .title {
+		display: block;
+		width: 99%;
+	}
+	.job .subHeading {
+		display: block;
+		width: 99%;
+	}
+}
+
+
+@media only screen and ( max-width: 768px ) {
+    /* half a monitor screen... */
+	
+	#cv-background-cover {
+		padding-top: 9%;
+	}
+	
+	#cv-sheet-div {
+/*		background: red;*/
+		min-width: 550px;
+		padding: 1em;
+	}
+	
+	#cv-sheet-header #title {
+		 display: block;
+		 width: 95%;
+		 margin: 0 auto;
+		 text-align: center;
+	}
+
+	#cv-sheet-header #sub-head {
+		 display: block;
+		 max-width: 95%;
+		 width: 95%;
+		 margin: 0 auto;
+		 text-align: justify;
+		 vertical-align: middle;
+	}
+
+	#job-history {
+		display: block;
+		width: 99%;
+	}
+	.job {
+		display: block;
+		width: 95%;
+		border-bottom: 1px solid rgb(80, 80, 80);
+		margin: 0 auto 1% auto;
+	}
+	.job .header .title {
+		display: table-cell;
+		width: 50%;
+	}
+	.job .header .subHeading {
+		display: table-cell;
+		width: 50%;
+	}
+	.job .body {
+		min-height: 0;
+	}
+	.job .footer { 
+		padding: 1% 0 1.5% 0;
+	}
+	
+	.job#oldest {
+		border: none;
+	}
+}
+
+
+
+@media only screen and ( max-width: 568px ) {
+/*   at 568px (iphone6 and above landscape) or less, do: */
+	#cv-sheet-div {
+/*		background: purple;*/
+		max-width: 90%;
+		margin: 2% auto;
+	}
+	#education, #references {
+		display: block;
+		width: 95%;
+		margin: 2% auto;
+	}	
+	.line span {
+		font-size: 0.35em;
+	}
+	.divider {
+		margin-bottom: 1%;
+	}
+   
+}

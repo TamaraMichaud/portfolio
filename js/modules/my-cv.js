@@ -16,14 +16,16 @@ var uiController = (function(){
 			globalConfig.jobHistory.forEach((obj, idx, array) => {
 				
 				var nextJobRecord = new JobRecord(obj);
-				nextJobRecord.classList.add("col", "col-4", "col-lg-4", "col-md-12", "col-sm-12");
-				document.querySelector(".job-history").appendChild(nextJobRecord);
+				
+				if(idx === array.length -1) {
+					nextJobRecord.id="oldest";
+				}
+				nextJobRecord.classList.add("job");
+				document.getElementById("job-history").appendChild(nextJobRecord);
 			})
 
 			globalConfig.education.forEach((obj, idx, array) => {
-				var selector = ".education";
-
-				document.querySelector(selector).appendChild(new EducationRecord(obj));
+				document.getElementById("education").appendChild(new EducationRecord(obj));
 			})
 
 			

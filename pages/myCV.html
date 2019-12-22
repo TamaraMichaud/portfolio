@@ -21,107 +21,110 @@ name: viewport is what makes your site responsive -->
 src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+		
 		<title>TamaraMichaud.io</title>
-
 	</head>
-
 	<body>
 
 		<nav id='header' class="navbar navbar-expand-md navbar-dark fixed-top">
-
 		</nav>
-		<div class="cover"><div class="cover-content"><div class="cv-frame">
+		<div class="cover">
 
-			<div class="row first">
+			<div id="cv-background-cover">
+				<div id="cv-sheet-div">
 
-				<div class="col col-4 col-lg-4 col-md-12 col-sm-12">
-					<h2>Thanks for visiting my portfolio</h2>
-				</div>
-				<div class="col col-8 col-lg-8 col-md-12 col-sm-12">
-					<div class="lead">
+				<div id="cv-sheet-header">
+					<h1 id="title">
+						Thanks for visiting my portfolio
+					</h1>
+					<lead id="sub-head">
 						Here is my CV detailing my development experience using a variety of languages and technologies. Mostly working on smaller in-house tools to aide efficiency within the business, in my latest role I have been focused particularly on Java development as detailed below.
+					</lead>
+				</div>
+					
+				<div id="cv-sheet-body">
+
+					<div class="divider">
+						<h1 class="line">
+							<span>Job History</span>
+						</h1>
+					</div>
+
+					<div id="job-history">
+					</div>
+
+					<div class="divider">
+						<h1 class="line">
+							<span>Acheivements</span>
+						</h1>
+					</div>
+
+					<div id="education-references">
+						<div id="education">
+						</div>
+
+						<div id="references">
+							Mr J Bloggs - 01234567890<br>Company Name<br>my old manager
+						</div>
+					</div>
+
+					<div class="divider">
+						<h1 class="line">
+							<span>Projects</span>
+						</h1>
+					</div>
+					<div id="projects-carousel" >
+
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+							</ol>
+							<div class="carousel-inner">
+							</div>
+							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+
+
+
+
 					</div>
 				</div>
-			</div>
 
-			<div class="row h">
-				<h1 class="line">
-					<span>Job History</span>
-				</h1>
-			</div>
+				</div></div>
 
-			<div class="row second job-history">
-			</div>
+		</div>
 
-			<div class="row h">
-				<h1 class="line">
-					<span>Acheivements</span>
-				</h1>
-			</div>
+		<!--footer-->
 
-			<div class="row third">
-				<div class="col col-8 education">
-				</div>
-				<!--
-<div class="col col-3 certs">
-</div>
--->
-				<div class="col col-4 references">
-					REFERENCES HERE
-				</div>
-			</div>
-
-			<div class="row h">
-				<h1 class="line">
-					<span>Projects</span>
-				</h1>
-			</div>
-			<div class="row fourth" >
-
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-					</ol>
-					<div class="carousel-inner">
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+		<footer id=footer>
+		</footer>
 
 
 
+		<!-- load cdn first, faster  -->
+		<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+		<!-- if cdn unavailable, load local version-->
+		<script src="../js/jquery-3.4.1.js">window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>');</script>
 
-			</div></div></div>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-			<!--footer-->
+		<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>              
+		<script src="../js/modules/loadPages.js" type="application/javascript"></script>
+		<script src="../js/modules/my-cv.js" type="module"></script>
 
-			<footer id=footer>
-			</footer>
-
-
-
-			<!-- load cdn first, faster  -->
-			<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-			<!-- if cdn unavailable, load local version-->
-			<script src="../js/jquery-3.4.1.js">window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>');</script>
-
-			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-			<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-			<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>              
-			<script src="../js/modules/loadPages.js" type="application/javascript"></script>
-			<script src="../js/modules/my-cv.js" type="module"></script>
-
-			<!--
+		<!--
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 -->
-			</body>
-		</html>
+
+	</body>
+</html>

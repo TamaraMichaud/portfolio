@@ -1,0 +1,271 @@
+/*  font-size; 1em == 18px (??)
+
+/* desktop = max-width: 1000px, min-width: 600px
+[title]  [lead]
+^^ 1.5em    ^^1em  -- line-spacing--;
+[carouselle if list > 3] [job1] [job2] [job3]
+    (don't allow > 3...)
+    
+[title] [subH]
+^^ bold, bigger than lead...
+[descr]
+^^
+[date]
+
+^^ fixed-height
+
+
+[acheivements] [ references]
+[crouselle if list > 3] [project1] [project2] [project3]
+
+([hobbies])
+
+tablet = max-width: 599px, 
+h2 { margin-bottom: 20px; }
+
+*/
+
+.title {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+.row {
+	padding: 0;
+/*	margin: 0;*/
+}
+
+.cover {
+	padding: 0;
+/*
+	max-width: 100%;
+	max-height: 100%;
+*/
+}
+
+.cover-content {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	background: rgba(0,0,0,0.7);
+	color: white;
+	font-family: serif;
+	padding: 7.5% 15%;
+	padding-top: 11%;
+	
+/*	line-height: 1.4em;*/
+	line-height: 140%;;
+	font-size: 18px;    /* * << starting font-size... hopefully? * << nop */  
+}
+
+.cv-frame {
+	max-width: 1000px;
+	margin: auto;
+	background: rgba(77,77,77,1); 
+	padding: 1%;
+}
+.enlarge-image-modal {
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	background: rgba(0,0,0,0.7);
+	top: 20px;
+    left: 0;  /* without this it indents... don't understand why! */
+	padding: 5%;
+	text-align: center;
+}
+.zoom-img {
+/*	max-width: 100%;*/
+	height: 90%;
+}
+
+
+
+h2 {
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.4em;
+
+}
+.lead{
+	text-align: justify;
+	font-size: 1.2em;
+}
+
+.row.first {
+	padding-top: 2%;
+}
+
+.line {  /* h2 */
+
+	width: 96%; 
+	text-align: center; 
+	border-bottom: 1px solid gold; 
+	line-height: 0.05em;
+	margin: auto; 
+}
+
+.line span {  /* span */
+	color: gold;
+	font-size: 0.5em;
+	text-transform: uppercase;
+	background: rgba(100,100,100,1); 
+	border-radius: 60%;
+	padding: 0 1%;
+	height: 5px;
+	box-sizing: border-box
+}
+
+.row {
+	padding: 0.5% 2%;
+	background: rgba(100,100,100,0.9);
+}
+
+.row.h {
+	height: 4.5em;
+}
+
+
+/*[ "title", "subHeading", "description", "dateFrom", "dateTo"]*/
+.job {
+	font-family: sans-serif;
+}
+
+.col.education .item-wrapper {
+	margin-bottom: 2%;
+}
+
+.education .img {
+	display: inline;
+	margin: 0.5%;
+}
+
+.education img {
+	min-width: 15%;
+	max-width: 15%;
+
+}
+
+.project .header {
+	text-align: center;
+	font-family: sans-serif;
+}
+.project .title {
+	font-weight: bold;
+	
+}
+.project .body {
+/*	height: 60%;*/	
+	max-height: 300px;
+	min-height: 150px;
+}
+
+.project .img {
+	display: inline-block;
+	width: 40%;
+	margin-left: 4%;
+}
+.project img {
+	width: 100%;
+	max-height: 40%;
+}
+.project .description {
+	margin-top: 2%;
+	padding-top: 2%;
+	width: 55%;
+	display: inline-block;
+	height: 100%;
+}
+
+
+.job.item-wrapper {
+	margin: 1% auto;
+}
+
+.job .title {
+	float: left;
+}
+
+.job .subHeading {
+	font-style: italic;
+	font-size: 1.2em;
+	float: right;
+	margin-bottom: 2%;
+}
+.job .description {
+	height: 50%;
+	position: relative;
+	padding: 7% 0 0 0;
+}
+
+.job .footer {
+	height: 100%;
+	
+}
+
+.description {
+	font-size: 1em;
+}
+
+.item-wrapper .header {
+	margin-bottom: 1%;
+}
+
+.item-wrapper .body {
+	text-align: justify;
+}
+
+.item-wrapper .footer {
+	text-align: right;
+}
+
+
+
+.row.fourth {
+	min-height: 300px;
+	height: 40%;
+}
+#carouselExampleIndicators {
+	width: 100%;
+	padding: 0 15%;
+	min-height: 300px;
+}
+
+#carouselExampleIndicators a.carousel-control-prev, #carouselExampleIndicators a.carousel-control-next{
+    
+    width: 5%;
+}
+
+
+
+/* desktop = max-width: 1000px, min-width: 600px
+[title]  [lead]
+[carouselle if list > 3] [job1] [job2] [job3]
+[acheivements] [ references]
+[crouselle if list > 3] [project1] [project2] [project3]
+([hobbies])
+
+tablet = max-width: 599px, 
+h2 { margin-bottom: 20px; }
+
+*/
+
+@media only screen and ( max-width: 985px ) {
+	.job .footer {
+		border-bottom: 1px solid white;
+	}
+	.job {
+/*		background: green;*/
+	}
+}
+	
+	
+@media only screen and ( max-width: 568px ) {
+/*   at 568px (iphone6 and above landscape) or less, do: */
+
+   
+}
