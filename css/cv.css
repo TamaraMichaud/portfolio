@@ -37,7 +37,8 @@ div {
 	text-align: center;
 }
 .zoom-img {
-	height: 90%;
+	max-height: 90%;
+	max-width: 90%;
 }
 
 #cv-background-cover {
@@ -46,7 +47,9 @@ div {
 	margin: 0;
 /*	padding: 5% 0;*/
 	background: rgba(0,0,0,0.6);
-	color: lightskyblue;
+	
+/*	color: lightskyblue;*/
+	color: #123EF2;
 	font-family: serif;
 	border: none;
 	box-sizing: border-box;
@@ -60,7 +63,8 @@ div {
 	box-sizing: border-box;
 /*	padding: 2em;*/
 	/*    background: yellow;*/
-	background: rgb(100, 100, 100, 0.7);
+/*	background: rgb(100, 100, 100, 0.7);*/
+	background: rgba(131, 155, 255, 0.7);
 	max-width: 1000px;
 	min-width: 300px;
 	width: 75%;
@@ -448,24 +452,22 @@ opacity: 1;
 		width: 99%;
 		text-decoration: underline;
 	}
+
+	#education-references {
+		width: 100%;
+		padding: 5%;
+		margin: 0;
+	}
+	
 	#education, #references {
 		display: block;
-		width: 95%;
-/*		margin: 2% auto;*/
+		width: 100%;
 	}	
 	
-	#education div {
-		display: inline;
+	#education, #education .education {
+		margin-bottom: 5%;
 	}
-/*
-	.line span {
-		font-size: 0.35em;
-	}
-	.divider {
-		margin-bottom: 1%;
-	}
-*/
-   
+	
 }
 
 
