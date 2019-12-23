@@ -1,90 +1,90 @@
-html, 
-body, 
-.cover {
-	background: black;
-    height: 95.5%;
-	min-height: 275px;
-}
+	html, 
+	body, 
+	.cover {
+		background: black;
+		 height: 95.5%;
+		min-height: 275px;
+	}
 
-.cover {
-   background: url('../img/night.jpg') center center no-repeat;
-   background-size: cover;
-   display: table; /* to VERTICAL ALIGN the children! */
-   width: 100%; /* to VERTICAL ALIGN the children! */
-   height: 100%;
-   padding: 0 20px;
-   box-shadow: inset 0 0 100px black;  /*use this to darken or lighten a box! */
-}
+	.cover {
+		background: url('../img/night.jpg') center center no-repeat;
+		background-size: cover;
+		display: table; /* to VERTICAL ALIGN the children! */
+		width: 100%; /* to VERTICAL ALIGN the children! */
+		height: 100%;
+		padding: 0 20px;
+		box-shadow: inset 0 0 100px black;  /*use this to darken or lighten a box! */
+	}
 
-.cover-text {
-   color: white;
-   text-align: center;
-   display: table-cell;/* to VERTICAL ALIGN the children! */
-   vertical-align: bottom;
-   position: relative;
-   top: 50px;
-}
+	.cover-text {
+		color: white;
+		text-align: center;
+		display: table-cell;/* to VERTICAL ALIGN the children! */
+		vertical-align: bottom;
+		position: relative;
+		top: 50px;
+	}
 
-.cover-text h1 {
-   font-size: 70px;
-   letter-spacing: -3px;
-}
-
-
-.testimonial {
-   padding: 40px 0;
-}
-
-blockquote {
-   font-family: Georgia, Times, serif;
-   font-style: italic;
-   font-size: 32px;
-   color: white;
-}
-
-blockquote cite {
-   display: block;
-   text-align: right;
-   text-transform: uppercase;
-   font-family: Helvetica, Arial, sans-serif;
-   font-style: normal;
-   font-size: 18px;
-   font-weight: bold;
-   color: #888;
-}
-
-/*
-h3 {
-	color: white;
-	text-align: left;
-}
-*/
+	.cover-text h1 {
+		font-size: 70px;
+		letter-spacing: -3px;
+	}
 
 
-#github, #linked-in {
+	.testimonial {
+		padding: 40px 0;
+	}
 
-	height: 1em;
-	background: white;
-	border-radius: 50%;
-}
+	blockquote {
+		font-family: Georgia, Times, serif;
+		font-style: italic;
+		font-size: 32px;
+		color: white;
+	}
+
+	blockquote cite {
+		display: block;
+		text-align: right;
+		text-transform: uppercase;
+		font-family: Helvetica, Arial, sans-serif;
+		font-style: normal;
+		font-size: 18px;
+		font-weight: bold;
+		color: #888;
+	}
+
+	/*
+	h3 {
+		color: white;
+		text-align: left;
+	}
+	*/
+
+
+	#github, #linked-in {
+
+		height: 1em;
+		background: white;
+		border-radius: 50%;
+	}
 
 
 
 
-/* Media Queries! */
+	/* Media Queries! */
 
-@media only screen and ( max-width: 568px ) {
-/*   at 568px (iphone6 and above landscape) or less, do: */
-   section {
-      padding: 20px;
-      font-size: 0.8em;
-   }
-   
-   .cover {
-      font-size: 10px;
-   }
-   
-}
+	@media only screen and ( max-width: 568px ) {
+	/*   at 568px (iphone6 and above landscape) or less, do: */
+		section {
+			padding: 20px;
+			font-size: 0.8em;
+		}
+
+		.cover {
+			font-size: 10px;
+		}
+
+	}
 
 
 

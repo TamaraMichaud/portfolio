@@ -81,6 +81,9 @@ h2 { margin-bottom: 20px; }
 body, .cover {
     padding: 0;
     margin: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
 }
 
 .enlarge-image-modal {
@@ -118,6 +121,7 @@ body, .cover {
 /*    background: yellow;*/
 	background: rgb(100, 100, 100);
     max-width: 1000px;
+	min-width: 300px;
     width: 75%;
     margin: 2% auto;
 }
@@ -387,21 +391,35 @@ div {
 
 @media only screen and ( max-width: 568px ) {
 /*   at 568px (iphone6 and above landscape) or less, do: */
+	#cv-background-cover {
+		padding-top: 58px;
+	}
 	#cv-sheet-div {
 /*		background: purple;*/
-		max-width: 90%;
-		margin: 2% auto;
+		max-width: 568px;
+		width: 99%;
+		margin: 0 auto 5px auto;
+		min-width: 300px;
+		padding: 0 5px;
 	}
 	#education, #references {
 		display: block;
 		width: 95%;
 		margin: 2% auto;
 	}	
+	
+	#education div {
+		display: inline;
+	}
+/*
 	.line span {
 		font-size: 0.35em;
 	}
 	.divider {
 		margin-bottom: 1%;
 	}
+*/
    
 }
+
+

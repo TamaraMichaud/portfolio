@@ -125,4 +125,5 @@ footer #tenerife-jack {
 	width: 2%;
 	height: 0.8em;
 	display: inline;
+	min-width: 23px;
 }
