@@ -31,7 +31,7 @@
         {
             "employer" : "NewSmartfocus Ltd",
             "jobTitle" : "QA Automation Engineer",
-            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Research into Cypress. Also built an application to generate monthly reports for the finance department. <a href=\"badbexports\">learn more</a>",
+            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Research into Cypress. Also created an application to generate monthly reports for the finance department. <a href=\"badbexports\">learn more</a>",
             "startDate" : "01/11/2018",
             "endDate" : "current"
 

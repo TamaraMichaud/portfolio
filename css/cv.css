@@ -1,3 +1,213 @@
+/* desktop = max-width: 1000px, min-width: 600px
+[title]  [lead]
+[carouselle if list > 3] [job1] [job2] [job3]
+[acheivements] [ references]
+[crouselle if list > 3] [project1] [project2] [project3]
+([hobbies])
+
+tablet = max-width: 599px, 
+h2 { margin-bottom: 20px; }
+
+*/
+
+
+
+/* https://vanseodesign.com/css/vertical-centering/    <<< print this!! */  
+
+body, .cover {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+}
+div {
+	letter-spacing: 0.5px;
+}
+
+.enlarge-image-modal {
+	background: rgba(0,0,0,0.7);
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	top: 20px;
+	left: 0;
+	padding: 5%;
+	text-align: center;
+}
+.zoom-img {
+	height: 90%;
+}
+
+#cv-background-cover {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 5% 0;
+	background: rgba(0,0,0,0.7);
+		color: lightskyblue;
+	font-family: serif;
+	border: none;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+#cv-sheet-div {
+
+	box-sizing: border-box;
+/*	padding: 2em;*/
+	/*    background: yellow;*/
+	background: rgb(100, 100, 100, 0.7);
+	max-width: 1000px;
+	min-width: 300px;
+	width: 75%;
+	margin: 2% auto;
+
+	font-size: 18px;
+	font-weight: 500;
+	text-shadow: 1px 1px 3px rgba(10,10,10,0.7), -1px -1px 3px rgba(0,0,0,0.7);
+
+}
+
+#cv-sheet-header, #education-references {
+	max-height: 150px;
+	min-height: 55px;
+	height: 25%;
+	display: table;
+	width: 99%;
+	padding: 2em;
+}
+
+#cv-sheet-header #title {
+	display: table-cell;
+	width: 23%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#cv-sheet-header #sub-head {
+	display: table-cell;
+	width: 73%;
+	text-align: justify;
+	vertical-align: middle;
+	padding: 0 2%;
+	font-family: sans-serif;
+}
+
+.divider {
+	width: 100%;
+	background: rgba(250,250,250, 0.1);
+	padding: 2px 1em;
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+}
+.divider .divider-title {
+	text-transform: uppercase;
+/*	color: rgb(100,100,150);*/
+}
+
+
+#job-history {
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 55px;
+	max-height: 25%;
+	height: 25%;
+	display: table;
+/*	padding: 2em;*/
+	background: rgba(250,250,250, 0.1);
+}
+
+.job {
+	display: table-cell;
+	width: 31.9%;
+	margin: 0 0.5%;
+	min-height: 50px;
+	height: 100%;
+	padding: 2% 1em;
+	vertical-align: top;
+	box-shadow: inset 0 0 100px rgba(50,50,50,0.8);
+}
+.job#job-0 {
+	padding-left: 2em;
+/*	border-right: 0.5px solid rgba(250,250,250,0.1);*/
+/*	box-shadow: 1px 1px 2px;*/
+}
+
+.job#oldest {
+	padding-right: 2em;
+/*	border-left: 1px solid;*/
+}
+
+.job .header {
+	display: table;
+	width: 99%;
+	padding-bottom: 2%;
+	height: 15%;
+	min-height: 2em;
+	font-size: 1.2em;
+	font-weight: bold;	
+}
+
+
+.job .title {
+	display: table-cell;
+/*	background: green;*/
+	vertical-align: middle;
+}
+
+.job .subHeading {
+/*	background: blue;*/
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	font-style: italic;
+	text-decoration: underline;
+	margin-bottom: 5%;
+}
+
+.job .body {
+	text-align: justify;
+	min-height: 100px;
+	font-family: sans-serif;
+}
+
+.job .description {
+	display: block;
+	height: 100%;
+}
+
+
+.job .footer {
+	text-align: right;
+	height: 15%;
+}
+
+
+
+#education {
+	display: table-cell;
+	width: 60%;
+	margin: 0 0.5%;
+	padding: 0 1%;
+}
+
+#education .education {
+	margin-bottom: 1%;
+}
+
+#references {
+	display: table-cell;
+	vertical-align: middle;
+	width: 38%;
+	margin: 0 0.5%;
+	box-sizing: border-box;
+	padding-left: 2%;
+	
+}
+
+
 
 #education .img {
 	display: inline;
@@ -18,6 +228,7 @@
 .project .body {
 	max-height: 300px;
 	min-height: 150px;
+		font-family: sans-serif;
 }
 
 .project .img {
@@ -58,229 +269,9 @@
 
 
 
-/* desktop = max-width: 1000px, min-width: 600px
-[title]  [lead]
-[carouselle if list > 3] [job1] [job2] [job3]
-[acheivements] [ references]
-[crouselle if list > 3] [project1] [project2] [project3]
-([hobbies])
-
-tablet = max-width: 599px, 
-h2 { margin-bottom: 20px; }
-
-*/
 
 
 
-
-
-
-
-/* https://vanseodesign.com/css/vertical-centering/    <<< print this!! */  
-
-body, .cover {
-    padding: 0;
-    margin: 0;
-	width: 100%;
-	height: 100%;
-	min-width: 320px;
-}
-
-.enlarge-image-modal {
-	background: rgba(0,0,0,0.7);
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	position:fixed;
-	top: 20px;
-	left: 0;
-	padding: 5%;
-	text-align: center;
-}
-.zoom-img {
-	height: 90%;
-}
-
-#cv-background-cover {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 5% 0;
-	background: rgba(0,0,0,0.7);
-	color: white;
-	font-family: serif;
-	border: none;
-	box-sizing: border-box;
-	overflow-y: scroll;
-}
-
-#cv-sheet-div {
-
-    box-sizing: border-box;
-    padding: 2em;
-/*    background: yellow;*/
-	background: rgb(100, 100, 100);
-    max-width: 1000px;
-	min-width: 300px;
-    width: 75%;
-    margin: 2% auto;
-}
-
-#cv-sheet-header, #education-references {
-	max-height: 150px;
-	min-height: 55px;
-	height: 25%;
-	display: table;
-	width: 99%;
-}
-
-#cv-sheet-header #title {
-	display: table-cell;
-	width: 23%;
-	vertical-align: middle;
-	text-align: center;
-}
-
-#cv-sheet-header #sub-head {
-	display: table-cell;
-	width: 73%;
-	text-align: justify;
-	vertical-align: middle;
-	padding: 0 2%;
-}
-
-.line {  /* h1 */
-
-	width: 96%; 
-	text-align: center; 
-	border-bottom: 1px solid gold; 
-	line-height: 0.05em;
-	margin: auto; 
-}
-
-.line span {  /* span */
-	color: gold;
-	font-size: 0.5em;
-	text-transform: uppercase;
-	background: rgba(100,100,100,1); 
-	border-radius: 60%;
-	padding: 0 1%;
-	height: 5px;
-	box-sizing: border-box;
-}
-
-.divider {
-	padding: 0.5% 2%;
-	background: rgba(100,100,100,0.9);
-	height: 1.5em;
-	margin: 0.5% 0;
-}
-
-
-#job-history {
-	width: 100%;
-	box-sizing: border-box;
-	min-height: 55px;
-	max-height: 25%;
-	height: 25%;
-	display: table;
-	padding: 1% 0;
-}
-
-.job {
-	display: table-cell;
-	width: 31.9%;
-	margin: 0 0.5%;
-	min-height: 50px;
-	height: 100%;
-	padding: 0 1%;
-	vertical-align: top;
-}
-
-.job .header {
-	display: table;
-	width: 99%;
-	padding-bottom: 2%;
-	height: 15%;
-	min-height: 2em;
-	font-size: 1.2em;
-}
-
-
-.job .title {
-	display: table-cell;
-/*	background: green;*/
-	vertical-align: middle;
-}
-
-.job .subHeading {
-/*	background: blue;*/
-	display: table-cell;
-	vertical-align: middle;
-	text-align: right;
-	font-style: italic;
-	font-weight: bold;	
-}
-
-.job .body {
-	text-align: justify;
-	min-height: 100px;
-}
-
-.job .description {
-	display: block;
-	height: 100%;
-}
-
-
-.job .footer {
-	text-align: right;
-	height: 15%;
-}
-
-
-
-#education-references {
-	padding: 1% 0;
-	margin: 0 auto;
-}
-
-#education {
-	display: table-cell;
-	width: 60%;
-	margin: 0 0.5%;
-	padding: 0 1%;
-}
-
-#education .education {
-	margin-bottom: 1%;
-}
-
-#references {
-	display: table-cell;
-	vertical-align: middle;
-	width: 38%;
-	margin: 0 0.5%;
-	box-sizing: border-box;
-	padding-left: 2%;
-	
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-div {
-    border: 1px solid black;
-}
-*/
 
 
 
@@ -314,7 +305,7 @@ div {
 	
 	#cv-sheet-header #sub-head {
 		width: 60%;
-		padding: 1%;
+/*		padding: 1%;*/
 	}
 	
 	.job .title {
@@ -332,40 +323,50 @@ div {
     /* half a monitor screen... */
 	
 	#cv-background-cover {
-		padding-top: 9%;
+/*		padding-top: 9%;*/
+		padding-top: 70px;
 	}
 	
 	#cv-sheet-div {
 /*		background: red;*/
-		min-width: 550px;
-		padding: 1em;
+		min-width: 330px;
+/*		padding: 0.7em;*/
+		width: 95%;
+		margin: 0 auto;
 	}
 	
 	#cv-sheet-header #title {
 		 display: block;
+/*
 		 width: 95%;
 		 margin: 0 auto;
+*/
+		width: 100%;
+		
 		 text-align: center;
+		margin-bottom: 1.5%;
 	}
 
 	#cv-sheet-header #sub-head {
 		 display: block;
-		 max-width: 95%;
-		 width: 95%;
-		 margin: 0 auto;
+/*		 max-width: 95%;*/
+		 width: 100%;
+/*		 margin: 0 auto;*/
 		 text-align: justify;
 		 vertical-align: middle;
 	}
 
 	#job-history {
 		display: block;
-		width: 99%;
+		width: 100%;
 	}
 	.job {
+		margin: 0;
+		padding: 1em 2em;
 		display: block;
-		width: 95%;
-		border-bottom: 1px solid rgb(80, 80, 80);
-		margin: 0 auto 1% auto;
+		width: 100%;
+		border-bottom: 1px solid;
+/*		margin: 0 auto 1% auto;*/
 	}
 	.job .header .title {
 		display: table-cell;
@@ -391,21 +392,37 @@ div {
 
 @media only screen and ( max-width: 568px ) {
 /*   at 568px (iphone6 and above landscape) or less, do: */
+/*
 	#cv-background-cover {
 		padding-top: 58px;
 	}
+*/
 	#cv-sheet-div {
 /*		background: purple;*/
 		max-width: 568px;
-		width: 99%;
+		width: 92%;
 		margin: 0 auto 5px auto;
 		min-width: 300px;
-		padding: 0 5px;
+/*		padding: 0 2px;*/
+	}
+	div {
+		letter-spacing: 1px;
+/*		padding: 1%;*/
+	}
+	.job .header .title {
+		display: block;
+		width: 99%;
+	}
+	
+	.job .header .subHeading {
+		display: block;
+		width: 99%;
+		text-decoration: underline;
 	}
 	#education, #references {
 		display: block;
 		width: 95%;
-		margin: 2% auto;
+/*		margin: 2% auto;*/
 	}	
 	
 	#education div {
