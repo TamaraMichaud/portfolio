@@ -29,18 +29,25 @@ var uiController = (function(){
 			
 			globalConfig.projects.forEach((obj, idx, array) => {
 
-				var nextProject = new ProjectRecord(obj);
-				nextProject.classList.add('carousel-item');				
+				var nextProjectObj = new ProjectRecord(obj);
+				var nextProjectInner = nextProjectObj.toElement();
+				
+				var nextProjectOuter = document.createElement('div');
+				nextProjectOuter.classList.add('project-overlay');
+				nextProjectOuter.classList.add('carousel-item');
+				nextProjectOuter.style.background = 'url(' + nextProjectObj.image + ') center center no-repeat';
+				
+				nextProjectOuter.appendChild(nextProjectInner);
 				
 				var indicatorElement = document.createElement('li');
-				indicatorElement.setAttribute('data-target', '#carouselExampleIndicators');
+				indicatorElement.setAttribute('data-target', '#carouselContents');
 				indicatorElement.setAttribute('data-slide-to', idx);
 
 				if(idx === 0){
-					nextProject.classList.add("active");
+					nextProjectOuter.classList.add("active");
 					indicatorElement.classList.add("active");
 				}
-				document.querySelector(".carousel-inner").appendChild(nextProject);
+				document.querySelector(".carousel-inner").appendChild(nextProjectOuter);
 				
 				document.querySelector(".carousel-indicators").appendChild(indicatorElement);
 				

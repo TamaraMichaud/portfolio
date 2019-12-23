@@ -73,11 +73,16 @@ export class ProjectRecord extends CareerInfo {
 		projectConfig.technologies = tech;
 		
 		super("project", projectConfig, configMap);
-		this.image = buildImageElement(projectConfig.image, "Project Collage");
+//		this.image = buildImageElement(projectConfig.image, "Project Collage");
 		this.linkedTo = projectConfig.linkedTo;
-		this.image = buildImageElement(projectConfig.image, "Obfuscated Image - my code only");
+//		this.image = buildImageElement(projectConfig.image, "Obfuscated Image - my code only");
 	
-		return this.toElement(this.image);
+		
+		//TODO: remove the defunct code above
+		this.image = projectConfig.image;
+		
+//		return this.toElement(this.image);
+//		return this.toElement();
 	}
 }
 
