@@ -91,13 +91,12 @@
 .navbar{
 	background-color: black;
 	border-bottom: 0.1px solid grey;
+	letter-spacing: 0.5px;
 }
-
-#my-cv:hover {
-	cursor:pointer;
+.navbar a:hover {
+	font-weight: 500;
+	letter-spacing: normal;
 }
-
-
 footer {
     height: 5%;
     background: black;
