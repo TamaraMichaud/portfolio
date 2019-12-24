@@ -1,13 +1,16 @@
 // TODO: 
 // figure out how to do set tasks on github.
 
-// remove underline from navbar myCV link
-// print languages next to certificates
+
 // add cv pdf to footer links
 // --> develop TenerifeJack --> about me // hobbies interests
+// landing page orbs declare "catch me"
 
+// convert entire myCV.html text to json config
 
-// convert entire myCV.html text to json config...
+// Tam's tools...
+	-> convert; hex to rgba // cm to inch // gram to ounce // f to c // spanish to english
+	-> workouts
 // set colour-schemes/backgrounds to changes depending on time of day...
 
 
