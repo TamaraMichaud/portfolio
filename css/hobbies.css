@@ -1,0 +1,54 @@
+.cover {
+	padding: 0;
+}
+
+h1 {
+	color: white;
+	font-weight: bolder;
+	letter-spacing: 0.5px;
+	width: 100%;
+	padding: 0 4% 1% 4%;
+	text-transform: uppercase;
+	font-family: serif;
+	text-shadow: 2px 2px 3px black, -2px -2px 3px black;
+}
+
+.hobbies-page {
+	
+	padding: 70px 5% 8% 5%;
+	background: rgba(10,10,10,0.5);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.hobby {
+
+	display: inline-block;
+	max-width: 15%;
+	min-width: 100px;
+	max-width: 170px;
+/*	max-height: 15%;*/
+/*	border-radius: 33%;*/
+	text-align: center;
+	margin: 1%;
+}
+
+.hobby a {
+	height: 100%;
+	width: 100%;
+}
+
+.hobby img:hover {
+	transform: scale(1.1);
+}
+
+.hobby img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 25%;
+	margin: auto;
+/*	filter: grayscale(1);*/
+/*	filter: sepia(0.5);*/
+/*	filter: opacity(0.9);*/
+	filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9))  sepia(0.2) opacity(0.9);
+}
