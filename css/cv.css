@@ -10,10 +10,45 @@ h2 { margin-bottom: 20px; }
 
 */
 
-
-
 /* https://vanseodesign.com/css/vertical-centering/    <<< print this!! */  
 
+
+:root {
+	--page-bg: rgba(80,80,115, 0.6);
+	--overlay-shade: rgba(0,0,0,0.5);
+	--box-shade: rgba(30,30,45,0.6);
+	--project-shade: rgba(60,60,85, 0.8);
+	--text-colour: rgba(129, 167, 255, 1);
+	--text-shade: rgba(30,30,45,1);
+	--title-colour: rgba(145,183,255, 1);
+}
+
+/*rgb(100,100,100);*/
+
+/* Blues...
+343477	rgb(52,52,119)
+
+3434A8	rgb(52,52,168)
+2929E5	rgb(41,41,229)
+272746	rgb(39,39,70)
+
+6780F4	rgb(103,128,244)
+
+rgb(139,177,255)
+
+rgb(161,176,246)
+Purple
+4C2D76
+
+Green
+
+
+
+*/
+.subHeading {
+	color: var(--title-colour);
+	font-weight: bold;
+}
 body, .cover {
 	padding: 0;
 	margin: 0;
@@ -26,7 +61,7 @@ div {
 }
 
 .enlarge-image-modal {
-	background: rgba(0,0,0,0.7);
+	background: var(--overlay-shade);
 	z-index: 999;
 	width: 100%;
 	height: 100%;
@@ -44,38 +79,32 @@ div {
 #cv-background-cover {
 	width: 100%;
 	height: 100%;
-	margin: 0;
-/*	padding: 5% 0;*/
-	background: rgba(0,0,0,0.6);
-/*	color: lightskyblue;*/
-/*	color: rgba(131, 155, 255);*/
-		color: rgb(129, 167, 255);
+/*	margin: 0;*/
+	background: var(--overlay-shade);
+	color: var(--text-colour);
 	font-family: serif;
-	border: none;
+/*	border: none;*/
 	box-sizing: border-box;
 	overflow-y: scroll;
-		padding-top: 70px;
+	padding-top: 70px;
 }
 	
 #cv-sheet-div {
-
 	
 	box-sizing: border-box;
-/*	padding: 2em;*/
-	/*    background: yellow;*/
-	background: rgb(100, 100, 100, 0.7);
+	background: var(--page-bg);
 	max-width: 1000px;
 	min-width: 300px;
-	width: 75%;
-	margin: 2% auto;
+	width: 75%;	
+	margin: 0 auto;
 
 	font-size: 18px;
 	font-weight: 500;
-	text-shadow: 1px 1px 3px rgba(10,10,10,0.7), -1px -1px 3px rgba(0,0,0,0.7);
+	text-shadow: 1px 1px 3px var(--text-shade), -1px -1px 3px var(--text-shade);
 
 }
 
-#cv-sheet-header, #education-references {
+#cv-sheet-header {
 	max-height: 150px;
 	min-height: 55px;
 	height: 25%;
@@ -85,8 +114,8 @@ div {
 }
 
 #cv-sheet-header {
-	box-shadow: inset 0 0 100px rgba(50,50,50,0.8);	
-	background: rgba(100,100,100, 0.5)
+	box-shadow: inset 0 0 100px var(--box-shade);	
+	background: var(--page-bg);
 }
 
 #cv-sheet-header #title {
@@ -107,17 +136,12 @@ div {
 
 .divider {
 	width: 100%;
-	background: rgba(50,50,50, 0.5);
+	background: var(--box-shade);
 	padding: 2px 1em;
-	box-shadow: 0.5px 0 3px rgb(50,50,50);
-/*
-	border-bottom: 1px solid;
-	border-top: 1px solid;
-*/
+	box-shadow: 0.5px 0 3px var(--box-shade);
 }
 .divider .divider-title {
 	text-transform: uppercase;
-/*	color: rgb(100,100,150);*/
 }
 
 
@@ -129,7 +153,7 @@ div {
 	height: 25%;
 	display: table;
 /*	padding: 2em;*/
-	background: rgba(250,250,250, 0.1);
+	background: var(--page-bg);
 }
 
 .job {
@@ -140,17 +164,14 @@ div {
 	height: 100%;
 	padding: 2% 1em;
 	vertical-align: top;
-	box-shadow: inset 0 0 100px rgba(50,50,50,0.8);
+	box-shadow: inset 0 0 100px var(--box-shade);
 }
 .job#job-0 {
 	padding-left: 2em;
-/*	border-right: 0.5px solid rgba(250,250,250,0.1);*/
-/*	box-shadow: 1px 1px 2px;*/
 }
 
 .job#oldest {
 	padding-right: 2em;
-/*	border-left: 1px solid;*/
 }
 
 .job .header {
@@ -162,68 +183,59 @@ div {
 	font-size: 1.2em;
 	font-weight: bold;	
 }
-
-
 .job .title {
 	display: table-cell;
-/*	background: green;*/
 	vertical-align: middle;
 }
-
 .job .subHeading {
-/*	background: blue;*/
 	display: table-cell;
 	vertical-align: middle;
 	text-align: right;
 	font-style: italic;
 	text-decoration: underline;
-	margin-bottom: 5%;
 }
-
 .job .body {
 	text-align: justify;
 	min-height: 100px;
 	font-family: sans-serif;
+	margin-top: 2.5%;
 }
-
 .job .description {
 	display: block;
 	height: 100%;
 }
-
-
 .job .footer {
 	text-align: right;
 	height: 15%;
+	font-family: sans-serif;
 }
 
 
+/* Education & Acheivements */
+#education-references {
+	max-height: 150px;
+	min-height: 55px;
+	height: 25%;
+	display: table;
+	width: 100%;
+	background: var(--page-bg);	
+	font-family: sans-serif;
+}
 
 #education {
 	display: table-cell;
 	width: 60%;
-	margin: 0 0.5%;
-	padding: 0 1%;
+	padding: 2em;
+	box-shadow: inset 0 0 100px var(--box-shade);	
 }
 
+#education-references span {
+	text-decoration: underline;
+	font-family: serif;
+}
 #education .education {
-	margin-bottom: 1%;
+	margin-bottom: 5%;
 }
-
-#references {
-	display: table-cell;
-	vertical-align: middle;
-	width: 38%;
-	margin: 0 0.5%;
-	box-sizing: border-box;
-	padding-left: 2%;
-	
-}
-
-#education .education {
-			margin-bottom: 5%;
-}
-
 #education .img {
 	display: inline;
 	margin: 0.5%;
@@ -233,13 +245,18 @@ div {
 	max-width: 15%;
 }
 
+#references {
+	display: table-cell;
+	vertical-align: middle;
+	width: 39%;
+	box-sizing: border-box;
+	padding: 2em;
+	box-shadow: inset 0 0 100px var(--box-shade);	
+}
 
-
-
-
+/* Projects */
 #projects-carousel {
 	min-height: 400px;
-/*	height: 40%;*/
 	display: table;
 }
 #carouselContents {
@@ -254,18 +271,10 @@ div {
     width: 5%;
 }
 .project {
-	background: rgba(100,100,100,0.85);
-
-/*	padding: 2%;*/
+	background: var(--project-shade);
 	padding: 5% 15%;
 	font-family: sans-serif;
 }
-
-/*
-.project-overlay {
-opacity: 1;	
-}
-*/
 
 .project .header {
 	text-align: center;
@@ -319,11 +328,8 @@ opacity: 1;
     /* half a monitor screen... */
     
 	#cv-sheet-div {
-
 		 min-width: 700px;
-		 width: 90%;
-		 margin: 0 auto;
-/*			background: green;*/
+		 width: 90%;	
 	}
 	#cv-sheet-header #title {
 		width: 36%;
@@ -331,16 +337,11 @@ opacity: 1;
 	
 	#cv-sheet-header #sub-head {
 		width: 60%;
-/*		padding: 1%;*/
 	}
 	
-	.job .title {
+	.job .title, .job .subHeading {
 		display: block;
-		width: 99%;
-	}
-	.job .subHeading {
-		display: block;
-		width: 99%;
+		width: 100%;
 	}
 }
 
@@ -350,32 +351,19 @@ opacity: 1;
 	
 	
 	#cv-sheet-div {
-/*		background: red;*/
 		min-width: 330px;
-/*		padding: 0.7em;*/
 		width: 95%;
-		margin: 0 auto;
 	}
 	
 	#cv-sheet-header #title {
-		 display: block;
-/*
-		 width: 95%;
-		 margin: 0 auto;
-*/
+		display: block;
 		width: 100%;
-		
-		 text-align: center;
-		margin-bottom: 1.5%;
 	}
 
 	#cv-sheet-header #sub-head {
 		 display: block;
-/*		 max-width: 95%;*/
 		 width: 100%;
-/*		 margin: 0 auto;*/
-		 text-align: justify;
-		 vertical-align: middle;
+		 padding: 0;
 	}
 
 	#job-history {
@@ -387,19 +375,17 @@ opacity: 1;
 		padding: 1em 2em;
 		display: block;
 		width: 100%;
-		border-bottom: 1px solid;
-/*		margin: 0 auto 1% auto;*/
+/*		border-bottom: 1px solid;*/
 	}
 	.job .header .title {
 		display: table-cell;
-		width: 50%;
+		width: 49%;
+		vertical-align: middle;
 	}
 	.job .header .subHeading {
 		display: table-cell;
-		width: 50%;
-	}
-	.job .body {
-		min-height: 0;
+		vertical-align: middle;
+		width: 49%;
 	}
 	.job .footer { 
 		padding: 1% 0 1.5% 0;
@@ -414,27 +400,16 @@ opacity: 1;
 
 @media only screen and ( max-width: 568px ) {
 /*   at 568px (iphone6 and above landscape) or less, do: */
-/*
-	#cv-background-cover {
-		padding-top: 58px;
-	}
-*/
 	#cv-sheet-div {
-/*		background: purple;*/
-		max-width: 568px;
 		width: 92%;
-		margin: 0 auto 5px auto;
-		min-width: 300px;
-/*		padding: 0 2px;*/
 	}
 	div {
 		letter-spacing: 1px;
-/*		padding: 1%;*/
 	}
 	#cv-sheet-header, .job, .job#job-0, .job#oldest {
 		padding: 5%;
-		width: 100%
-/*		margin: 0;*/
+		width: 100%;
+		margin: 0;
 	}
 	.job .header .title {
 		display: block;
@@ -449,7 +424,6 @@ opacity: 1;
 
 	#education-references {
 		width: 100%;
-		padding: 5%;
 		margin: 0;
 	}
 	
@@ -457,10 +431,6 @@ opacity: 1;
 		display: block;
 		width: 100%;
 	}	
-	
-	#education {
-		margin-bottom: 5%;
-	}
 	
 	.project {
 		padding: 5% 8%;

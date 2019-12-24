@@ -1,10 +1,10 @@
 {
     "education" : [
         {
-            "title" : "Education: Newstead Wood School For Girls",
+            "title" : "<span>Education</span><br>Newstead Wood School For Girls",
             "startDate" : "01/09/2000",
             "endDate" : "01/04/2007",
-            "description" : "&#9679; 12 GCSE's; 4 A*, 4 A, 2 B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B",
+            "description" : "&#9679; 12 GCSE's; 4 A*, 4 A, 2 B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
             "certificate" : "",
             "languages" : ""
         },
