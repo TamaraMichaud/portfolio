@@ -73,16 +73,11 @@ export class ProjectRecord extends CareerInfo {
 		projectConfig.technologies = tech;
 		
 		super("project", projectConfig, configMap);
-//		this.image = buildImageElement(projectConfig.image, "Project Collage");
+
 		this.linkedTo = projectConfig.linkedTo;
-//		this.image = buildImageElement(projectConfig.image, "Obfuscated Image - my code only");
-	
 		
 		//TODO: remove the defunct code above
 		this.image = projectConfig.image;
-		
-//		return this.toElement(this.image);
-//		return this.toElement();
 	}
 }
 
@@ -94,8 +89,16 @@ export class EducationRecord extends CareerInfo {
 		super("education", educationConfig, configMap);
 		
 		if(educationConfig.certificate) {
-			this.element = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
+			var mainCertDiv = newDiv(['cert-outer']);
+			var imageDiv = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
 
+			var tech = '&#9679 ' + educationConfig.languages.toString().replace(/,/g, '<br>&#9679 ');
+			var languagesDiv = newDiv(['cert-langs']);
+			languagesDiv.innerHTML = tech;
+			mainCertDiv.appendChild(languagesDiv);
+			mainCertDiv.appendChild(imageDiv);
+				
+			this.element = mainCertDiv;
 		} else {
 			this.element = this.school(this);
 		}
