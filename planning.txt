@@ -1,138 +1,21 @@
 // TODO: 
 // figure out how to do set tasks on github.
 
-// fix css on background image
-// find footer
-// --> develop footer link
+// remove underline from navbar myCV link
+// print languages next to certificates
+// add cv pdf to footer links
+// --> develop TenerifeJack --> about me // hobbies interests
 
 
-// Portfolio;
-- MyCv -> CV Pdf, LinkedInBadge, GitHub Link
- --> fix EMBED not-closing for pdf...
- --> import new displayImageModal() for the sidebar modal
-- career; on-load, display orb.carerrItemType on the screen for 2s
-- career; certificates enlarge on mouseover/click (**touchscreen)
+// convert entire myCV.html text to json config...
+// set colour-schemes/backgrounds to changes depending on time of day...
+
+
+
+
+
 
 // ^^ pr here and then stop procrastinating and apply for some jobs fool!!
 
+- career; on-load, display orb.carerrItemType on the screen for 2s
 (- starburst of technologies/languages on hover/click)
-
-
-
-
-
-
-
-// instead of sidebar, open new page; have the 3 images in a bootstrap carousel
-    // nope; will need to be v.2; carousel of 3 circular images that rotate visibly on x axis
-//(2 fading in the background, one major in the fore, on click/swipe, swivel the three and bring another forward)
-
-
-
-
-
-
-
-
-
-WORK:
-        CV: pdf/image, or link to LinkedIn
-        Languages: worked in
-        Projects completed: command-line helpme, selenium suite, cypress suite(s), dwt, finance app
-
-PLAY:
-        build-a-workout
-        side-scroller game
-        hobbies links; WT, ifly, Spartan, Parkour// Main Page = orbs;
-
-    //Orbs:  (major. onClick, freeze other orbs and display titles)
-            // Work
-                // CV: pdf of cv and/or link to LinkedIn page
-                // History: timeline of education and employment + key things learnt (grades, languages, certificates)
-                // Projects: screenshots of previous projects; commandline helpme, qa selenium, finance app, dwt
-
-
-            // Play
-                // sidescroller...
-                // about-me; WT, ifly,
-                // workouts app
-                    //
-                    // Workouts Page:
-    /*       input: Select muscle-group(s): workoutsConfig["muscle-groups"]
-             input: select workout type(s): workoutsConfig["workout-types"]
-             input: select level:  easy/medium/hard
-             input: select workout duration: [number] minutes
-             Go! =>
-             loop workoutsConfig["workouts"]
-                collect all workouts matching  .muscle-groups and .workout-types
-                    - push into displayWorkoutObj with level info
-                        - strip non-matching muscle-groups and workout-types for any later "swap workout" option
-                    - calculate workout duration and stop within 5 minutes
-                    - add generic stretching routines to start and end
-                    - display workouts and timer on screen
-
-
-//Objects
-Exercise = function(level, ){
-    name: '',
-    description: '',
-    sets: '',
-    reps: '',
-}
-Exercise.prototype.setLevel = function(level){
-
-    var levelInfo = workoutList[this].variations[level]
-
-}
-
-Variation = function(level){
-    level: '', // easy, medium, hard
-    sets: '',
-    reps: '',
-    description: '',
-}
-
-Workout = function(configObject){
-    exercise: new Exercise(configObject.name),
-    variations: setLevels(),
-    setLevels: function(){
-        var levelsArray = [];
-        for (easy medium hard) {
-            levelsArray.push(new Level())
-        }
-        return levelsArray;        
-    }
-}
-
-//{
-                        "name" : "squats",
-                        "reps" : 20,
-                        "sets" : 5, 
-                        "muscle-groups" : [ "legs" ],
-                        "variations" : [ 
-                                {
-                                    "level" : "easy",
-                                    "description" : ""
-                                },
-                                {
-                                    "level" : "medium",
-                                    "description" : "squat 1 pulse 2"
-                                },
-                                {
-                                    "level" : "hard",
-                                    "description" : "hands overhead; squat 1 pulse 2 squat 1 hold:5secs = 1 rep"
-                                }
-                            ]
-                    }
-
-
-
-    */
-
-///////////////////////////////////////////////////////
-
-controller
-
-
-
-

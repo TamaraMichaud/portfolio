@@ -23,28 +23,6 @@ h2 { margin-bottom: 20px; }
 	--title-colour: rgba(145,183,255, 1);
 }
 
-/*rgb(100,100,100);*/
-
-/* Blues...
-343477	rgb(52,52,119)
-
-3434A8	rgb(52,52,168)
-2929E5	rgb(41,41,229)
-272746	rgb(39,39,70)
-
-6780F4	rgb(103,128,244)
-
-rgb(139,177,255)
-
-rgb(161,176,246)
-Purple
-4C2D76
-
-Green
-
-
-
-*/
 .subHeading {
 	color: var(--title-colour);
 	font-weight: bold;
@@ -136,9 +114,10 @@ div {
 
 .divider {
 	width: 100%;
-	background: var(--box-shade);
-	padding: 2px 1em;
-	box-shadow: 0.5px 0 3px var(--box-shade);
+/*	background: linear-gradient(to right, yellow, red 50%, green 75%, white 75%);*/
+	background: linear-gradient(to right, rgba(255,206,88, 0.5), var(--box-shade) 25%);
+	padding: 2px 10px;
+	box-shadow: 0.5px 0 3px var(--box-shade);	
 }
 .divider .divider-title {
 	text-transform: uppercase;
