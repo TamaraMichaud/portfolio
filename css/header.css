@@ -1,3 +1,88 @@
+.modal-close {
+	background: skyblue;
+	color: azure;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-left: auto;
+	position:relative;
+	top: -1%;
+	left: -1%;
+	box-shadow: 0 0 15px 5px skyblue;
+}
+
+.modal-close:hover {
+	cursor:pointer;
+}
+.modal-close:active {
+	background: lightblue;
+}
+
+
+.navbar{
+	background-color: black;
+	border-bottom: 0.1px solid grey;
+	letter-spacing: 0.5px;
+}
+.navbar a:hover {
+	font-weight: 500;
+	letter-spacing: normal;
+}
+
+
+footer {
+    height: 5%;
+    background: black;
+    color: white;
+    text-align: center; 
+    padding: 5px 0 ;
+    font-family: Georgia, Times, serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 0.1px solid grey;
+    z-index: 9999;
+}
+
+footer a {
+	color:white;
+	font-style: italic;
+}
+footer a:hover {
+	text-decoration: none;
+}
+
+footer #tenerife-jack {
+	width: 2%;
+	height: 0.8em;
+	display: inline;
+	min-width: 23px;
+}
+#github, #linked-in, #cv-pdf {
+
+	height: 1em;
+	background: white;
+	border-radius: 50%;
+}
+#cv-pdf {
+	background: black;
+	border-radius: 0;
+}
+
+
+
+
+
+/*
+
+.align-right {
+	margin-left: auto;
+	padding-right: 1%;
+	width: 50px;
+}
+
+
 .sidebar {
 	display: none;
 	position: fixed;
@@ -38,28 +123,6 @@
     cursor: pointer;
 }
 
-.modal-close {
-	background: skyblue;
-	color: azure;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	margin-left: auto;
-	position:relative;
-	top: -1%;
-	left: -1%;
-/*	border: 1px solid blue;*/
-	box-shadow: 0 0 15px 5px skyblue;
-}
-
-.modal-close:hover {
-	cursor:pointer;
-}
-.modal-close:active {
-	background: lightblue;
-}
-
-
 .sidebar ul {
 	height: 100%;
 	padding: 1%;
@@ -81,47 +144,4 @@
 .sidebar li img {
 	height: 100px;
 }
-
-.align-right {
-	margin-left: auto;
-	padding-right: 1%;
-	width: 50px;
-}
-
-.navbar{
-	background-color: black;
-	border-bottom: 0.1px solid grey;
-	letter-spacing: 0.5px;
-}
-.navbar a:hover {
-	font-weight: 500;
-	letter-spacing: normal;
-}
-footer {
-    height: 5%;
-    background: black;
-    color: white;
-    text-align: center; 
-    padding: 5px 0 ;
-    font-family: Georgia, Times, serif;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-top: 0.1px solid grey;
-    z-index: 9999;
-}
-
-footer a {
-	color:white;
-/*	font-weight: bolder;*/
-	font-style: italic;
-}
-
-footer #tenerife-jack {
-
-	width: 2%;
-	height: 0.8em;
-	display: inline;
-	min-width: 23px;
-}
+*/
