@@ -1,5 +1,6 @@
 import {fetchFileContents} from './FetchConfig.js';
 import {ProjectRecord, JobRecord, EducationRecord} from './career/CareerInfo.js';
+//import {ShowProject} from './career/ShowProject.js';
 
 var globalConfig;
 fetchFileContents("career").then((jsonContents) => {
@@ -14,9 +15,9 @@ var uiController = (function(){
 			console.log('Starting Up');
 
 			globalConfig.jobHistory.forEach((obj, idx, array) => {
-				
+
 				var nextJobRecord = new JobRecord(obj);
-				
+
 				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
 				nextJobRecord.classList.add("job");
 				document.getElementById("job-history").appendChild(nextJobRecord);
@@ -26,19 +27,19 @@ var uiController = (function(){
 				document.getElementById("education").appendChild(new EducationRecord(obj));
 			})
 
-			
+
 			globalConfig.projects.forEach((obj, idx, array) => {
 
 				var nextProjectObj = new ProjectRecord(obj);
 				var nextProjectInner = nextProjectObj.toElement();
-				
+
 				var nextProjectOuter = document.createElement('div');
-				nextProjectOuter.classList.add('project-overlay');
-				nextProjectOuter.classList.add('carousel-item');
+				nextProjectOuter.id = "proj-" + nextProjectObj.id;
+				nextProjectOuter.classList.add('project-overlay', 'carousel-item');
 				nextProjectOuter.style.background = 'url(' + nextProjectObj.image + ') center center no-repeat';
-				
+
 				nextProjectOuter.appendChild(nextProjectInner);
-				
+
 				var indicatorElement = document.createElement('li');
 				indicatorElement.setAttribute('data-target', '#carouselContents');
 				indicatorElement.setAttribute('data-slide-to', idx);
@@ -48,12 +49,26 @@ var uiController = (function(){
 					indicatorElement.classList.add("active");
 				}
 				document.querySelector(".carousel-inner").appendChild(nextProjectOuter);
-				
+
 				document.querySelector(".carousel-indicators").appendChild(indicatorElement);
-				
+
 			});
-		
+
+
+			// bind event listener to "learn more"'s
+			document.querySelectorAll('.job .description span').forEach((item, idx, array) => {
+
+				item.addEventListener('click', () => {
+					$('.carousel').carousel(item.id *1);
+					document.getElementById('projects-carousel').focus();
+				
+				});
+			});
 		}
 	}
-        
+
 })();
+
+function goToProject(){
+	console.log("woop");
+}

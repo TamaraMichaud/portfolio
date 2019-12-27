@@ -4,7 +4,7 @@
             "title" : "<span>Education</span><br>Newstead Wood School For Girls",
             "startDate" : "01/09/2000",
             "endDate" : "01/04/2007",
-            "description" : "&#9679; 12 GCSE's; 4 A*, 4 A, 2 B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
+            "description" : "&#9679; 12 GCSE's; A* -  B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
             "certificate" : "",
             "languages" : ""
         },
@@ -31,7 +31,7 @@
         {
             "employer" : "NewSmartfocus Ltd",
             "jobTitle" : "QA Automation Engineer",
-            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Research into Cypress. Also created an application to generate monthly reports for the finance department. <a href=\"badbexports\">learn more</a>",
+            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Research into Cypress. Also created an application to generate monthly reports for the finance department. <span id='1'>learn more</span>",
             "startDate" : "01/11/2018",
             "endDate" : "current"
 
@@ -39,7 +39,7 @@
         {
             "employer" : "Smartfocus Ltd",
             "jobTitle" : "Data Integration Specialist",
-            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of back-end packages with a web tool interface <a href=\"dwt\">learn more</a>",
+            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of back-end packages with a web tool interface <span id='0'>learn more</span>",
             "startDate" : "01/09/2015",
             "endDate" : "01/11/2018"
 
@@ -55,6 +55,7 @@
     ],
     "projects" : [
         {
+			   "id" : "dwt",
             "title" : "Data Web Tool",
             "description" : "View client-account setup information from multiple servers/applications in one page. Scope a new sale and directly tag an authorisor on the related Jira ticket automatically",
             "technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
@@ -63,6 +64,7 @@
             "endDate" : "01/10/2017"
         }, 
         {
+			   "id" : "badbexports",
             "title" : "Badb Exports",
             "description" : "Self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports",
             "technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
@@ -71,6 +73,7 @@
             "endDate" : "01/11/2019"
         },
 		 {
+			 "id" : "qasuite",
 			 "title" : "QA Regression Test Suite",
 			 "description" : "Working in a small international team, I helped to build a suite of automated tests that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices",
 			 "technologies" : [ "Selenium", "Java", "Cucumber", "Gherkin", "CI/CD", "Jenkins", "Postman", "Cypress"],

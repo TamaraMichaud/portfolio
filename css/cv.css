@@ -25,8 +25,8 @@ h2 { margin-bottom: 20px; }
 
 .subHeading {
 	color: var(--title-colour);
-	font-weight: bold;
 }
+
 body, .cover {
 	padding: 0;
 	margin: 0;
@@ -189,7 +189,14 @@ div {
 	height: 15%;
 	font-family: sans-serif;
 }
-
+.job span {
+	font-size: 0.75em;
+	text-transform: uppercase;
+}
+.job span:hover {
+	cursor: pointer;
+	text-shadow: none;
+}
 
 /* Education & Acheivements */
 #education-references {

@@ -71,12 +71,9 @@ export class ProjectRecord extends CareerInfo {
 		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
 		var tech = projectConfig.technologies.toString().replace(/,/g, ' &#9679 ');
 		projectConfig.technologies = tech;
-		
 		super("project", projectConfig, configMap);
 
-		this.linkedTo = projectConfig.linkedTo;
-		
-		//TODO: remove the defunct code above
+		this.id = projectConfig.id;
 		this.image = projectConfig.image;
 	}
 }
