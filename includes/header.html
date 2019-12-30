@@ -1,5 +1,39 @@
 <link rel="stylesheet" href="./css/header.css">
 <div class="main-image-modal"></div>
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
 <a class="navbar-brand" href="./index.html">TamaraMichaud.io</a>
 
-<a class="navbar-brand ml-auto text-white mr-1" href="./pages/myCV.html">My CV</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav ml-auto">
+		
+		<li class="nav-item active">
+			<a class="nav-link" href="./pages/myCV.html">My CV</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="./pages/about-me.html">About Me <img title="Made in England" id="tenerife-jack" src="./img/tenerifeJack.png">
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href='https://uk.linkedin.com/in/tamara-michaud-35b02256?trk=profile-badge' target="_blank">
+				<span>View LinkedIn Profile </span><img id="linked-in" title="My LinkedIn Profile" src="./img/career/linkedin.png">
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://github.com/TamaraMichaud" target="_blank">
+				<span>Go to Github Account </span><img id="github" title="My Github Account" src="./img/career/github-profile.png">
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" onClick="return confirm('You are about to download/view the pdf version of my cv, do you want to continue?');" href="./img/career/tamaramichaud-cv2020.pdf" id="pdfDownload" target="_blank">
+				<span>View CV PDF </span><img id="cv-pdf" title="My CV as PDF" src="./img/career/cv-img.png">
+			</a>
+		</li>
+
+	</ul>
+</div>
+<!--</nav>-->

@@ -1,19 +1,24 @@
 const relativeDir = getRelativeDir();
-const includesArray = [ 'header', 'footer'];
+//const includesArray = [ 'header', 'footer', 'footer-lazy'];
 const urlPathStart = window.location.protocol + 
 		"//" + window.location.host + "/";
 const projectDir = document.URL
   		.replace(urlPathStart, "").replace(/\/.*$/, "\/");
 const pathRoot = urlPathStart + projectDir;
 
-for(var i = 0; i < includesArray.length; i++){
-	doAjax(includesArray[i], true);
-}
+//for(var i = 0; i < includesArray.length; i++){
+//	doAjax(includesArray[i], true);
+//}
 
-function doAjax(item, relative){
+doAjax('header', 'header', true);
+//doAjax('footer', 'footer', true);
+//doAjax('footer', 'footer-lazy', true);
+
+
+function doAjax(docname, item, relative){
   $.ajax({
 			type: "GET",
-			url: relativeDir + 'includes/' + item + '.html',
+			url: relativeDir + 'includes/' + docname + '.html',
 			dataType: 'html',
 			error: function (e) {
 					console.log("Failed to read file: " + 'x', e);
