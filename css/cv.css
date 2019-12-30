@@ -15,6 +15,7 @@ h2 { margin-bottom: 20px; }
 
 :root {
 	--page-bg: rgba(80,80,115, 0.6);
+/*	--page-bg: rgba(236,236,255, 0.6);*/
 	--overlay-shade: rgba(0,0,0,0.5);
 	--box-shade: rgba(30,30,45,0.6);
 	--project-shade: rgba(60,60,85, 0.8);
@@ -70,7 +71,7 @@ div {
 #cv-sheet-div {
 	
 	box-sizing: border-box;
-	background: var(--page-bg);
+/*	background: var(--page-bg);*/
 	max-width: 1000px;
 	min-width: 300px;
 	width: 75%;	

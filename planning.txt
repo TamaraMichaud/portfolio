@@ -2,8 +2,13 @@
 // figure out how to do set tasks on github.
 
 
-// add cv pdf to footer links
-// --> develop TenerifeJack --> about me // hobbies interests
+
+//min-screen0wdith == 10px less than curr
+// at min-width; push footer into header
+//add confirm() to pdf download
+//lighten background
+// (set plain bg with watermark of all tech/langs ?)
+
 // landing page orbs declare "catch me"
 
 // convert entire myCV.html text to json config
