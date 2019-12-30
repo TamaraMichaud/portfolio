@@ -74,6 +74,25 @@ footer #tenerife-jack {
 
 
 
+/* move footer into dropdown for mobiles */
+@media only screen and ( max-width: 650px ) {
+/*   at 568px (iphone6 and above landscape) or less, do: */
+
+	.cover {
+		max-height: 620px;
+	}
+	footer {
+		visibility: hidden;
+		position: relative;
+	}
+	
+	
+	
+	
+	
+}
+
+
 /*
 
 .align-right {
