@@ -25,10 +25,6 @@
 }
 
 
-
-
-
-
 div {
 	letter-spacing: 0.5px;
 }
@@ -42,7 +38,6 @@ div {
 	top: 0;
 	left: 0;
 	padding: 5%;
-	padding-top: 20px;
 	text-align: center;
 }
 .zoom-img {
@@ -399,12 +394,32 @@ ol.carousel-indicators li {
 	/*@media only screen and ( max-width: 0px ) {*/
 	/*   at 568px (iphone6 and above landscape) or less, do: */
 
-
+	body {
+		overflow: auto;
+	}
 	div {
-		letter-spacing: 1px;
+		letter-spacing: 0.9px;
+	}
+	.enlarge-image-modal {
+			padding-top: 30%;
 	}
 
+	#cv-sheet-header {
+		padding: 10% 2% 2% 2%;
+	}
+	
+	.divider {
+		padding-top: 2px;
+		background: var(--divider-colour1);
+	}
 
+	#up-down-nav {
+		visibility: hidden;
+	}
+	
+	#job-history {
+		height:auto;
+	}
 	.job .header .title, .job .header .subHeading {
 		display: block;
 		width: 100%;
@@ -418,7 +433,8 @@ ol.carousel-indicators li {
 	#education-references {
 /*		padding: 0;*/
 		display: block;
-		overflow-y: auto;
+/*		overflow-y: auto;*/
+		height: auto;
 		line-height: 1.3em;
 	}
 	.cert-outer {

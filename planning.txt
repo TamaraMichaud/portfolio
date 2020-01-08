@@ -1,12 +1,6 @@
 // TODO: 
 // figure out how to do set tasks on github.
 
-- order job history in desktop by old to new
-- set job history dates on top row as full-width (?)
-- swap references for skills; everyday tech 
-	- group by programming / web / database
-- projects; on-hover make background more prominent --> fuck no
-
 
 -- projects: remove the languages shite.  display only the code and/or blur the image
 -- stretch/repeat image...

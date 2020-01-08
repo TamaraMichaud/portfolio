@@ -67,10 +67,16 @@ var uiController = (function(){
 			});
 
 
+			document.querySelector('.to-top').addEventListener('click', () => {
+				document.getElementById('div-0').scrollIntoView();
+			});
+
 			document.querySelector('#up-down-nav #up').addEventListener('click', updownNav);
 			document.querySelector('#up-down-nav #down').addEventListener('click', updownNav);
 
-			document.getElementById('div-0').scrollIntoView(true);
+			if(window.innerWidth >= 650){
+				document.getElementById('div-0').scrollIntoView(true);
+			}
 		}
 	}
 
@@ -86,14 +92,14 @@ function updownNav(){
 	if(nextElementIdx < 0 || nextElementIdx > 3 ) {
 		nextElementIdx = currElementIdx;
 	}
-	
+
 	document.getElementById('div-' + nextElementIdx).scrollIntoView({ behaviour: 'smooth', block: 'start'});
-	
-//	$().animate({
-//    scrollTop: $("#elementId").offset().top
-//}, 1000);
-	
-	
+
+	//	$().animate({
+	//    scrollTop: $("#elementId").offset().top
+	//}, 1000);
+
+
 	this.parentNode.setAttribute('data-next', nextElementIdx);
 }
 
