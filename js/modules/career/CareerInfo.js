@@ -12,7 +12,73 @@ class CareerInfo {
 	}
 
 
+}
+
+
+export class JobRecord extends CareerInfo {
+
+	//employer -   datef/datet
+	//title
+	//description
+
+	constructor(jobConfig) {
+
+		var configMap = [ "employer", "jobTitle", "description", "startDate", "endDate" ];
+		super("job", jobConfig, configMap);
+		
+		return this.toElement();
+	}
+
+	
 	toElement(extraElement){
+		// Title - subheading
+		// description
+		// (other infos)
+		// datefrom - dateto
+
+					
+		var wrapper = getWrapperAndHeader(this, []);
+
+		var wFooter = newDiv(['footer']);
+		var dateText = "";
+		if(this.dateFrom == "" || this.dateTo == "") {
+			dateText = this.dateFrom + this.dateTo;
+		} else {
+			dateText = this.dateFrom + '&nbsp; - &nbsp;' + this.dateTo;
+		}
+
+		wFooter.appendChild(nextLine(dateText, 'dates'));
+
+		var wBody = buildBody(this.description, this.title);
+
+		if(extraElement) {
+					wBody.appendChild(extraElement);
+		}
+
+		if(wBody.hasChildNodes()) { 
+			wrapper.appendChild(wBody);
+		}
+//		wrapper.appendChild(wFooter);
+		wrapper.insertBefore(wFooter, wrapper.children[0]);
+
+		return wrapper;
+	}
+
+}			
+
+
+export class ProjectRecord extends CareerInfo {
+
+	constructor(projectConfig) {
+		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
+		var tech = projectConfig.technologies.toString().replace(/,/g, ' &#9679 ');
+		projectConfig.technologies = tech;
+		super("project", projectConfig, configMap);
+
+		this.id = projectConfig.id;
+		this.image = projectConfig.image;
+		
+		this.toElement = (extraElement) => {
 		// Title - subheading
 		// description
 		// (other infos)
@@ -45,36 +111,6 @@ class CareerInfo {
 		return wrapper;
 	}
 
-}
-
-
-export class JobRecord extends CareerInfo {
-
-	//employer -   datef/datet
-	//title
-	//description
-
-	constructor(jobConfig) {
-
-		var configMap = [ "employer", "jobTitle", "description", "startDate", "endDate" ];
-		super("job", jobConfig, configMap);
-		
-		return this.toElement();
-	}
-
-}			
-
-
-export class ProjectRecord extends CareerInfo {
-
-	constructor(projectConfig) {
-		var configMap = ["title", "technologies", "description", "startDate", "endDate"];
-		var tech = projectConfig.technologies.toString().replace(/,/g, ' &#9679 ');
-		projectConfig.technologies = tech;
-		super("project", projectConfig, configMap);
-
-		this.id = projectConfig.id;
-		this.image = projectConfig.image;
 	}
 }
 

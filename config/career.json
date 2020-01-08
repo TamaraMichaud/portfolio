@@ -29,25 +29,25 @@
     ],
     "jobHistory" : [
         {
-            "employer" : "NewSmartfocus Ltd",
-            "jobTitle" : "QA Automation Engineer",
-            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Research into Cypress. Also created an application to generate monthly reports for the finance department. <span id='1'>learn more</span>",
+            "jobTitle" : "NewSmartfocus Ltd",
+            "employer" : "QA Automation Engineer",
+            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Researched Cypress and developed a basic poc framework for tests on a separate application. Also created an application to generate monthly reports for the finance department. <br><span id='1'>learn about badb-exports</span>",
             "startDate" : "01/11/2018",
             "endDate" : "current"
 
         },
         {
-            "employer" : "Smartfocus Ltd",
-            "jobTitle" : "Data Integration Specialist",
-            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of back-end packages with a web tool interface <span id='0'>learn more</span>",
+            "jobTitle" : "Smartfocus Ltd",
+            "employer" : "Data Integration Specialist",
+            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of otherwise invisible client configurations with a web tool interface <br><span id='0'>learn about data web tool</span>",
             "startDate" : "01/09/2015",
             "endDate" : "01/11/2018"
 
         },
         {
-            "employer" : "Capita PLC",
-            "jobTitle" : "Technical Officer",
-            "description": "Using UNIX shell scripts, SQL queries & XSL coding to extract and manipulate data for monthly statistics packs, FOI requests and management reporting to strict SLAs",
+            "jobTitle" : "Capita PLC",
+            "employer" : "Technical Officer",
+            "description": "Using UNIX shell scripts, SQL queries & XSL coding to extract and manipulate data for monthly statistics packs, Freedom of Information requests, and management reporting to strict SLAs",
             "startDate" : "01/07/2010",
             "endDate" : "01/09/2015"
         }
@@ -57,16 +57,25 @@
         {
 			   "id" : "dwt",
             "title" : "Data Web Tool",
-            "description" : "View client-account setup information from multiple servers/applications in one page. Scope a new sale and directly tag an authorisor on the related Jira ticket automatically",
+            "description" : "This php site compiles client-account setup information from multiple servers and applications into one comprehensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically",
             "technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
             "image" : "../img/career/projects/DWT_1.jpg",
-            "startDate" : "01/10/2017",
-            "endDate" : "01/10/2017"
+            "startDate" : "01/10/2015",
+            "endDate" : "01/04/2018"
+        }, 
+{
+			   "id" : "cmd",
+            "title" : "Command-Line Helper",
+            "description" : "A simple and expandable command-line tool to provide users with customised man pages explaining shortcuts for etl-creation, file-system navigation, system space and performance checks, as well as tips for less experienced users on how to get on with, or avoid, the linux built-in functions of vi and grep.",
+            "technologies" : [ "bash shell", "linux command-line" ],
+            "image" : "",
+            "startDate" : "01/01/2016",
+            "endDate" : "01/08/2016"
         }, 
         {
 			   "id" : "badbexports",
             "title" : "Badb Exports",
-            "description" : "Self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports",
+            "description" : "A self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports. The application utilises encrypted login authentication and varying user-access levels to reveal only the appropriate actions for each user.",
             "technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
             "image" : "../img/career/projects/finance-reports.jpg",
             "startDate" : "01/11/2019",

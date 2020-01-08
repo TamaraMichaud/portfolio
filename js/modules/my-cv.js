@@ -21,6 +21,7 @@ var uiController = (function(){
 				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
 				nextJobRecord.classList.add("job");
 				document.getElementById("job-history").appendChild(nextJobRecord);
+				
 			})
 
 			globalConfig.education.forEach((obj, idx, array) => {
@@ -36,7 +37,7 @@ var uiController = (function(){
 				var nextProjectOuter = document.createElement('div');
 				nextProjectOuter.id = "proj-" + nextProjectObj.id;
 				nextProjectOuter.classList.add('project-overlay', 'carousel-item');
-				nextProjectOuter.style.background = 'url(' + nextProjectObj.image + ') center center no-repeat';
+				nextProjectOuter.style.background = 'url(' + nextProjectObj.image + ')';
 
 				nextProjectOuter.appendChild(nextProjectInner);
 
