@@ -21,7 +21,7 @@ var uiController = (function(){
 				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
 				nextJobRecord.classList.add("job");
 				document.getElementById("job-history").appendChild(nextJobRecord);
-				
+
 			})
 
 			globalConfig.education.forEach((obj, idx, array) => {
@@ -62,14 +62,31 @@ var uiController = (function(){
 				item.addEventListener('click', () => {
 					$('.carousel').carousel(item.id *1);
 					document.getElementById('projects-carousel').focus();
-				
+
 				});
 			});
+
+
+			document.getElementById('up-down-nav').addEventListener('click', updownNav);
+
 		}
 	}
 
 })();
 
-function goToProject(){
-	console.log("woop");
+
+
+function updownNav(){
+
+	var nextElementIdx = this.getAttribute('data-next') *1;
+	console.log("scroll to tabindex: " + nextElementIdx);
+	
+	
+	
+	document.getElementById('div-' + nextElementIdx).scrollIntoView('alignToTop');
+	nextElementIdx += 1;
+	this.setAttribute('data-next', nextElementIdx);
+	
+	console.log("next time will be: " + nextElementIdx);
 }
+
