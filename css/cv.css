@@ -244,12 +244,14 @@ body {
 	height: 90%;
 	display: table;
 	color: var(--cover-bg);
+	padding: 0 20%;
+	background: var(--page-bg);
 }
 #carouselContents {
 	display: table-cell;
 	vertical-align: top;
 	padding-top: 5%;
-	height: 90%;
+/*	height: 100%;*/
 	background: var(--page-bg);
 }
 
@@ -292,9 +294,6 @@ ol.carousel-indicators li {
 	text-transform: uppercase;
 }
 .project .body {
-	max-height: 300px;
-	height: 50%;
-	min-height: 150px;
 	overflow-y: auto;
 	margin-bottom: 4px;
 }
@@ -408,6 +407,10 @@ ol.carousel-indicators li {
 		padding: 10% 2% 2% 2%;
 	}
 	
+	#cv-sheet-header #title {
+		line-height: 88%;
+	}
+	
 	.divider {
 		padding-top: 2px;
 		background: var(--divider-colour1);
@@ -419,6 +422,9 @@ ol.carousel-indicators li {
 	
 	#job-history {
 		height:auto;
+	}
+	.job, #education-references, #education, #references {
+		padding: 2%;
 	}
 	.job .header .title, .job .header .subHeading {
 		display: block;
@@ -443,18 +449,36 @@ ol.carousel-indicators li {
 	#education, #references {
 		display: block;
 		width: 100%;
-		padding: 1em;
+/*		padding: 1em;*/
 	}	
+	#education {
+		padding-bottom: 5px;
+	}
 	#education .education {
-		margin-bottom: 4px;
+		margin-bottom: 5px;
+	}
+	
+	#projects-carousel {
+		padding: 0;
 	}
 
 	.project {
 		padding: 5% 10%;
+/*		min-height: 400px;*/
 	}
 	.project .subHeading {
 		font-size: 0.5em;
 		/*		font-weight: normal;*/
+	}
+	.project .footer {
+		padding: 10px 0;
+	}
+	
+	.project .body {
+		padding: 0 2.5%;
+		max-height: 250px;
+		
+		
 	}
 }
 
