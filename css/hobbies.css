@@ -32,6 +32,13 @@
 	margin: 1%;
 }
 
+/*
+.hobby.meh img {
+	border: 3px solid skyblue;
+	box-shadow: 1px 1px 3px skyblue, -1px -1px 3px skyblue;
+}
+*/
+
 .hobby a {
 	height: 100%;
 	width: 100%;

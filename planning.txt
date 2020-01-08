@@ -1,12 +1,24 @@
 // TODO: 
 // figure out how to do set tasks on github.
 
+- order job history in desktop by old to new
+- set job history dates on top row as full-width (?)
+- swap references for skills; everyday tech 
+	- group by programming / web / database
+- projects; on-hover make background more prominent --> fuck no
 
 
-//min-screen0wdith == 10px less than curr
-// at min-width; push footer into header
-//add confirm() to pdf download
-//lighten background
+-- projects: remove the languages shite.  display only the code and/or blur the image
+-- stretch/repeat image...
+
+-- about-me: make the last one pop...
+
+
+
+
+
+
+
 // (set plain bg with watermark of all tech/langs ?)
 
 // landing page orbs declare "catch me"
@@ -16,6 +28,7 @@
 // Tam's tools...
 	-> convert; hex to rgba // cm to inch // gram to ounce // f to c // spanish to english
 	-> workouts
+	-> ais
 // set colour-schemes/backgrounds to changes depending on time of day...
 
 
