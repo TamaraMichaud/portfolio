@@ -55,8 +55,20 @@ div {
 	bottom: 10px;
 	right: 10px;
 	width: 50px;
-	background: black;
 	color: white;
+}
+
+#up-down-nav div {
+	background: black;
+/*	border: 1px solid yellow;*/
+	text-align: center;
+	width: 50%;
+	margin: auto;
+	border-radius: 50%;
+}
+
+#up-down-nav div:hover {
+	cursor: pointer;
 }
 
 body {
@@ -101,8 +113,8 @@ body {
 .divider {
 	width: 100%;
 	/*	background: linear-gradient(to right, yellow, red 50%, green 75%, white 75%);*/
-	/*	background: linear-gradient(to right, var(--divider-colour1), var(--divider-colour2) 25%);*/
-	background: var(--divider-colour1);
+		background: linear-gradient(to bottom, var(--job-dates-bg), var(--job-dates-bg) 68%, var(--divider-colour1) 25%);
+/*	background: var(--divider-colour1);*/
 	padding: 2px 10px;
 	padding-top: 60px;
 	/*	box-shadow: 0.5px 0 3px var(--box-shade);	*/

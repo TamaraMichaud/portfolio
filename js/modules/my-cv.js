@@ -67,7 +67,8 @@ var uiController = (function(){
 			});
 
 
-			document.getElementById('up-down-nav').addEventListener('click', updownNav);
+			document.querySelector('#up-down-nav #up').addEventListener('click', updownNav);
+			document.querySelector('#up-down-nav #down').addEventListener('click', updownNav);
 
 		}
 	}
@@ -78,15 +79,14 @@ var uiController = (function(){
 
 function updownNav(){
 
-	var nextElementIdx = this.getAttribute('data-next') *1;
-	console.log("scroll to tabindex: " + nextElementIdx);
-	
-	
+	var currElementIdx = this.parentNode.getAttribute('data-next') *1;
+	var nextElementIdx = (this.id == 'up') ? currElementIdx - 1 : currElementIdx + 1;
+
+	if(nextElementIdx < 0 || nextElementIdx > 3 ) {
+		nextElementIdx = currElementIdx;
+	}
 	
 	document.getElementById('div-' + nextElementIdx).scrollIntoView('alignToTop');
-	nextElementIdx += 1;
-	this.setAttribute('data-next', nextElementIdx);
-	
-	console.log("next time will be: " + nextElementIdx);
+	this.parentNode.setAttribute('data-next', nextElementIdx);
 }
 
