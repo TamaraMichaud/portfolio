@@ -55,13 +55,15 @@ div {
 	bottom: 10px;
 	right: 10px;
 	width: 50px;
+/*	height: 50px;*/
 	color: white;
 }
 
 #up-down-nav div {
-	background: black;
-/*	border: 1px solid yellow;*/
+	background: var(--cover-bg);
+	/*	border: 1px solid yellow;*/
 	text-align: center;
+
 	width: 50%;
 	margin: auto;
 	border-radius: 50%;
@@ -73,10 +75,11 @@ div {
 
 body {
 	background: var(--job-dates-bg);
-	padding-top: 65px;
+	padding-top: 56.1px;
 	color: var(--text-colour);
-/*	overflow: hidden;*/
+		overflow: hidden;
 }
+
 
 #cv-sheet-header,
 #job-history,
@@ -88,7 +91,7 @@ body {
 }
 
 #cv-sheet-header {
-	padding: 0 10%;
+	padding: 50px 10% 0 10%;
 	background: var(--job-dates-bg);
 }
 
@@ -112,14 +115,10 @@ body {
 
 .divider {
 	width: 100%;
-	/*	background: linear-gradient(to right, yellow, red 50%, green 75%, white 75%);*/
-		background: linear-gradient(to bottom, var(--job-dates-bg), var(--job-dates-bg) 68%, var(--divider-colour1) 25%);
-/*	background: var(--divider-colour1);*/
+	background: linear-gradient(to bottom, var(--job-dates-bg), var(--job-dates-bg) 68%, var(--divider-colour1) 25%);
 	padding: 2px 10px;
 	padding-top: 60px;
-	/*	box-shadow: 0.5px 0 3px var(--box-shade);	*/
 	color: var(--cover-bg);
-	/*	text-shadow: 1px 1px 18px yellow, -1px -1px 18px yellow;*/
 	font-weight: bolder;
 }
 .divider .divider-title {
@@ -143,8 +142,6 @@ body {
 }
 
 .job .footer {
-/*	text-shadow: 1px 1px 2px var(--cover-bg), -1px -1px 2px var(--cover-bg);*/
-/*	color: var(--divider-colour2);*/
 	text-align: center;
 	padding-bottom: 5%;
 }
@@ -191,8 +188,9 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 	width: 60%;
-	height: 100%;
-/*	padding: 2em;*/
+/*	height: 100%;*/
+	/*	padding: 2em;*/
+	padding: 0 7%;
 }
 
 #education-references span {
@@ -209,7 +207,7 @@ body {
 	padding-left: 5%;
 	margin: 0;
 	display: inline-block;
-	margin: 2% 0;
+	margin-bottom: 2%;
 }
 #education .education {
 	margin-bottom: 5%;
@@ -248,17 +246,16 @@ body {
 
 /* Projects */
 #projects-carousel {
-height: 90%;
+	height: 90%;
 	display: table;
 	color: var(--cover-bg);
 }
 #carouselContents {
 	display: table-cell;
 	vertical-align: top;
-/*	width: 100%;*/
-	/*	min-height: 300px;*/
-
-	background: var(--project-shade);
+	padding-top: 5%;
+	height: 90%;
+	background: var(--page-bg);
 }
 
 #carouselContents a.carousel-control-prev, #carouselContents a.carousel-control-next{
@@ -342,128 +339,99 @@ ol.carousel-indicators li {
 */
 
 
-@media only screen and ( max-width: 1098px ) {
-	/* half a monitor screen... */
-	/*
-
-	#cv-sheet-div {
-	min-width: 700px;
-	width: 90%;	
-}
-	#cv-sheet-header #title {
-	width: 36%;
-}
-
-	#cv-sheet-header #sub-head {
-	width: 60%;
-}
-	.job .header {
-	min-height: 0;
-}
-
-	.job .title, .job .subHeading {
-	display: block;
-	width: 100%;
-}
-	*/
-
-}
-
-
 @media only screen and ( max-width: 935px ) {
 
-
-	/*
 	#job-history {
-	display: block;
-	width: 100%;
-}
+		display: block;
+		width: 100%;
+		overflow-y: auto;
+		padding-bottom: 5%;
+	}
 	.job {
-	margin: 0;
-	padding: 1em 2em;
-	display: block;
-	width: 100%;
-	border-bottom: 1px solid var(--cover-bg);
-}
+		margin: 0 0 2% 0;
+		padding: 1em 2em 4% 2em;
+		display: block;
+		width: 100%;
+/*		border-bottom: 1px solid var(--cover-bg);*/
+	}
 	.job .header .title ,
 	.job .header .subHeading {
-	display: table-cell;
-	vertical-align: middle;
-	width: 49%;
+		display: table-cell;
+		vertical-align: middle;
+		width: 49%;
+		padding: 0;
+	}
+	.job .header {
+		padding-bottom: 0;
 }
 	.job .footer { 
-	padding: 1% 0 1.5% 0;
-	text-align: left;
-}
-
-	.job#oldest {
-	border: none;
-}
-	*/
-
-
+		padding: 0;
+		text-align: left;
+	}
 }
 
 @media only screen and ( max-width: 768px ) {
 	/* tablets... */
-	/*
-	#cv-sheet-div {
-	min-width: 320px;
-	width: 95%;
-	margin: 0 auto;
-}
 
+	#cv-sheet-header {
+		padding: 15% 15% 5% 15%;
+	}
+	
 	#cv-sheet-header #title {
-	display: block;
-	width: 100%;
-}
+/*		color: yellow	;*/
+		display: block;
+		width: 100%;
+		margin-bottom: 10%;
+	}
 
 	#cv-sheet-header #sub-head {
-	display: block;
-	width: 100%;
-	padding: 0;
-}
-	*/
-
-}
-
-
-
-/*@media only screen and ( max-width: 650px ) {*/
-@media only screen and ( max-width: 0px ) {
-	/*   at 568px (iphone6 and above landscape) or less, do: */
-	#cv-sheet-div {
-		width: 92%;
+		display: block;
+		width: 100%;
+		padding: 2% 10%;
 	}
+
+
+}
+
+
+
+@media only screen and ( max-width: 650px ) {
+	/*@media only screen and ( max-width: 0px ) {*/
+	/*   at 568px (iphone6 and above landscape) or less, do: */
+
+
 	div {
 		letter-spacing: 1px;
 	}
-	#cv-sheet-header, .job, .job#job-0, .job#oldest {
-		padding: 5%;
-		width: 100%;
-		margin: 0;
-	}
-	.job .header .title {
+
+
+	.job .header .title, .job .header .subHeading {
 		display: block;
 		width: 100%;
 	}
-
-	.job .header .subHeading {
-		display: block;
-		width: 100%;
-		/*		text-decoration: underline;*/
+	
+	.job .header {
+		min-height: 0;
+		padding-bottom: 10px;
 	}
-
+	
 	#education-references {
-		width: 100%;
-		margin: 0;
+/*		padding: 0;*/
+		display: block;
+		overflow-y: auto;
+		line-height: 1.3em;
 	}
-
+	.cert-outer {
+		line-height: 1em;
+	}
 	#education, #references {
 		display: block;
 		width: 100%;
-		padding: 2em;
+		padding: 1em;
 	}	
+	#education .education {
+		margin-bottom: 4px;
+	}
 
 	.project {
 		padding: 5% 10%;
