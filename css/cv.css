@@ -16,18 +16,16 @@ h2 { margin-bottom: 20px; }
 :root {
 	--overlay-shade: rgba(0,0,0,0.75);
 	--page-bg: rgba(80,80,145, .9);
-/*	--page-bg: rgb(37,17,149, 1);*/
-/*	--page-bg: rgba(236,236,255, 0.6);*/
 	--box-shade: rgba(0,0,0, .31);
+	--divider-colour1: rgba(255,206,88, 1);
+	--divider-colour2: rgba(236,230, 77, 0.4);	
+	
 	--project-shade: rgba(60,60,85, 0.8);
 	--text-colour: rgba(219, 227, 255, 1);
 	--text-shade: rgba(30,30,45,1);
 	--title-colour: rgba(236, 230, 77, 0.8);
 /*	--title-colour: var(--divider-colour1);*/
 /*	--title-colour: gold;*/
-	--divider-colour1: rgba(255,206,88, 1);
-/*	--divider-colour2: rgba(255,206,88, 0.5);*/
-	--divider-colour2: rgba(236,230, 77, 0.4);
 }
 
 
@@ -137,7 +135,7 @@ div {
 	text-align: justify;
 	vertical-align: middle;
 	padding: 0 2%;
-	font-family: sans-serif;
+	font-family: arial, sans-serif;
 }
 
 .divider {
@@ -189,7 +187,7 @@ div {
 	width: 99%;
 	padding-bottom: 2%;
 	height: 15%;
-	min-height: 2em;
+	min-height: 101px;
 	font-size: 1.2em;
 	font-weight: bold;	
 }
@@ -369,6 +367,9 @@ div {
 	
 	#cv-sheet-header #sub-head {
 		width: 60%;
+	}
+	.job .header {
+		min-height: 0;
 	}
 	
 	.job .title, .job .subHeading {
