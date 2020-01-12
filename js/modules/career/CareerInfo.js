@@ -38,6 +38,7 @@ export class JobRecord extends CareerInfo {
 
 					
 		var wrapper = getWrapperAndHeader(this, []);
+		wrapper.classList.add('card');
 
 		var wFooter = newDiv(['footer']);
 		var dateText = "";
@@ -50,9 +51,10 @@ export class JobRecord extends CareerInfo {
 		wFooter.appendChild(nextLine(dateText, 'dates'));
 
 		var wBody = buildBody(this.description, this.title);
+		wBody.classList.add("scrollbar", "square", "thin", "black");
 
 		if(extraElement) {
-					wBody.appendChild(extraElement);
+				wBody.appendChild(extraElement);
 		}
 
 		if(wBody.hasChildNodes()) { 

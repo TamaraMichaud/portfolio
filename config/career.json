@@ -1,95 +1,96 @@
 {
-    "education" : [
-        {
-            "title" : "<span>Education</span><br>Newstead Wood School For Girls",
-            "startDate" : "01/09/2000",
-            "endDate" : "01/04/2007",
-            "description" : "&#9679; 12 GCSE's; A* -  B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
-            "certificate" : "",
-            "languages" : ""
-        },
-        {
-            "title"  : "Cucumber & Selenium - Develop a Framework",
-            "startDate" : "17/06/2019",
-            "endDate" : "17/06/2019",
-            "description" : "Explore qa automation using cucumber and gherkin with selenium",
-            "certificate" : "../img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
-            "languages" : [ "Cucumber", "Gherkin", "Selenium", "Java", "TDD &amp; BDD"]
-        },
-        {
-            "title"  : "Ultimate Web Developer",
-            "startDate" : "05/08/2019",
-            "endDate" : "05/08/2019",
-            "description" : "",
-            "certificate" : "../img/career/certs/WebDesignerAndDeveloper.jpg",
-            "languages" : [ "Javascript", "Angular", "css", "bootstrap"]
-        }
+	"education" : [
+		{
+			"title" : "<span>Education</span><br>Newstead Wood School For Girls",
+			"startDate" : "01/09/2000",
+			"endDate" : "01/04/2007",
+			"description" : "&#9679; 12 GCSE's; A* -  B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
+			"certificate" : "",
+			"languages" : ""
+		},
+		{
+			"title"  : "Cucumber & Selenium - Develop a Framework",
+			"startDate" : "17/06/2019",
+			"endDate" : "17/06/2019",
+			"description" : "Explore qa automation using cucumber and gherkin with selenium",
+			"certificate" : "../img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
+			"languages" : [ "Cucumber", "Gherkin", "Selenium", "Java", "TDD &amp; BDD"]
+		},
+		{
+			"title"  : "Ultimate Web Developer",
+			"startDate" : "05/08/2019",
+			"endDate" : "05/08/2019",
+			"description" : "",
+			"certificate" : "../img/career/certs/WebDesignerAndDeveloper.jpg",
+			"languages" : [ "Javascript", "Angular", "css", "bootstrap"]
+		}
 
 
-    ],
-    "jobHistory" : [
-        {
-            "jobTitle" : "NewSmartfocus Ltd",
-            "employer" : "QA Automation Engineer",
-            "description": "Developing regression test packages using bdd techniques with Selenium, Cucumber, Gherkin. Researched Cypress and developed a basic poc framework for tests on a separate application. Also created an application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
-            "startDate" : "01/11/2018",
-            "endDate" : "current"
+	],
+	"jobHistory" : [
 
-        },
-        {
-            "jobTitle" : "Smartfocus Ltd",
-            "employer" : "Data Integration Specialist",
-            "description": "Creating bespoke etl packages using bash shell scripting, Oracle SQL.<br>Also, enabling greater visibility and analysis of otherwise invisible client configurations with a web tool interface <br><span id='0'>learn about data web tool</span>",
-            "startDate" : "01/09/2015",
-            "endDate" : "01/11/2018"
+		{
+			"jobTitle" : "Capita PLC",
+			"employer" : "Technical Officer",
+			"description": "When I first began to work at Capita, it was in an accounts-related position courtesy of my previous job-history and ACCA training.  However, after automating as much of my bau as possible using VB-coded macros in Excel, I began to teach myself how to improve the existing UNIX shell scripts, SQL queries & XSL coding that generated the source data. This allowed me to further automate the  extraction and manipulation of account data into precise accounting reports which were soon used by several other departments within the company. And here I first fell in love with coding.",
+			"startDate" : "01/07/2010",
+			"endDate" : "01/09/2015"
+		},
+		{
+			"jobTitle" : "Smartfocus Ltd",
+			"employer" : "Data Integration Specialist",
+			"description": "Using my experience from Capita with shell scripting and sql, my main responsibility within Smartfocus was to create bespoke etl packages using bash shell scripting and Oracle SQL. My team was also responsible for resolving support queries in relation to existing etl packages; many of which were recurring questions. As such I modified an existing php-based web support tool to allow users to answer the most common queries themselves, saving measurable work hours for my team.<br><span id='0'>learn about data web tool</span>",
+			"startDate" : "01/09/2015",
+			"endDate" : "01/11/2018"
 
-        },
-        {
-            "jobTitle" : "Capita PLC",
-            "employer" : "Technical Officer",
-            "description": "Using UNIX shell scripts, SQL queries & XSL coding to extract and manipulate data for monthly statistics packs, Freedom of Information requests, and management reporting to strict SLAs",
-            "startDate" : "01/07/2010",
-            "endDate" : "01/09/2015"
-        }
+		},
+		{
+			"jobTitle" : "NewSmartfocus Ltd",
+			"employer" : "QA Automation Engineer",
+			"description": "In my most recent role I have been developing regression test packages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I helped the main development team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
+			"startDate" : "01/11/2018",
+			"endDate" : "current"
 
-    ],
-    "projects" : [
-        {
-			   "id" : "dwt",
-            "title" : "Data Web Tool",
-            "description" : "This php site compiles client-account setup information from multiple servers and applications into one comprehensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically",
-            "technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
-            "image" : "../img/career/projects/DWT_1.jpg",
-            "startDate" : "01/10/2015",
-            "endDate" : "01/04/2018"
-        }, 
-{
-			   "id" : "cmd",
-            "title" : "Command-Line Helper",
-            "description" : "A simple and expandable command-line tool to provide users with customised man pages explaining shortcuts for etl-creation, file-system navigation, system space and performance checks, as well as tips for less experienced users on how to get on with, or avoid, the linux built-in functions of vi and grep.",
-            "technologies" : [ "bash shell", "linux command-line" ],
-            "image" : "",
-            "startDate" : "01/01/2016",
-            "endDate" : "01/08/2016"
-        }, 
-        {
-			   "id" : "badbexports",
-            "title" : "Badb Exports",
-            "description" : "A self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports. The application utilises encrypted login authentication and varying user-access levels to reveal only the appropriate actions for each user.",
-            "technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
-            "image" : "../img/career/projects/finance-reports.jpg",
-            "startDate" : "01/11/2019",
-            "endDate" : "01/11/2019"
-        },
-		 {
-			 "id" : "qasuite",
-			 "title" : "QA Regression Test Suite",
-			 "description" : "Working in a small international team, I helped to build a suite of automated tests that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices",
-			 "technologies" : [ "Selenium", "Java", "Cucumber", "Gherkin", "CI/CD", "Jenkins", "Postman", "Cypress"],
-			 "startDate" : "01/11/2018",
-			 "endDate" : "01/11/2019"
-		 }
-    ]
+		}
+
+	],
+	"projects" : [
+		{
+			"id" : "dwt",
+			"title" : "Data Web Tool",
+			"description" : "This php site compiles client-account setup information from multiple servers and applications into one comprehensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically",
+			"technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
+			"image" : "../img/career/projects/DWT_1.jpg",
+			"startDate" : "01/10/2015",
+			"endDate" : "01/04/2018"
+		}, 
+		{
+			"id" : "cmd",
+			"title" : "Command-Line Helper",
+			"description" : "A simple and expandable command-line tool to provide users with customised man pages explaining shortcuts for etl-creation, file-system navigation, system space and performance checks, as well as tips for less experienced users on how to get on with, or avoid, the linux built-in functions of vi and grep.",
+			"technologies" : [ "bash shell", "linux command-line" ],
+			"image" : "",
+			"startDate" : "01/01/2016",
+			"endDate" : "01/08/2016"
+		}, 
+		{
+			"id" : "badbexports",
+			"title" : "Badb Exports",
+			"description" : "A self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports. The application utilises encrypted login authentication and varying user-access levels to reveal only the appropriate actions for each user.",
+			"technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
+			"image" : "../img/career/projects/finance-reports.jpg",
+			"startDate" : "01/11/2019",
+			"endDate" : "01/11/2019"
+		},
+		{
+			"id" : "qasuite",
+			"title" : "QA Regression Test Suite",
+			"description" : "Working in a small international team, I helped to build a suite of automated tests that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices",
+			"technologies" : [ "Selenium", "Java", "Cucumber", "Gherkin", "CI/CD", "Jenkins", "Postman", "Cypress"],
+			"startDate" : "01/11/2018",
+			"endDate" : "01/11/2019"
+		}
+	]
 
 }
 

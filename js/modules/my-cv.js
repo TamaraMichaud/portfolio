@@ -20,7 +20,7 @@ var uiController = (function(){
 
 				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
 				nextJobRecord.classList.add("job");
-				document.getElementById("job-history").appendChild(nextJobRecord);
+				document.getElementById("job-wrapper").appendChild(nextJobRecord);
 
 			})
 
