@@ -443,7 +443,7 @@ ol.carousel-indicators li {
 	/*@media only screen and ( max-width: 0px ) {*/
 	/*   at 568px (iphone6 and above landscape) or less, do: */
 
-		body {
+	body {
 		overflow: auto;
 	}
 
@@ -473,6 +473,7 @@ ol.carousel-indicators li {
 
 	#job-history {
 		height:auto;
+		padding-bottom: 0;
 	}
 	.job {
 		padding: 2% 0 5% 0;
