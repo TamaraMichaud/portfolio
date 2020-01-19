@@ -132,7 +132,7 @@ body {
 #job-history {
 
 	background: var(--page-bg);
-	padding: 3% 2% 0 2%;
+	padding: 1% 2% 0 2%;
 }
 
 #job-wrapper {
@@ -165,7 +165,7 @@ body {
 	margin:auto;
 	padding-bottom: 2%;
 	height: 15%;
-	min-height: 101px;
+	min-height: 87px;
 	font-size: 1.2em;
 	font-weight: bold;	
 }
@@ -190,11 +190,11 @@ body {
 	min-height: 100px;
 }
 
-.job span {
+.job span, .project span {
 	font-size: 0.75em;
 	text-transform: uppercase;
 }
-.job span:hover {
+.job span:hover, .project span:hover {
 	cursor: pointer;
 	color: var(--divider-colour1);
 }
@@ -289,6 +289,7 @@ body {
 /* Projects */
 #projects-carousel {
 	height: 90%;
+	min-height: 1em;
 	display: table;
 	color: var(--cover-bg);
 	padding: 0 20%;
@@ -296,9 +297,9 @@ body {
 }
 #carouselContents {
 	display: table-cell;
-	vertical-align: top;
-	padding-top: 5%;
-	/*	height: 100%;*/
+	vertical-align: middle;
+/*	padding-top: 5%;*/
+		height: 100%;
 	background: var(--page-bg);
 }
 
@@ -319,6 +320,9 @@ ol.carousel-indicators li {
 }
 
 .project {
+/*	min-height: 350px;*/
+/*	min-height: 1em;*/
+/*	height: 100%;*/
 	background: var(--project-shade);
 	padding: 5% 8%;
 	font-family: sans-serif;
@@ -360,7 +364,7 @@ ol.carousel-indicators li {
 
 
 .carousel-indicators {
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 
@@ -513,6 +517,7 @@ ol.carousel-indicators li {
 		margin-bottom: 5px;
 	}
 
+	
 	#projects-carousel {
 		padding: 0;
 	}

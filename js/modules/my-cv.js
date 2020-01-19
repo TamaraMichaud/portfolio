@@ -18,8 +18,10 @@ var uiController = (function(){
 
 				var nextJobRecord = new JobRecord(obj);
 
-				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
+				//				nextJobRecord.id = (idx === array.length - 1) ? "oldest" : "job-" + idx;
+				nextJobRecord.id = "job-" + idx;
 				nextJobRecord.classList.add("job");
+				nextJobRecord.setAttribute("tabindex", 10 + idx);
 				document.getElementById("job-wrapper").appendChild(nextJobRecord);
 
 			})
@@ -66,13 +68,36 @@ var uiController = (function(){
 				});
 			});
 
+			// bind event listener to "return to prev"'s
+			document
+				.querySelectorAll('.project .description span')
+				.forEach((item, idx, array) => {
+
+				item.addEventListener('click', () => {
+
+					if(window.innerWidth <= 650){
+						// mobile; jump to item
+						document.getElementById('job-' + item.id)
+							.scrollIntoView();
+					} else {
+						// desktop; jump to 'job-history'
+						document.getElementById('up-down-nav')
+							.setAttribute('data-next', 1);
+						document.getElementById('div-1')
+							.scrollIntoView();
+					}
+				});
+			});
+
 
 			document.querySelector('.to-top').addEventListener('click', () => {
 				document.getElementById('div-0').scrollIntoView();
 			});
 
-			document.querySelector('#up-down-nav #up').addEventListener('click', updownNav);
-			document.querySelector('#up-down-nav #down').addEventListener('click', updownNav);
+			document.querySelector('#up-down-nav #up')
+				.addEventListener('click', updownNav);
+			document.querySelector('#up-down-nav #down')
+				.addEventListener('click', updownNav);
 
 			if(window.innerWidth >= 650){
 				document.getElementById('div-0').scrollIntoView(true);
@@ -95,11 +120,5 @@ function updownNav(){
 
 	document.getElementById('div-' + nextElementIdx).scrollIntoView({ behaviour: 'smooth', block: 'start'});
 
-	//	$().animate({
-	//    scrollTop: $("#elementId").offset().top
-	//}, 1000);
-
-
 	this.parentNode.setAttribute('data-next', nextElementIdx);
 }
-

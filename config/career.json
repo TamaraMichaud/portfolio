@@ -42,7 +42,6 @@
 			"description": "Using my experience from Capita with shell scripting and sql, my main responsibility within Smartfocus was to create bespoke etl packages using bash shell scripting and Oracle SQL. My team was also responsible for resolving support queries in relation to existing etl packages; many of which were recurring questions. As such I modified an existing php-based web support tool to allow users to answer the most common queries themselves, saving measurable work hours for my team.<br><span id='0'>learn about data web tool</span>",
 			"startDate" : "01/09/2015",
 			"endDate" : "01/11/2018"
-
 		},
 		{
 			"jobTitle" : "NewSmartfocus Ltd",
@@ -50,15 +49,13 @@
 			"description": "In my most recent role I have been developing regression test packages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I helped the main development team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
 			"startDate" : "01/11/2018",
 			"endDate" : "current"
-
 		}
-
 	],
 	"projects" : [
 		{
 			"id" : "dwt",
 			"title" : "Data Web Tool",
-			"description" : "This php site compiles client-account setup information from multiple servers and applications into one comprehensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically",
+			"description" : "This php site compiles client-account setup information from multiple servers and applications into one comprehensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically<br><span id='1'>return to job history</span>",
 			"technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
 			"image" : "../img/career/projects/DWT_1.jpg",
 			"startDate" : "01/10/2015",
@@ -67,7 +64,7 @@
 		{
 			"id" : "cmd",
 			"title" : "Command-Line Helper",
-			"description" : "A simple and expandable command-line tool to provide users with customised man pages explaining shortcuts for etl-creation, file-system navigation, system space and performance checks, as well as tips for less experienced users on how to get on with, or avoid, the linux built-in functions of vi and grep.",
+			"description" : "In order to help non-technical users navigate the command-line more effectively, I created a simple and expandable command-line tool with customised man pages explaining shortcuts for etl-creation, file-system navigation, system space and performance checks, as well as tips on how to get on with, or avoid, the linux built-in functions of vi and grep.",
 			"technologies" : [ "bash shell", "linux command-line" ],
 			"image" : "",
 			"startDate" : "01/01/2016",
@@ -76,7 +73,7 @@
 		{
 			"id" : "badbexports",
 			"title" : "Badb Exports",
-			"description" : "A self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports. The application utilises encrypted login authentication and varying user-access levels to reveal only the appropriate actions for each user.",
+			"description" : "A self-service portal for the finance department to generate ad-hoc usage reports and download automated monthly reports. The application utilises encrypted login authentication and varying user-access levels to reveal only the appropriate actions for each user.<br><span id='2'>return to job history</span>",
 			"technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
 			"image" : "../img/career/projects/finance-reports.jpg",
 			"startDate" : "01/11/2019",
