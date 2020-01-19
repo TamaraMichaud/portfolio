@@ -38,7 +38,7 @@ export class JobRecord extends CareerInfo {
 
 					
 		var wrapper = getWrapperAndHeader(this, []);
-		wrapper.classList.add('card');
+		wrapper.classList.add('card', 'bg-success');
 
 		var wFooter = newDiv(['footer']);
 		var dateText = "";

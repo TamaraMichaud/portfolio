@@ -20,8 +20,15 @@
 	/*	--title-colour: gold;*/
 	--job-dates-bg: rgb(70,111,213);
 	/*--job-title-color: */
+	
+	
+	--job-history: #86C98A;
+/*	--job-history: #AFD2B4;*/
+	
+	--job-card-bg: #2D8632;
 
-
+/*--job-div: #AA6E39;*/
+--job-div: #8B2E5F;
 }
 
 
@@ -128,10 +135,23 @@ body {
 	text-transform: uppercase;
 }
 
+#div-1 {
+	background: linear-gradient(to bottom, var(--job-dates-bg), var(--job-dates-bg) 65%, var(--job-div) 25%);
+	color: var(--job-history);
+}
+.job ::-webkit-scrollbar-thumb  {
+	background: var(--job-div);
+}
+.job span:hover {
+	color: var(--job-div);
+	cursor: pointer;
+/*	font-weight: bold;*/
+}
 
 #job-history {
 
-	background: var(--page-bg);
+/*	background: var(--page-bg);*/
+	background: var(--job-history);
 	padding: 1% 2% 0 2%;
 }
 
@@ -193,10 +213,6 @@ body {
 .job span, .project span {
 	font-size: 0.75em;
 	text-transform: uppercase;
-}
-.job span:hover, .project span:hover {
-	cursor: pointer;
-	color: var(--divider-colour1);
 }
 
 /* width */
@@ -326,6 +342,10 @@ ol.carousel-indicators li {
 	background: var(--project-shade);
 	padding: 5% 8%;
 	font-family: sans-serif;
+}
+.project span:hover {
+	cursor: pointer;
+	color: var(--divider-colour1);
 }
 
 .project .header {
