@@ -90,8 +90,8 @@ body {
 	margin: auto;
 	/*	max-height: 550px;*/
 	/*	height: 800px;*/
+	font-family: helvetica, verdana, sans-serif;
 }
-
 
 #cv-sheet-header,
 #job-history,
@@ -122,7 +122,6 @@ body {
 	text-align: justify;
 	vertical-align: middle;
 	padding: 0 5%;
-	font-family: arial, sans-serif;
 }
 
 .divider {
@@ -261,7 +260,7 @@ body {
 	text-decoration: underline;
 	text-decoration-color: var(--divider-colour1);
 	text-decoration-style: wavy;
-	font-family: verdana, serif;
+/*	font-family: verdana, serif;*/
 	font-size: 1.2em;
 	display: block;
 }
@@ -368,7 +367,7 @@ ol.carousel-indicators li {
 	/*	height: 100%;*/
 	background: var(--project-shade);
 	padding: 5% 8%;
-	font-family: sans-serif;
+/*	font-family: sans-serif;*/
 }
 .project span:hover {
 	cursor: pointer;
@@ -380,7 +379,7 @@ ol.carousel-indicators li {
 }
 .project .title {
 	font-weight: bold;
-	font-family: serif;
+/*	font-family: serif;*/
 	font-size: 1.1em;
 	margin-bottom: 1%;
 	text-decoration: underline;
