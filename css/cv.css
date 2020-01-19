@@ -24,11 +24,13 @@
 
 	--job-history: #86C98A;
 	/*	--job-history: #AFD2B4;*/
-
 	--job-card-bg: #2D8632;
-
 	/*--job-div: #AA6E39;*/
 	--job-div: #8B2E5F;
+	
+	
+	--acheivements-text: navy;
+	--acheivements-bg: white;
 }
 
 
@@ -238,8 +240,12 @@ body {
 
 /* Education & Acheivements */
 #education-references {
-	background: var(--job-dates-bg);	
 	padding: 5%;
+/*	background: var(--job-dates-bg);	*/
+	background: var(--acheivements-bg);	
+	color: var(--acheivements-text);
+/*	text-shadow: 1px 1px 3px darkgray, -1px -1px 3px darkgray;*/
+	font-weight: bold;
 }
 
 #education-references .left-block, 
@@ -253,6 +259,8 @@ body {
 /*the main titles*/
 #education-references span {
 	text-decoration: underline;
+	text-decoration-color: var(--divider-colour1);
+	text-decoration-style: wavy;
 	font-family: verdana, serif;
 	font-size: 1.2em;
 	display: block;
@@ -540,7 +548,7 @@ ol.carousel-indicators li {
 
 	#education-references {
 		/*		padding: 0;*/
-		padding: 2%;
+		padding: 5% 2% 2% 2%;
 		display: block;
 		/*		overflow-y: auto;*/
 		height: auto;
