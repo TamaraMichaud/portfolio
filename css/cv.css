@@ -61,7 +61,7 @@ div {
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-bottom: 20px solid var(--divider-colour1);
-/*	border-bottom: 20px solid black;*/
+	/*	border-bottom: 20px solid black;*/
 }
 #down {
 	position: fixed;
@@ -70,7 +70,7 @@ div {
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-top: 20px solid var(--divider-colour1);
-/*	border-top: 20px solid black;*/
+	/*	border-top: 20px solid black;*/
 }
 
 #up-down-nav div {
@@ -294,6 +294,7 @@ body {
 	vertical-align: top
 }
 #certificates .img {
+	max-height: 77px;
 	max-width: 49%;
 	display: inline-flex;
 	padding-top: 1%;
@@ -331,22 +332,6 @@ body {
 
 
 /* Projects */
-#projects-carousel {
-	height: 90%;
-	min-height: 1em;
-	display: table;
-	color: var(--cover-bg);
-	padding: 0 20%;
-	background: var(--page-bg);
-}
-#carouselContents {
-	display: table-cell;
-	vertical-align: middle;
-	/*	padding-top: 5%;*/
-	height: 100%;
-	background: var(--page-bg);
-}
-
 #carouselContents a.carousel-control-prev, #carouselContents a.carousel-control-next{
 
 	width: 5%;
@@ -359,22 +344,56 @@ body {
 	/*	background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%24fff' …3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e);*/
 }
 
+#projects-carousel {
+	height: 95%;
+	color: var(--cover-bg);
+	background: var(--page-bg);
+}
+.carousel-inner{
+	height: 90%;
+}
+.carousel-item {
+	height: 100%;
+}
+#carouselContents {
+	background: var(--page-bg);
+	height: 100%;
+}
+
+
 ol.carousel-indicators li {
 	background-color: var(--cover-bg);
 }
 
-.project {
-	/*	min-height: 350px;*/
-	/*	min-height: 1em;*/
-	/*	height: 100%;*/
+.project-outer {
+
+	height: 100%;
 	background: var(--project-shade);
-	padding: 5% 8%;
+	padding: 0 30%;
 	/*	font-family: sans-serif;*/
+	display: table;
 }
+.project-inner {
+	background: rgba(255,255,255,0.75);
+	padding: 0 1% 0 3%;
+/*	border-radius: 2%;*/
+	display: table-cell;
+	vertical-align: middle;
+}
+
 .project span:hover {
 	cursor: pointer;
 	color: var(--divider-colour1);
 }
+
+/*
+.project .header, .project .body, .project .footer {
+background: rgba(255,255,255,0.7);
+padding: 2%;
+margin: 0;
+border-radius: 5%;
+}
+*/
 
 .project .header {
 	text-align: center;
@@ -394,6 +413,7 @@ ol.carousel-indicators li {
 }
 .project .body {
 	overflow-y: auto;
+	max-height: 70%;
 	margin-bottom: 4px;
 }
 
@@ -412,7 +432,8 @@ ol.carousel-indicators li {
 
 
 .carousel-indicators {
-	margin-top: 5px;
+	height: 4%;
+	margin-top: 1%;
 }
 
 
@@ -428,7 +449,7 @@ ol.carousel-indicators li {
 	height: 7px;
 	width: 25px;
 	background: var(--divider-colour1);
-/*	background: black;*/
+	/*	background: black;*/
 	border-radius: 15%;
 }
 
@@ -438,7 +459,7 @@ ol.carousel-indicators li {
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
 	border-bottom: 15px solid var(--divider-colour1);
-/*	border-bottom: 13px solid black;*/
+	/*	border-bottom: 13px solid black;*/
 	border-radius: 15%;
 }
 
@@ -470,7 +491,7 @@ ol.carousel-indicators li {
 		padding: 1em 2em 4% 2em;
 		display: block;
 		width: 100%;
-		/*		border-bottom: 1px solid var(--cover-bg);*/
+		max-height: 350px;
 	}
 	.job .header .title ,
 	.job .header .subHeading {
@@ -489,6 +510,10 @@ ol.carousel-indicators li {
 		margin: auto;
 		text-align: left;
 	}
+	.job .body {
+		max-height: 150px;
+	}
+
 }
 
 @media only screen and ( max-width: 768px ) {
@@ -594,7 +619,7 @@ ol.carousel-indicators li {
 		/*		padding: 1em;*/
 	}	
 	#references .body {
-		padding-left: 5%;
+		padding: 0 1% 0 5%;
 	}
 	#education, #references {
 		padding: 0;
@@ -609,25 +634,22 @@ ol.carousel-indicators li {
 		padding: 0;
 	}
 
-	.project {
-		padding: 5% 10%;
-		/*		min-height: 400px;*/
+	.project-outer {
+		padding: 0 20%;
 	}
 	.project .subHeading {
 		font-size: 0.5em;
 		/*		font-weight: normal;*/
 	}
 	.project .footer {
-		padding: 10px 0;
+		padding: 10px 3% 0 0;
 	}
 
 	.project .body {
 		padding: 0 2.5%;
-		max-height: 250px;
-
-
+		max-height: 300px;
 	}
-	
+
 	#footer .to-top {
 		left: 2%;
 		bottom: 2%;

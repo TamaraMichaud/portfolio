@@ -5,7 +5,7 @@ import {ProjectRecord, JobRecord, EducationRecord} from './career/CareerInfo.js'
 var globalConfig;
 fetchFileContents("career").then((jsonContents) => {
 	globalConfig = jsonContents;
-	uiController.init();
+	uiController.init();	
 });
 
 var uiController = (function(){
@@ -106,7 +106,7 @@ var uiController = (function(){
 			}
 		}
 	}
-
+	
 })();
 
 

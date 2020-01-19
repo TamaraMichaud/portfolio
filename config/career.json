@@ -79,7 +79,7 @@
 		{
 			"id" : "badbexports",
 			"title" : "Badb Exports",
-			"description" : "As an exciting exercise to dive deeper into Java development outside of the QA remit, I was tasked to develop a self-service portal for the finance department. Utilising encrypted login authentication and user-access level security, the application uses servlets and a ui to allow the team to generate any one of four ad-hoc reports for themselves as required. Some of these reports are also cronned to run automatically for users to download at their convenience, with manager-level users able to modify the particular scheduling, or suspend the automatic generation of, any report and housekeeping as required.<br><span id='2'>return to job history</span>",
+			"description" : "As an exciting challenge to dive deeper into Java development outside of the QA remit, I was tasked to develop a self-service portal for the finance department. Utilising encrypted login authentication and user-access level security, the application uses servlets and a ui to allow the team to generate any one of four ad-hoc reports for themselves as required. Some of these reports are also cronned to run automatically for users to download at their convenience, with manager-level users able to modify the particular scheduling, or suspend the automatic generation of, any report and housekeeping as required.<br><span id='2'>return to job history</span>",
 			"technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
 			"image" : "../img/career/projects/finance-reports.jpg",
 			"startDate" : "01/11/2019",

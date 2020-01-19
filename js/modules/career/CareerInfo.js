@@ -87,7 +87,7 @@ export class ProjectRecord extends CareerInfo {
 		// datefrom - dateto
 
 					
-		var wrapper = getWrapperAndHeader(this, []);
+		var wrapper = getWrapperAndHeader(this, ["project-inner"]);
 
 		var wFooter = newDiv(['footer']);
 		var dateText = "";
@@ -110,7 +110,10 @@ export class ProjectRecord extends CareerInfo {
 		}
 		wrapper.appendChild(wFooter);
 
-		return wrapper;
+			var extraLayer = newDiv(['project-outer']);
+			extraLayer.appendChild(wrapper);
+			
+		return extraLayer;
 	}
 
 	}
