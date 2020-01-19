@@ -27,8 +27,8 @@
 	--job-card-bg: #2D8632;
 	/*--job-div: #AA6E39;*/
 	--job-div: #8B2E5F;
-	
-	
+
+
 	--acheivements-text: navy;
 	--acheivements-bg: white;
 }
@@ -61,6 +61,7 @@ div {
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-bottom: 20px solid var(--divider-colour1);
+/*	border-bottom: 20px solid black;*/
 }
 #down {
 	position: fixed;
@@ -69,13 +70,14 @@ div {
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-top: 20px solid var(--divider-colour1);
+/*	border-top: 20px solid black;*/
 }
 
 #up-down-nav div {
 	z-index: 999;
 }
 
-#up-down-nav div:hover {
+#up-down-nav div:hover, #footer .to-top:hover {
 	cursor: pointer;
 	opacity: 0.5;
 }
@@ -240,10 +242,10 @@ body {
 /* Education & Acheivements */
 #education-references {
 	padding: 5%;
-/*	background: var(--job-dates-bg);	*/
+	/*	background: var(--job-dates-bg);	*/
 	background: var(--acheivements-bg);	
 	color: var(--acheivements-text);
-/*	text-shadow: 1px 1px 3px darkgray, -1px -1px 3px darkgray;*/
+	/*	text-shadow: 1px 1px 3px darkgray, -1px -1px 3px darkgray;*/
 	font-weight: bold;
 }
 
@@ -260,7 +262,7 @@ body {
 	text-decoration: underline;
 	text-decoration-color: var(--divider-colour1);
 	text-decoration-style: wavy;
-/*	font-family: verdana, serif;*/
+	/*	font-family: verdana, serif;*/
 	font-size: 1.2em;
 	display: block;
 }
@@ -367,7 +369,7 @@ ol.carousel-indicators li {
 	/*	height: 100%;*/
 	background: var(--project-shade);
 	padding: 5% 8%;
-/*	font-family: sans-serif;*/
+	/*	font-family: sans-serif;*/
 }
 .project span:hover {
 	cursor: pointer;
@@ -379,7 +381,7 @@ ol.carousel-indicators li {
 }
 .project .title {
 	font-weight: bold;
-/*	font-family: serif;*/
+	/*	font-family: serif;*/
 	font-size: 1.1em;
 	margin-bottom: 1%;
 	text-decoration: underline;
@@ -414,6 +416,31 @@ ol.carousel-indicators li {
 }
 
 
+#footer .to-top {
+
+	width: 30px;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+}
+
+#footer .to-top #top1 {
+	height: 7px;
+	width: 25px;
+	background: var(--divider-colour1);
+/*	background: black;*/
+	border-radius: 15%;
+}
+
+#footer .to-top #top2 {
+	margin-top: 2px;
+	width: 25px;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 15px solid var(--divider-colour1);
+/*	border-bottom: 13px solid black;*/
+	border-radius: 15%;
+}
 
 
 
@@ -599,6 +626,11 @@ ol.carousel-indicators li {
 		max-height: 250px;
 
 
+	}
+	
+	#footer .to-top {
+		left: 2%;
+		bottom: 2%;
 	}
 }
 

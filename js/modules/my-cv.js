@@ -91,6 +91,8 @@ var uiController = (function(){
 
 
 			document.querySelector('.to-top').addEventListener('click', () => {
+				document.getElementById('up-down-nav')
+					.setAttribute('data-next', 0);
 				document.getElementById('div-0').scrollIntoView();
 			});
 
