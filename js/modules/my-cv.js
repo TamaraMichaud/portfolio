@@ -27,7 +27,7 @@ var uiController = (function(){
 			})
 
 			globalConfig.education.forEach((obj, idx, array) => {
-				document.getElementById("education").appendChild(new EducationRecord(obj));
+				document.getElementById("certificates").appendChild(new EducationRecord(obj));
 			})
 
 

@@ -1,20 +1,12 @@
 {
 	"education" : [
 		{
-			"title" : "<span>Education</span><br>Newstead Wood School For Girls",
-			"startDate" : "01/09/2000",
-			"endDate" : "01/04/2007",
-			"description" : "&#9679; 12 GCSE's; A* -  B <br>&#9679; 3 A-levels; Spanish A, Psychology C, Maths B<br><br><span>Certificates</span>",
-			"certificate" : "",
-			"languages" : ""
-		},
-		{
 			"title"  : "Cucumber & Selenium - Develop a Framework",
 			"startDate" : "17/06/2019",
 			"endDate" : "17/06/2019",
 			"description" : "Explore qa automation using cucumber and gherkin with selenium",
 			"certificate" : "../img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
-			"languages" : [ "Cucumber", "Gherkin", "Selenium", "Java", "TDD &amp; BDD"]
+			"languages" : [ "Cucumber", "Gherkin", "Selenium", "TDD &amp; BDD"]
 		},
 		{
 			"title"  : "Ultimate Web Developer",
@@ -23,30 +15,44 @@
 			"description" : "",
 			"certificate" : "../img/career/certs/WebDesignerAndDeveloper.jpg",
 			"languages" : [ "Javascript", "Angular", "css", "bootstrap"]
+		},
+		{
+			"title" : "Java Programming Masterclass",
+			"startDate" : "01/09/2019",
+			"endDate" : "in-progress",
+			"description" : "",
+			"certificate" : "../img/career/certs/placeholder.jpg",
+			"languages" : [ "[WIP] Java Masterclass" ]
+		},
+		{
+			"title" : "Design Patterns in Java",
+			"startDate" : "queued",
+			"endDate" : "queued",
+			"description" : "",
+			"certificate" : "../img/career/certs/placeholder.jpg",
+			"languages" : [ "[WIP] Design Patterns"]
 		}
-
-
 	],
 	"jobHistory" : [
 
 		{
 			"jobTitle" : "Capita PLC",
 			"employer" : "Technical Officer",
-			"description": "When I first began to work at Capita, it was in an accounts-related position courtesy of my previous job-history and ACCA training.  However, after automating as much of my bau as possible using VB-coded macros in Excel, I began to teach myself how to improve the existing UNIX shell scripts, SQL queries & XSL coding that generated the source data. This allowed me to further automate the  extraction and manipulation of account data into precise accounting reports which were soon used by several other departments within the company. And here I first fell in love with coding.",
+			"description": "When I first began to work at Capita, it was in an accounts-related position courtesy of my previous job-history and ACCA training.  However, after auto&shy;mating as much of my bau as possible using VB-coded macros in Excel, I began to teach myself how to improve the existing UNIX shell scripts, SQL queries & XSL coding that generated the source data. This allowed me to further auto&shy;mate the  extr&shy;action and manip&shy;ulation of account data into precise accounting reports which were soon used by several other depart&shy;ments within the company. And here I first fell in love with coding.",
 			"startDate" : "01/07/2010",
 			"endDate" : "01/09/2015"
 		},
 		{
 			"jobTitle" : "Smartfocus Ltd",
 			"employer" : "Data Integration Specialist",
-			"description": "Using my experience from Capita with shell scripting and sql, my main responsibility within Smartfocus was to create bespoke etl packages using bash shell scripting and Oracle SQL. My team was also responsible for resolving support queries in relation to existing etl packages; many of which were recurring questions. As such I modified an existing php-based web support tool to allow users to answer the most common queries themselves, saving measurable work hours for my team.<br><span id='0'>learn about data web tool</span>",
+			"description": "Using my experience from Capita with shell scripting and sql, my main respons&shy;ibility within Smart&shy;focus was to create bespoke etl packages using bash shell scripting and Oracle SQL. My team was also responsible for resolving support queries in relation to existing etl packages; many of which were recurring questions. As such I modified an existing php-based web support tool to allow users to answer the most common queries themselves, saving measurable work hours for my team.<br><span id='0'>learn about data web tool</span>",
 			"startDate" : "01/09/2015",
 			"endDate" : "01/11/2018"
 		},
 		{
 			"jobTitle" : "NewSmartfocus Ltd",
 			"employer" : "QA Automation Engineer",
-			"description": "In my most recent role I have been developing regression test packages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I helped the main development team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
+			"description": "In my most recent role I have been developing regression test pack&shy;ages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I helped the main dev&shy;elopment team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
 			"startDate" : "01/11/2018",
 			"endDate" : "current"
 		}

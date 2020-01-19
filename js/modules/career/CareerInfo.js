@@ -123,30 +123,38 @@ export class EducationRecord extends CareerInfo {
 		var configMap = [ "title", "languages", "description", "startDate", "endDate"];
 		super("education", educationConfig, configMap);
 		
-		if(educationConfig.certificate) {
-			var mainCertDiv = newDiv(['cert-outer']);
-			var imageDiv = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
+//		if(educationConfig.certificate) {
+		var mainCertDiv = newDiv(['cert-outer']);
+		var imageDiv = buildImageElement(educationConfig.certificate, "Certificate of Acheivement");
 
-			var tech = '&#9679 ' + educationConfig.languages.toString().replace(/,/g, '<br>&#9679 ');
-			var languagesDiv = newDiv(['cert-langs']);
-			languagesDiv.innerHTML = tech;
-			mainCertDiv.appendChild(languagesDiv);
-			mainCertDiv.appendChild(imageDiv);
-				
-			this.element = mainCertDiv;
-		} else {
-			this.element = this.school(this);
-		}
+//		console.log(educationConfig.languages);
+//		console.log(educationConfig.languages.toString());
+		
+		
+		var tech = '&#9679 ' + educationConfig.languages.toString().replace(/,/g, '<br>&#9679 ');
+		
+		var languagesDiv = newDiv(['cert-langs']);
+//		console.log(tech);
+		languagesDiv.innerHTML = tech;
+		mainCertDiv.appendChild(languagesDiv);
+		mainCertDiv.appendChild(imageDiv);
+
+		this.element = mainCertDiv;
+//		} 
+		
+//		else {
+//			this.element = this.school(this);
+//		}
 		return this.element; //asElement();
 	}
-
-	school(mainObj){
-		
-		var wrapper = getWrapperAndHeader(mainObj, []);
-		var wBody = buildBody(mainObj.description, mainObj.title);
-		wrapper.appendChild(wBody);
-		return wrapper;
-	}
+//
+//	school(mainObj){
+//		
+//		var wrapper = getWrapperAndHeader(mainObj, []);
+//		var wBody = buildBody(mainObj.description, mainObj.title);
+//		wrapper.appendChild(wBody);
+//		return wrapper;
+//	}
 	
 }
 
