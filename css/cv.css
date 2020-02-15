@@ -251,7 +251,7 @@ body {
 
 #education-references .left-block, 
 #education-references .right-block {
-	width: 50%;
+	width: 49%;
 	display: inline-block;
 	height: 100%;
 	vertical-align: top;
@@ -291,7 +291,10 @@ body {
 	max-width: 95px;
 	min-width: 85px;
 	width: 45%;
-	vertical-align: top
+	vertical-align: top;
+}
+#certificates .img:hover {
+	cursor: pointer;
 }
 #certificates .img {
 	max-height: 77px;

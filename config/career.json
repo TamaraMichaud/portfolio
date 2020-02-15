@@ -5,7 +5,7 @@
 			"startDate" : "17/06/2019",
 			"endDate" : "17/06/2019",
 			"description" : "Explore qa automation using cucumber and gherkin with selenium",
-			"certificate" : "../img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
+			"certificate" : "./img/career/certs/QaAutomation-CucumberSeleniumJava.jpg",
 			"languages" : [ "Cucumber", "Gherkin", "Selenium", "TDD &amp; BDD"]
 		},
 		{
@@ -13,7 +13,7 @@
 			"startDate" : "05/08/2019",
 			"endDate" : "05/08/2019",
 			"description" : "",
-			"certificate" : "../img/career/certs/WebDesignerAndDeveloper.jpg",
+			"certificate" : "./img/career/certs/WebDesignerAndDeveloper.jpg",
 			"languages" : [ "Javascript", "Angular", "css", "bootstrap"]
 		},
 		{
@@ -21,7 +21,7 @@
 			"startDate" : "01/09/2019",
 			"endDate" : "in-progress",
 			"description" : "",
-			"certificate" : "../img/career/certs/placeholder.jpg",
+			"certificate" : "./img/career/certs/placeholder.jpg",
 			"languages" : [ "[WIP] Java Masterclass" ]
 		},
 		{
@@ -29,18 +29,17 @@
 			"startDate" : "queued",
 			"endDate" : "queued",
 			"description" : "",
-			"certificate" : "../img/career/certs/placeholder.jpg",
+			"certificate" : "./img/career/certs/placeholder.jpg",
 			"languages" : [ "[WIP] Design Patterns"]
 		}
 	],
 	"jobHistory" : [
-
 		{
-			"jobTitle" : "Capita PLC",
-			"employer" : "Technical Officer",
-			"description": "When I first began to work at Capita, it was in an accounts-related position courtesy of my previous job-history and ACCA training.  However, after auto&shy;mating as much of my bau as possible using VB-coded macros in Excel, I began to teach myself how to improve the existing UNIX shell scripts, SQL queries & XSL coding that generated the source data. This allowed me to further auto&shy;mate the  extr&shy;action and manip&shy;ulation of account data into precise accounting reports which were soon used by several other depart&shy;ments within the company. And here I first fell in love with coding.",
-			"startDate" : "01/07/2010",
-			"endDate" : "01/09/2015"
+			"jobTitle" : "NewSmartfocus Ltd",
+			"employer" : "QA Automation Engineer",
+			"description": "In my most recent role I have been developing regression test pack&shy;ages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I also helped the main dev&shy;elopment team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
+			"startDate" : "01/11/2018",
+			"endDate" : "current"
 		},
 		{
 			"jobTitle" : "Smartfocus Ltd",
@@ -50,11 +49,11 @@
 			"endDate" : "01/11/2018"
 		},
 		{
-			"jobTitle" : "NewSmartfocus Ltd",
-			"employer" : "QA Automation Engineer",
-			"description": "In my most recent role I have been developing regression test pack&shy;ages using bdd techniques with Selenium, Cucumber and Gherkin. Being my first time working with compiled code at work it has been an exciting learning curve which I have very much enjoyed. Most recently I also helped the main dev&shy;elopment team by creating a java servlet application to generate monthly reports for the finance department. <br><span id='2'>learn about badb-exports</span>",
-			"startDate" : "01/11/2018",
-			"endDate" : "current"
+			"jobTitle" : "Capita PLC",
+			"employer" : "Technical Officer",
+			"description": "When I first began to work at Capita, it was in an accounts-related position courtesy of my previous job-history and ACCA training.  However, after auto&shy;mating as much of my bau as possible using VB-coded macros in Excel, I began to teach myself how to improve the existing UNIX shell scripts, SQL queries & XSL coding that generated the source data. This allowed me to further auto&shy;mate the  extr&shy;action and manip&shy;ulation of account data into precise accounting reports which were soon used by several other depart&shy;ments within the company. And here I first fell in love with coding.",
+			"startDate" : "01/07/2010",
+			"endDate" : "01/09/2015"
 		}
 	],
 	"projects" : [
@@ -63,7 +62,7 @@
 			"title" : "Data Web Tool",
 			"description" : "This php site compiles client-account setup information from multiple servers and applications into one compre&shy;hensive dashboard page. Over the years I added extra modules to automate recurring processes and begin to standardise more ad-hoc actions; such as the ability to scope a new custom etl project and directly tag an authorisor on the related Jira ticket automatically<br><span id='1'>return to job history</span>",
 			"technologies" : [ "PHP", "Oracle SQL", "bash", "ssh", "API", "Jira", "GDPR", "json" ],
-			"image" : "../img/career/projects/DWT_1.jpg",
+			"image" : "./img/career/projects/DWT_1.jpg",
 			"startDate" : "01/10/2015",
 			"endDate" : "01/04/2018"
 		}, 
@@ -79,9 +78,9 @@
 		{
 			"id" : "badbexports",
 			"title" : "Badb Exports",
-			"description" : "As an exciting challenge to dive deeper into Java development outside of the QA remit, I was tasked to develop a self-service portal for the finance department. Utilising encrypted login authentication and user-access level security, the application uses servlets and a ui to allow the team to generate any one of four ad-hoc reports for themselves as required. Some of these reports are also cronned to run automatically for users to download at their convenience, with manager-level users able to modify the particular scheduling, or suspend the automatic generation of, any report and housekeeping as required.<br><span id='2'>return to job history</span>",
+			"description" : "As an exciting challenge to dive deeper into Java development outside of the QA remit, I was tasked to develop a self-service portal for the finance department. Utilising encrypted login authentication and user-access level security, the application uses servlets and a ui to allow the team to generate any one of four ad-hoc reports for themselves as required. Some of these reports are also cronned to run automatically for users to download at their convenience, with manager-level users able to modify the particular scheduling, or suspend the automatic generation of, any report and housekeeping as required.<br><span id='0'>return to job history</span>",
 			"technologies" : [ "Java", "JSP", "Servlet", "Tomcat Authentication", "IntelliJ IDEA", "git", "Bitbucket" ],
-			"image" : "../img/career/projects/finance-reports.jpg",
+			"image" : "./img/career/projects/finance-reports.jpg",
 			"startDate" : "01/11/2019",
 			"endDate" : "01/11/2019"
 		},
