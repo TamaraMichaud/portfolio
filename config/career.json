@@ -21,16 +21,16 @@
 			"startDate" : "01/09/2019",
 			"endDate" : "in-progress",
 			"description" : "",
-			"certificate" : "./img/career/certs/placeholder.jpg",
+			"certificate" : "./img/career/certs/JavaMasterclass.jpg",
 			"languages" : [ "[WIP] Java Masterclass" ]
 		},
 		{
-			"title" : "Design Patterns in Java",
+			"title" : "Complete Javascript Course 2020",
 			"startDate" : "queued",
 			"endDate" : "queued",
 			"description" : "",
-			"certificate" : "./img/career/certs/placeholder.jpg",
-			"languages" : [ "[WIP] Design Patterns"]
+			"certificate" : "./img/career/certs/CompleteJavascript.jpg",
+			"languages" : [ "[WIP] The Complete Javascript Course"]
 		}
 	],
 	"jobHistory" : [

@@ -82,9 +82,26 @@ div {
 	opacity: 0.5;
 }
 
+/*
+#wip {
+	line-height: 190px;
+	height: 190px;
+	text-align: center;
+	font-size: 100px;
+	width: 80%;
+	transform: rotate(30deg);
+	color: yellow;
+	font-weight: bolder;
+	opacity: 50%;
+	z-index: 20;
+	position: absolute;
+	top: 50%;
+	
+}
+*/
 
 body {
-	background: var(--job-dates-bg);
+/*	background: var(--job-dates-bg);*/
 	padding-top: 56.1px;
 	color: var(--text-colour);
 	overflow: hidden;
@@ -106,7 +123,8 @@ body {
 
 #cv-sheet-header {
 	padding: 50px 10% 0 10%;
-	background: var(--job-dates-bg);
+/*	background: var(--job-dates-bg);*/
+	background: url(../img/under-construction.jpg) top left repeat;
 }
 
 #cv-sheet-header #title {
