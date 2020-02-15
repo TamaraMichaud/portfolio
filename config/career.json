@@ -71,7 +71,7 @@
 			"title" : "Command-Line Helper",
 			"description" : "In order to help non-technical users navigate the command-line more effectively, I created a simple and expandable tool accessible from the terminal, with customised man pages explai&shy;ning shortcuts for etl-creation, file-system navig&shy;ation, system space and perfor&shy;mance checks, as well as tips on how to get on with, or avoid, the linux built-in functions of vi and grep.",
 			"technologies" : [ "bash shell", "linux command-line" ],
-			"image" : "",
+			"image" : "./img/career/projects/helpme.png",
 			"startDate" : "01/01/2016",
 			"endDate" : "01/08/2016"
 		}, 
@@ -87,8 +87,9 @@
 		{
 			"id" : "qasuite",
 			"title" : "QA Regression Test Suite",
-			"description" : "Working in a small international team, I helped to build a suite of automated regression tests that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices",
+			"description" : "Working in a small international team, I helped to build a suite of automated regression tests with Cucumber and Selenium, that are deployed alongside regular platform releases to ensure reliable deployments using ci/cd practices. More recently I have also built a proof-of-concept test framework using cypress",
 			"technologies" : [ "Selenium", "Java", "Cucumber", "Gherkin", "CI/CD", "Jenkins", "Postman", "Cypress"],
+			"image" : "./img/career/projects/qa-cypress.png",
 			"startDate" : "01/11/2018",
 			"endDate" : "01/11/2019"
 		}
