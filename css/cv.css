@@ -295,11 +295,12 @@ body {
 }
 #certificates {
 	padding: 2% 0 0 0;
+	margin: 0 auto;
 }
 
 #certificates .cert-outer {
 	min-height: 80px;
-	width: 40%;
+	width: 43%;
 	display: inline-block;
 	margin-left: 5%;
 }
@@ -628,6 +629,19 @@ border-radius: 5%;
 	}
 	#certificates {
 		margin-bottom: 3%;
+	}
+	#certificates .cert-outer .cert-langs {
+		max-width: 100%;
+		width: 100%;
+	}
+	#certificates .cert-outer .img {
+		max-width: 100px;
+/*		display: inline-block;*/
+		margin: 0 5%;
+		padding: 0;
+	}
+	#certificates .cert-outer .img img {
+		width: 100%;
 	}
 	.cert-outer {
 		line-height: 1em;
